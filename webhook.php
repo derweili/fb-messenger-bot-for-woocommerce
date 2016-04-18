@@ -14,7 +14,7 @@ if ( !isset($wp_did_header) ) {
     require_once( ABSPATH . WPINC . '/template-loader.php' );
 
     //Chef if something is received
-    if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_REQUEST['hub_verify_token'] == mbot_woocommerce_verify_token) {
+    if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_REQUEST['hub_verify_token'] == 'my_test_verify_tooken_for_alles_teuer_shop_messenger_bot') {
 
         // Webhook setup request
         echo $_REQUEST['hub_challenge'];

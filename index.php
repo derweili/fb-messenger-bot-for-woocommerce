@@ -47,6 +47,7 @@ function hook_css() {
 	$bot = new FbBotApp(mbot_woocommerce_token);
 
 	$bot->send(new Message('995353523866516', 'Vielen Dank für deine Bestellung' ));
+	
 
 }
 
