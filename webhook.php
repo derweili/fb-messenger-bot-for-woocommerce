@@ -13,6 +13,7 @@ if ( !isset($wp_did_header) ) {
     wp();
     require_once( ABSPATH . WPINC . '/template-loader.php' );
 
+    echo mbot_woocommerce_verify_token;
     //Chef if something is received
     if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_REQUEST['hub_verify_token'] == 'my_test_verify_tooken_for_alles_teuer_shop_messenger_bot') {
 
