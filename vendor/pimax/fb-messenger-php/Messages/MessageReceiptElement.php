@@ -13,17 +13,17 @@ class MessageReceiptElement extends MessageElement
     /**
      * @var int
      */
-    protected $quantity = 1;
+    public $quantity = 1;
 
     /**
      * @var int
      */
-    protected $price = 0;
+    public $price = 0;
 
     /**
      * @var string
      */
-    protected $currency = "USD";
+    public $currency = "USD";
 
     /**
      * MessageReceiptElement constructor.

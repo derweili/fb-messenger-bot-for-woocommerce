@@ -15,28 +15,28 @@ class MessageElement
      *
      * @var string|null
      */
-    protected $title = null;
+    public $title = null;
 
     /**
      * Image url
      *
      * @var null|string
      */
-    protected $image_url = null;
+    public $image_url = null;
 
     /**
      * Subtitle
      *
      * @var null|string
      */
-    protected $subtitle = null;
+    public $subtitle = null;
 
     /**
      * Buttons
      *
      * @var array
      */
-    protected $buttons = [];
+    public $buttons = [];
 
     /**
      * MessageElement constructor.

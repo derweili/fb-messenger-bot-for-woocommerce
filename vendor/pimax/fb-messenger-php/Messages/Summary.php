@@ -12,7 +12,7 @@ class Summary
     /**
      * @var array
      */
-    protected $data = [];
+    public $data = [];
 
     /**
      * Summary constructor.

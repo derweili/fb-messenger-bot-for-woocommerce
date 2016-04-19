@@ -12,7 +12,7 @@ class Address
     /**
      * @var array
      */
-    protected $data = [];
+    public $data = [];
 
     /**
      * Address constructor.

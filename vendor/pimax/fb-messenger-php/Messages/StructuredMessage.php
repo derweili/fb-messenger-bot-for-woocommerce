@@ -32,67 +32,68 @@ class StructuredMessage extends Message
     /**
      * @var null|string
      */
-    protected $title = null;
+    public $title = null;
 
     /**
      * @var null|string
      */
-    protected $subtitle = null;
+    public $subtitle = null;
 
     /**
      * @var array
      */
-    protected $elements = [];
+    public $elements = [];
 
     /**
      * @var array
      */
-    protected $buttons = [];
+    public $buttons = [];
 
     /**
      * @var null|string
      */
-    protected $recipient_name = null;
+    public $recipient_name = null;
 
     /**
      * @var null|integer
      */
-    protected $order_number = null;
+    public $order_number = null;
 
     /**
      * @var string
      */
-    protected $currency = "USD";
+    public $currency = "USD";
 
     /**
      * @var null|string
      */
-    protected $payment_method = null;
+    public $payment_method = null;
 
     /**
      * @var null|string
      */
-    protected $order_url = null;
+    public $order_url = null;
 
     /**
      * @var null|integer
      */
-    protected $timestamp = null;
+    public $timestamp = null;
 
     /**
      * @var array
      */
-    protected $address = [];
+    public $address = [];
 
     /**
      * @var array
      */
-    protected $summary = [];
+    public $summary = [];
 
     /**
      * @var array
      */
-    protected $adjustments = [];
+    public $adjustments = [];
+
 
     /**
      * StructuredMessage constructor.
@@ -175,11 +176,12 @@ class StructuredMessage extends Message
                 $result['attachment']['payload']['payment_method'] = $this->payment_method;
                 $result['attachment']['payload']['order_url'] = $this->order_url;
                 $result['attachment']['payload']['timestamp'] = $this->timestamp;
-                $result['attachment']['payload']['elements'] = [];
+                $result['attachment']['payload']['elements'] = $this->elements;
 
-                foreach ($this->elements as $btn) {
+                //Object not used in WooCommerce Messenger bot
+                /*foreach ($this->elements as $btn) {
                     $result['attachment']['payload']['elements'][] = $btn->getData();
-                }
+                }*/
 
                 $result['attachment']['payload']['address'] = $this->address->getData();
                 $result['attachment']['payload']['summary'] = $this->summary->getData();

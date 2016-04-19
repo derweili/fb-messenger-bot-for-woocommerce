@@ -30,9 +30,12 @@ include('vendor/pimax/fb-messenger-php/Messages/Address.php');
 include('vendor/pimax/fb-messenger-php/Messages/Summary.php');
 include('vendor/pimax/fb-messenger-php/Messages/Adjustment.php');
 
+include('vendor/pimax/fb-messenger-php/Messages/WooReceipt.php');
+
 include('inc/woocommerce-settings.php');
 include('inc/woocommerce-thank-you.php');
 include('inc/woocommerce-order-message.php');
+include('inc/woocommerce-order-status-messages.php');
 
 //Define Messenger App Token
 define("mbot_woocommerce_token", "EAAW0k7Iyff4BALJPNJorl031tIJYtyuJzDZCfpSPZB125kZCBGnS9hrt8QIYZCvguzCEx0sW1OR2orQUwMcZBqr3XJz7pD5lFvT8Uvez3oPCU2qvkc1byPRw1pZAl4diD9dKYdwwTZBb054wVnxjwF6WaSLlwEwoxwJe40ezt4cfQZDZD");
