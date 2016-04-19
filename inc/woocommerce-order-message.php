@@ -1,16 +1,9 @@
 <?php
 
-function WooCommerce_Send_order($bot, $order_id){
-
-	$order = new WC_Order($order_id);
-
-	$order_number = $order->get_order_number();
-
-	$bot->send(new StructuredMessage($message['sender']['id'],
-	    StructuredMessage::TYPE_RECEIPT,
-	    [
+function WooCommerce_Send_order($bot, $message, $order){
+	$orderdata = [
 	        'recipient_name' => 'Fox Brown',
-	        'order_number' => $order_id,
+	        'order_number' => $order->id,
 	        'currency' => 'EUR',
 	        'payment_method' => 'VISA',
 	        'order_url' => 'http://facebook.com',
@@ -44,8 +37,15 @@ function WooCommerce_Send_order($bot, $order_id){
 	                'amount' => 10
 	            ])
 	        ]
-	    ]
+	    ];
+
+	$bot->send(
+		new StructuredMessage(
+			$message['sender']['id'],
+	    	StructuredMessage::TYPE_RECEIPT,
+			$orderdata
+	    
 	));
 
-
+	echo $order->id;
 }

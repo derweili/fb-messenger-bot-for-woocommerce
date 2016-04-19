@@ -8,13 +8,22 @@
 if ( !isset($wp_did_header) ) {
 
 	//Load Wordpress Functions
-    $wp_did_header = true;
-    require_once( '../../../wp-load.php' );
-    wp();
-    require_once( ABSPATH . WPINC . '/template-loader.php' );
+   // $wp_did_header = true;
+   // require_once( '../../../wp-load.php' );
+   // wp();
+   // require_once( ABSPATH . WPINC . '/template-loader.php' );
+    define('WP_USE_THEMES', false);
+    require('../../../wp-load.php');
+
+    $order = new WC_Order(2381);
+
+
+//echo mbot_woocommerce_verify_token;
+$bot = new FbBotApp(mbot_woocommerce_token);
+
 
     //Chef if something is received
-    if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_REQUEST['hub_verify_token'] == 'my_test_verify_tooken_for_alles_teuer_shop_messenger_bot') {
+    if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_REQUEST['hub_verify_token'] == mbot_woocommerce_verify_token) {
 
         // Webhook setup request
         file_put_contents("log.html", $_REQUEST['hub_challenge']);
@@ -32,6 +41,7 @@ if ( !isset($wp_did_header) ) {
         if (!empty($data['entry'][0]['messaging'])) {
             foreach ($data['entry'][0]['messaging'] as $message) {
 
+
                 $command = "";
 
                 //If Authentication Callback is received
@@ -43,15 +53,23 @@ if ( !isset($wp_did_header) ) {
                         
                         $bot->send(new Message($message['sender']['id'], 'Thank you for you order. ' . $orderid ));
                         
-                        WooCommerce_Send_order($bot, $orderid);
+                        WooCommerce_Send_order($bot, $message, $orderid);
 
                     };
 
                 };
 
             }; //endforeach
+        }else{
+            //Testing
+            $message['sender']['id'] = 995353523866516;
+            $order = new WC_Order(2381);
+            $bot->send(new Message($message['sender']['id'], 'Test ' ));
+            WooCommerce_Send_order($bot, $message, $order);
+
         }; //endif
 
+       
 
     }
 
