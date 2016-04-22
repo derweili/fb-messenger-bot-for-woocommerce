@@ -28,7 +28,6 @@ $bot = new FbBotApp(mbot_woocommerce_token);
         file_put_contents("log.html", $_REQUEST['hub_challenge']);
         echo $_REQUEST['hub_challenge'];
 
-        $bot->send( new Message( 995353523866516, 'Hub reveived' ) );
     } else {
 
         // Other event
@@ -42,24 +41,19 @@ $bot = new FbBotApp(mbot_woocommerce_token);
 
         if (!empty($data['error'])) {
             file_put_contents("error.html", $data['error']['message']);
-            $bot->send( new Message( 995353523866516, 'Error Message' ) );
         }
 
         if (!empty($data['entry'][0]['messaging'])) {
-            $bot->send( new Message( 995353523866516, 'messaging not empty' ) );
             foreach ($data['entry'][0]['messaging'] as $message) {
-                $bot->send( new Message( 995353523866516, 'foreach messaging' ) );
 
 
                 $command = "";
 
                 //If Authentication Callback is received
                 if (!empty($message['optin'])) {
-                    $bot->send( new Message( 995353523866516, 'optin not empty' ) );
 
                     //Is order subsciption
                     if (startswith($message['optin']['ref'], 'derweiliSubscribeToOrder' )) {
-                        $bot->send( new Message( 995353523866516, 'optin starty with derweiliSubscibeToOrder' ) );
                         $orderid = str_replace("derweiliSubscribeToOrder", "", $message['optin']['ref']);
                         $order = new WC_Order($orderid);
 
@@ -83,7 +77,6 @@ $bot = new FbBotApp(mbot_woocommerce_token);
 
             }; //endforeach
         }else{
-            $bot->send( new Message( 995353523866516, 'messages empty' ) );
             //Testing
             $message['sender']['id'] = 995353523866516;
             $order = new WC_Order(2385);
@@ -113,6 +106,7 @@ echo $order->get_total_discount();
                 $image_id = $product->get_image_id();
                 $imgurl = wp_get_attachment_url($image_id);
                
+echo '<hr />';
 
                //echo $new_structured_message->elements[0]->quantity;
 

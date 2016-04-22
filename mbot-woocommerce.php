@@ -32,18 +32,20 @@ include('vendor/pimax/fb-messenger-php/Messages/Adjustment.php');
 
 
 include('inc/WooOrderMessage.php');
-include('inc/woocommerce-settings.php');
+//include('inc/woocommerce-settings.php');
 include('inc/woocommerce-thank-you.php');
 include('inc/woocommerce-order-status-messages.php');
+include('inc/settingspage.php');
 
 //Define Messenger App Token
-define("mbot_woocommerce_token", "EAAW0k7Iyff4BALJPNJorl031tIJYtyuJzDZCfpSPZB125kZCBGnS9hrt8QIYZCvguzCEx0sW1OR2orQUwMcZBqr3XJz7pD5lFvT8Uvez3oPCU2qvkc1byPRw1pZAl4diD9dKYdwwTZBb054wVnxjwF6WaSLlwEwoxwJe40ezt4cfQZDZD");
+define("mbot_woocommerce_token", WC_Admin_Settings::get_option( 'derweili_mbot_page_token', 'test' ));
 
 //Define Messenger App Token
-define("mbot_woocommerce_verify_token", "my_test_verify_tooken_for_alles_teuer_shop_messenger_bot");
+define("mbot_woocommerce_verify_token", WC_Admin_Settings::get_option( 'derweili_mbot_page_token', 'test' ));
 
 
 
 function startswith($haystack, $needle){ 
     return strpos($haystack, $needle) === 0;
 }
+
