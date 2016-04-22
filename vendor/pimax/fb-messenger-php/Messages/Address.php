@@ -1,6 +1,5 @@
 <?php
 
-//namespace pimax\Messages;
 
 /**
  * Class Address
@@ -12,7 +11,7 @@ class Address
     /**
      * @var array
      */
-    public $data = [];
+    protected $data = [];
 
     /**
      * Address constructor.

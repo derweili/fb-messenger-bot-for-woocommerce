@@ -1,6 +1,5 @@
 <?php
 
-//namespace pimax\Messages;
 
 /**
  * Class Summary
@@ -12,7 +11,7 @@ class Summary
     /**
      * @var array
      */
-    public $data = [];
+    protected $data = [];
 
     /**
      * Summary constructor.

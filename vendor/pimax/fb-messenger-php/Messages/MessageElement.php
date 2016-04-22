@@ -1,6 +1,5 @@
 <?php
 
-//namespace pimax\Messages;
 
 
 /**
@@ -15,28 +14,28 @@ class MessageElement
      *
      * @var string|null
      */
-    public $title = null;
+    protected $title = null;
 
     /**
      * Image url
      *
      * @var null|string
      */
-    public $image_url = null;
+    protected $image_url = null;
 
     /**
      * Subtitle
      *
      * @var null|string
      */
-    public $subtitle = null;
+    protected $subtitle = null;
 
     /**
      * Buttons
      *
      * @var array
      */
-    public $buttons = [];
+    protected $buttons = [];
 
     /**
      * MessageElement constructor.

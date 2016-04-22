@@ -30,11 +30,10 @@ include('vendor/pimax/fb-messenger-php/Messages/Address.php');
 include('vendor/pimax/fb-messenger-php/Messages/Summary.php');
 include('vendor/pimax/fb-messenger-php/Messages/Adjustment.php');
 
-include('vendor/pimax/fb-messenger-php/Messages/WooReceipt.php');
 
+include('inc/WooOrderMessage.php');
 include('inc/woocommerce-settings.php');
 include('inc/woocommerce-thank-you.php');
-include('inc/woocommerce-order-message.php');
 include('inc/woocommerce-order-status-messages.php');
 
 //Define Messenger App Token
@@ -43,17 +42,7 @@ define("mbot_woocommerce_token", "EAAW0k7Iyff4BALJPNJorl031tIJYtyuJzDZCfpSPZB125
 //Define Messenger App Token
 define("mbot_woocommerce_verify_token", "my_test_verify_tooken_for_alles_teuer_shop_messenger_bot");
 
-//add_action('wp_head','hook_css');
 
-function hook_css() {
-	echo 'test';
-
-	$bot = new FbBotApp(mbot_woocommerce_token);
-
-	$bot->send(new Message('995353523866516', 'Vielen Dank für deine Bestellung' ));
-	
-
-}
 
 function startswith($haystack, $needle){ 
     return strpos($haystack, $needle) === 0;

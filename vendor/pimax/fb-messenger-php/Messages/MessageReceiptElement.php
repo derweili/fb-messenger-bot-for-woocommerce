@@ -1,6 +1,5 @@
 <?php
 
-//namespace pimax\Messages;
 
 
 /**
@@ -13,17 +12,17 @@ class MessageReceiptElement extends MessageElement
     /**
      * @var int
      */
-    public $quantity = 1;
+    protected $quantity = 1;
 
     /**
      * @var int
      */
-    public $price = 0;
+    protected $price = 0;
 
     /**
      * @var string
      */
-    public $currency = "USD";
+    protected $currency = "USD";
 
     /**
      * MessageReceiptElement constructor.

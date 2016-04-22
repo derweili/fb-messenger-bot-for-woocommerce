@@ -1,6 +1,5 @@
 <?php
 
-//namespace pimax\Messages;
 
 /**
  * Class MessageButton
