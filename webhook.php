@@ -86,7 +86,6 @@ $bot = new FbBotApp(mbot_woocommerce_token);
             $bot->send( new Message( 995353523866516, 'messages empty' ) );
             //Testing
             $message['sender']['id'] = 995353523866516;
-            $bot->send( 995353523866516, 'Nix passiert ' ) );
             $order = new WC_Order(2385);
             echo $order->get_formatted_shipping_full_name();
 
