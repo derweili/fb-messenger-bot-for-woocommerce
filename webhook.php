@@ -94,7 +94,6 @@ $bot = new FbBotApp(mbot_woocommerce_token);
 echo $order->order_currency;
 echo $order->get_total_discount();
 
-
  echo '<hr />';
                echo '<hr alt/>';
                

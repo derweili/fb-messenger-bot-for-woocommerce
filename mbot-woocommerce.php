@@ -2,7 +2,7 @@
 /**
  * @wordpress-plugin
  * Plugin Name:       Facebook Messenger Bot Version 2
- * Plugin URI:        http://www.werbeagenten.de
+ * Plugin URI:        http://www.derweili.de
  * Description:       Stay in contact with you customers via Facebook Messenger. Send them notifications when order status changes.
  * Version:           1.0
  * Author:            derweili
@@ -10,7 +10,7 @@
  * License:           GNU General Public License v3.0
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
  * Domain Path:       /mbot-for-woocommerce/languages/
- * GitHub Plugin URI: https://github.com/angelleye/paypal-woocommerce
+ * GitHub Plugin URI: https://github.com/derweili/fb-messenger-bot-for-woocommerce
  *
  */
 if (!defined('ABSPATH'))
