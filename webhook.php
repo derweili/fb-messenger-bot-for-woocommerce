@@ -7,11 +7,6 @@
 
 if ( !isset($wp_did_header) ) {
 
-	//Load Wordpress Functions
-   // $wp_did_header = true;
-   // require_once( '../../../wp-load.php' );
-   // wp();
-   // require_once( ABSPATH . WPINC . '/template-loader.php' );
     define('WP_USE_THEMES', false);
     require('../../../wp-load.php');
 
@@ -77,38 +72,16 @@ $bot = new FbBotApp(mbot_woocommerce_token);
 
             }; //endforeach
         }else{
-            //Testing
-            $message['sender']['id'] = 995353523866516;
-            $order = new WC_Order(2385);
-            echo $order->get_formatted_shipping_full_name();
-
-
-
-#######
-
-
-           $bot->send(new WooOrderMessage( $message['sender']['id'], $order ) );
-
-
-#########
-echo $order->order_currency;
-echo $order->get_total_discount();
-
- echo '<hr />';
-               echo '<hr alt/>';
-               
-               echo time();
-
-               echo '<hr />';
-               echo strtotime($order->order_date);
-
-                $product = new WC_product($item['product_id']);
-                $image_id = $product->get_image_id();
-                $imgurl = wp_get_attachment_url($image_id);
-               
-echo '<hr />';
-
-               //echo $new_structured_message->elements[0]->quantity;
+            if ( current_user_can( 'manage_options' ) ) {
+                $testsender = $_GET['senderid'];
+                $testorder = $_GET['order'];
+            } 
+            if (!empty($testsender)) {
+                $message['sender']['id'] = $testsender;
+                $order = new WC_Order($testorder);
+                $bot->send(new WooOrderMessage( $message['sender']['id'], $order ) );
+            }
+            
 
         }; //endif
 
@@ -117,6 +90,5 @@ echo '<hr />';
     }
 
 }
-//$derweili_mbot = new FbBotApp($token);
 
 

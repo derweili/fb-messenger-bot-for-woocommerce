@@ -32,16 +32,21 @@ include('vendor/pimax/fb-messenger-php/Messages/Adjustment.php');
 
 
 include('inc/WooOrderMessage.php');
-//include('inc/woocommerce-settings.php');
 include('inc/woocommerce-thank-you.php');
 include('inc/woocommerce-order-status-messages.php');
 include('inc/settingspage.php');
 
 //Define Messenger App Token
-define("mbot_woocommerce_token", WC_Admin_Settings::get_option( 'derweili_mbot_page_token', 'test' ));
+define( "mbot_woocommerce_token", get_option( 'derweili_mbot_page_token' ) );
 
 //Define Messenger App Token
-define("mbot_woocommerce_verify_token", WC_Admin_Settings::get_option( 'derweili_mbot_page_token', 'test' ));
+define("mbot_woocommerce_verify_token", get_option( 'derweili_mbot_verify_token' ) );
+
+//Define Messenger App Token
+define("mbot_woocommerce_app_id", get_option( 'derweili_mbot_messenger_app_id' ) );
+
+//Define Messenger App Token
+define("mbot_woocommerce_page_id", get_option( 'derweili_mbot_page_id' ) );
 
 
 

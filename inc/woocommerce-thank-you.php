@@ -13,8 +13,8 @@ function derweili_mbot_woocommerce_thank_you_message( $example, $order ) {
 	if ( empty( $usermessengerid ) ) { // Display send to messenger button if no messenger id is stored
 
 	    $send_to_messenger_button = '<div class="fb-send-to-messenger" 
-	                  messenger_app_id="1605921326398974" 
-	                  page_id="193236457477337" 
+	                  messenger_app_id="' . mbot_woocommerce_app_id . '" 
+	                  page_id="' . mbot_woocommerce_page_id . '" 
 	                  data-ref="derweiliSubscribeToOrder' . $order->id . '" 
 	                  color="blue" 
 	                  size="large"></div>';
@@ -23,7 +23,7 @@ function derweili_mbot_woocommerce_thank_you_message( $example, $order ) {
 	}else{
 
 		//If user already has messenger id, send order notification to messenger
-		$bot = new FbBotApp(mbot_woocommerce_token);
+		$bot = new FbBotApp( mbot_woocommerce_token );
 		$bot->send(new WooOrderMessage( $message['sender']['id'], $order ) );
 
 	}
@@ -40,7 +40,7 @@ function derweili_mbot_woocommerce_thank_you_script(){ ?>
 	<script>
 	  window.fbAsyncInit = function() {
 	    FB.init({
-	      appId      : '1605921326398974',
+	      appId      : '<?php echo mbot_woocommerce_app_id; ?>',
 	      xfbml      : true,
 	      version    : 'v2.6'
 	    });
