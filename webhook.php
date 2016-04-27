@@ -1,8 +1,5 @@
 <?php
 
-//echo dirname(__FILE__);
-
-
 //Load WordPress functions
 
 if ( !isset($wp_did_header) ) {
@@ -58,7 +55,7 @@ $bot = new FbBotApp(mbot_woocommerce_token);
 
                         //save messenger id to user if available
                         if ($order->get_user_id() != 0) {
-                            add_user_meta( $order->get_user_id(), 'derweili_mbot_woocommerce_messenger_id', $message['sender']['id'], true );
+                            //add_user_meta( $order->get_user_id(), 'derweili_mbot_woocommerce_messenger_id', $message['sender']['id'], true );
                         }
                         
                         //send text message to messenger
@@ -81,7 +78,13 @@ $bot = new FbBotApp(mbot_woocommerce_token);
                 $order = new WC_Order($testorder);
                 $bot->send(new WooOrderMessage( $message['sender']['id'], $order ) );
             }
-            
+
+            $order = new WC_Order(2387);
+            $bot->send( new Message( 995353523866516, 'Danke für Ihre Bestellung, sie werden ab sofort über den Bestellstatus per Chat informiert. ' ) );
+            $bot->send(new WooOrderMessage( 995353523866516, $order ) );
+
+            echo get_current_user_id();
+
 
         }; //endif
 

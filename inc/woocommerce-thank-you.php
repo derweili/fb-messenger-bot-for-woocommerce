@@ -9,7 +9,6 @@ function derweili_mbot_woocommerce_thank_you_message( $example, $order ) {
 
 	//get messenger id from user
 	$usermessengerid = get_user_meta( $order->get_user_id(), 'derweili_mbot_woocommerce_messenger_id', true );
-	
 	if ( empty( $usermessengerid ) ) { // Display send to messenger button if no messenger id is stored
 
 	    $send_to_messenger_button = '<div class="fb-send-to-messenger" 
