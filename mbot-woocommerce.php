@@ -1,7 +1,7 @@
 <?php
 /**
  * @wordpress-plugin
- * Plugin Name:       Facebook Messenger Bot Version 2
+ * Plugin Name:       Messengerbot for WooCommerce
  * Plugin URI:        http://www.derweili.de
  * Description:       Stay in contact with you customers via Facebook Messenger. Send them notifications when order status changes.
  * Version:           1.0
@@ -50,7 +50,7 @@ define("mbot_woocommerce_page_id", get_option( 'derweili_mbot_page_id' ) );
 
 
 
-function startswith($haystack, $needle){ 
+function derweili_mob_woocommerce_startswith($haystack, $needle){ 
     return strpos($haystack, $needle) === 0;
 }
 

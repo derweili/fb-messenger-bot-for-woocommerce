@@ -16,8 +16,8 @@ function derweili_mbot_woocommerce_thank_you_message( $example, $order ) {
 	                  page_id="' . mbot_woocommerce_page_id . '" 
 	                  data-ref="derweiliSubscribeToOrder' . $order->id . '" 
 	                  color="blue" 
-	                  size="large"></div>';
-	    return '<div style="width: 100%; background-color:white; padding: 20px; margin-bottom:20px;"><strong></strong>' . $send_to_messenger_button . '</div>' . $example;
+	                  size="standard"></div>';
+	    return '<div style="width: 100%; background-color:white; padding: 20px; margin-bottom:20px;"><h3>' . __( 'Get notified about Updates via Facebook Messenger', 'mbot-woocommerce' ) . '</h3>' . $send_to_messenger_button . '</div>' . $example;
 
 	}else{
 

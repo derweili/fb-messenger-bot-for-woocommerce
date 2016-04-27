@@ -1,16 +1,7 @@
 <?php
 
 
-#####
-
-
-
-
-
-
-####
-
-class WC_Settings_Tab_Demo {
+class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
     /**
      * Bootstraps the class and hooks required actions & filters.
      *
@@ -29,7 +20,7 @@ class WC_Settings_Tab_Demo {
      * @return array $settings_tabs Array of WooCommerce setting tabs & their labels, including the Subscription tab.
      */
     public static function add_settings_tab( $settings_tabs ) {
-        $settings_tabs['settings_tab_demo'] = __( 'Messenger Bot', 'woocommerce-settings-tab-demo' );
+        $settings_tabs['settings_tab_demo'] = __( 'Messenger Bot', 'mbot-woocommmerce' );
         return $settings_tabs;
     }
     /**
@@ -58,33 +49,33 @@ class WC_Settings_Tab_Demo {
     public static function get_settings() {
         $settings = array(
             'facebook_api_credentials_title' => array(
-                'name'     => __( 'Facebook API Credentials', 'woocommerce-settings-tab-demo' ),
+                'name'     => __( 'Facebook API Credentials', 'mbot-woocommmerce' ),
                 'type'     => 'title',
                 'desc'     => '',
                 'id'       => 'derweili_mbot_fb_credentials_title'
             ),
             'page_token' => array(
-                'name' => __( 'Page Tooken', 'woocommerce-settings-tab-demo' ),
+                'name' => __( 'Page Tooken', 'mbot-woocommmerce' ),
                 'type' => 'text',
-                'desc' => __( '', 'woocommerce-settings-tab-demo' ),
+                'desc' => __( '', 'mbot-woocommmerce' ),
                 'id'   => 'derweili_mbot_page_token'
             ),
             'verify_tooken' => array(
-                'name' => __( 'Verify Token', 'woocommerce-settings-tab-demo' ),
+                'name' => __( 'Verify Token', 'mbot-woocommmerce' ),
                 'type' => 'text',
-                'desc' => __( '', 'woocommerce-settings-tab-demo' ),
+                'desc' => __( '', 'mbot-woocommmerce' ),
                 'id'   => 'derweili_mbot_verify_token'
             ),
             'Page_ID' => array(
-                'name' => __( 'Page ID', 'woocommerce-settings-tab-demo' ),
+                'name' => __( 'Page ID', 'mbot-woocommmerce' ),
                 'type' => 'text',
-                'desc' => __( '', 'woocommerce-settings-tab-demo' ),
+                'desc' => __( '', 'mbot-woocommmerce' ),
                 'id'   => 'derweili_mbot_page_id'
             ),
             'Messenger_APP_ID' => array(
-                'name' => __( 'Messenger App ID', 'woocommerce-settings-tab-demo' ),
+                'name' => __( 'Messenger App ID', 'mbot-woocommmerce' ),
                 'type' => 'text',
-                'desc' => __( '', 'woocommerce-settings-tab-demo' ),
+                'desc' => __( '', 'mbot-woocommmerce' ),
                 'id'   => 'derweili_mbot_messenger_app_id'
             ),
             'section_end' => array(
@@ -95,5 +86,5 @@ class WC_Settings_Tab_Demo {
         return apply_filters( 'wc_settings_tab_demo_settings', $settings );
     }
 }
-WC_Settings_Tab_Demo::init();
+DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE::init();
 
