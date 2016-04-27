@@ -29,7 +29,7 @@ class WC_Settings_Tab_Demo {
      * @return array $settings_tabs Array of WooCommerce setting tabs & their labels, including the Subscription tab.
      */
     public static function add_settings_tab( $settings_tabs ) {
-        $settings_tabs['settings_tab_demo'] = __( 'Settings Demo Tab', 'woocommerce-settings-tab-demo' );
+        $settings_tabs['settings_tab_demo'] = __( 'Messenger Bot', 'woocommerce-settings-tab-demo' );
         return $settings_tabs;
     }
     /**
@@ -96,3 +96,4 @@ class WC_Settings_Tab_Demo {
     }
 }
 WC_Settings_Tab_Demo::init();
+
