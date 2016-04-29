@@ -73,11 +73,6 @@ $bot = new FbBotApp(mbot_woocommerce_token);
             }; //endforeach
         }else{
 
-            $order = new WC_Order(2387);
-            $bot->send( new Message( 995353523866516, 'Danke für Ihre Bestellung, sie werden ab sofort über den Bestellstatus per Chat informiert. ' ) );
-            $bot->send(new WooOrderMessage( 995353523866516, $order ) );
-
-            echo get_current_user_id();
 
 
         }; //endif
