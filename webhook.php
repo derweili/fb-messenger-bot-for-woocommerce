@@ -33,7 +33,6 @@ $bot = new FbBotApp(mbot_woocommerce_token);
 
         if (!empty($data['error'])) {
             file_put_contents("error.html", $data['error']['message']);
-            $bot->send( new Message( 995353523866516, 'error message: ' . $message['error']['message'] ) );
         }
 
         if (!empty($data['entry'][0]['messaging'])) {
@@ -45,13 +44,10 @@ $bot = new FbBotApp(mbot_woocommerce_token);
                 //If Authentication Callback is received
                 if (!empty($message['optin'])) {
 
-                    $bot->send( new Message( 995353523866516, 'optinmessage: ' . $message['optin']['ref'] ) );
-                    $bot->send( new Message( 995353523866516, 'sender id: ' . $message['sender']['id'] ) );
 
                     //Is order subsciption
                     if (derweili_mob_woocommerce_startswith($message['optin']['ref'], 'derweiliSubscribeToOrder' )) {
-                        $bot->send( new Message( 995353523866516, 'Message starts with derweiliSubscribeToOrder' ) );
-                        
+
                         $orderid = str_replace("derweiliSubscribeToOrder", "", $message['optin']['ref']);
                         $order = new WC_Order($orderid);
 

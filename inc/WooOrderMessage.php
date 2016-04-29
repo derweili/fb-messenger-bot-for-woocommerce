@@ -7,8 +7,8 @@ class WooOrderMessage extends StructuredMessage {
         $this->type = "receipt";
 
         $this->recipient_name = $order->get_formatted_shipping_full_name();
-        //$this->order_number = $order->get_order_number();
-        $this->order_number = rand(10000, 99999);
+        $this->order_number = $order->get_order_number();
+        //$this->order_number = rand(10000, 99999);
         $this->currency = $order->order_currency;
         $this->payment_method = $order->payment_method_title;
         $this->order_url = 'http://derweili.de/';
