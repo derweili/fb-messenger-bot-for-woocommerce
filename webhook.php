@@ -49,9 +49,12 @@ $bot = new FbBotApp(mbot_woocommerce_token);
                     $bot->send( new Message( 995353523866516, 'sender id: ' . $message['sender']['id'] ) );
 
                     //Is order subsciption
-                    if (startswith($message['optin']['ref'], 'derweiliSubscribeToOrder' )) {
+                    if (derweili_mob_woocommerce_startswith($message['optin']['ref'], 'derweiliSubscribeToOrder' )) {
+                        $bot->send( new Message( 995353523866516, 'Message starts with derweiliSubscribeToOrder' ) );
+                        
                         $orderid = str_replace("derweiliSubscribeToOrder", "", $message['optin']['ref']);
                         $order = new WC_Order($orderid);
+
 
 
                         //save messenger id to order
