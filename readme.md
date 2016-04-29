@@ -1,13 +1,17 @@
-=== Messengerbot for WooCommerce ===
+#Messengerbot for WooCommerce
+
 Tags: WooCommerce, Facebook, Messenger, Bot
+
 Requires at least: 4.0
+
 Tested up to: 4.5
+
 License: GPL
 
-Messenger Bot for WooCommerce
+##Messenger Bot for WooCommerce
 Notify your customers about their orders via Facebook Messenger
 
-== Installation ==
+##Installation
 Install the Plugin via the Wordpress Backend.
 
 Setup a Facebook App as described here:
