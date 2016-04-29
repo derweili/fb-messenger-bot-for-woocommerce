@@ -3,7 +3,7 @@
  * @wordpress-plugin
  * Plugin Name:       Messengerbot for WooCommerce
  * Plugin URI:        http://www.derweili.de
- * Description:       Stay in contact with you customers via Facebook Messenger. Send them notifications when order status changes.
+ * Description:       Stay in contact with you customers via Facebook Messenger. Send them notifications when the order status changes.
  * Version:           1.0
  * Author:            derweili
  * Author URI:        http://www.derweili.de/
