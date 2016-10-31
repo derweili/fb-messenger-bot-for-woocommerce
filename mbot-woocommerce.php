@@ -40,11 +40,12 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		$this->load_vendors();
 		$this->define_credentials();
 
-		include('inc/settingspage.php');
 
 		if ( $this->credentials_not_empty() ) {
 			$this->load_dependencies();
 		}
+
+		add_action( 'admin_init', array( &$this, 'load_admin_dependencies' ) );
 
 	}
 
@@ -91,10 +92,16 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		
 		include('inc/WooOrderMessage.php');
 		include('inc/woocommerce-thank-you.php');
-		include('inc/woocommerce-order-status-messages.php');
 
 	}
 
+	public function load_admin_dependencies() {
+
+		include('inc/woocommerce-order-status-messages.php');
+		include('inc/settingspage.php');
+
+
+	}
 
 }
 
