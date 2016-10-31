@@ -27,7 +27,7 @@ $bot = new pimax\FbBotApp(mbot_woocommerce_token);
     
         //Log latest connections    
         
-        $logdata = print_r($data['entry'][0]['messaging'], true);
+        $logdata = print_r($data['entry'], true);
 
         file_put_contents("log.html", $logdata);
 
