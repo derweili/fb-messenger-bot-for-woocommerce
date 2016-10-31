@@ -13,6 +13,7 @@ if ( !isset($wp_did_header) ) {
 $bot = new pimax\FbBotApp(mbot_woocommerce_token);
 
 $data = json_decode(file_get_contents("php://input"), true);
+$logdata = print_r($data['entry'], true);
 file_put_contents("log2.html", $logdata);
 
     //Chef if something is received
