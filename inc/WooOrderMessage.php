@@ -18,7 +18,7 @@ class WooOrderMessage extends pimax\Messages\StructuredMessage {
 
         //Elements
         foreach ($order->get_items() as $item) {
-        	$this->elements[] = new MessageReceiptElement(
+        	$this->elements[] = new pimax\Messages\MessageReceiptElement(
 	        		$item['name'], //headline
 	        		"", //subline
 	        		"", //image url
@@ -29,7 +29,7 @@ class WooOrderMessage extends pimax\Messages\StructuredMessage {
         }
 
         //Address
-        $this->address = new Address([
+        $this->address = new pimax\Messages\Address([
                             'country' => $order->shipping_country,
                             'state' => '#',
                             'postal_code' => $order->shipping_postcode,
@@ -39,7 +39,7 @@ class WooOrderMessage extends pimax\Messages\StructuredMessage {
                         ]);
 
         //Summary
-        $this->summary = new Summary([
+        $this->summary = new pimax\Messages\Summary([
                             'subtotal' => number_format( $order->get_subtotal(), 2 ),
                             'shipping_cost' => number_format( $order->order_shipping, 2 ),
                             'total_tax' => number_format( $order->order_tax, 2 ),
@@ -50,7 +50,7 @@ class WooOrderMessage extends pimax\Messages\StructuredMessage {
         if ($order->get_total_discount() != 0) { //Only display cupouns and discount when available
 
         	$this->adjustments = [
-        		new Adjustment([
+        		new pimax\Messages\Adjustment([
                     'name' => 'Gutscheine und Rabatte',
                     'amount' => $order->get_total_discount()
                 ])

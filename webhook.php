@@ -13,6 +13,7 @@ if ( !isset($wp_did_header) ) {
 $bot = new pimax\FbBotApp(mbot_woocommerce_token);
 
 
+
     //Chef if something is received
     if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_REQUEST['hub_verify_token'] == mbot_woocommerce_verify_token) {
 
@@ -31,9 +32,9 @@ $bot = new pimax\FbBotApp(mbot_woocommerce_token);
 
         file_put_contents("log.html", $logdata);
 
-        if (!empty($data['error'])) {
+       /* if (!empty($data['error'])) {
             file_put_contents("error.html", $data['error']['message']);
-        }
+        }*/
 
         if (!empty($data['entry'][0]['messaging'])) {
             foreach ($data['entry'][0]['messaging'] as $message) {
@@ -42,7 +43,7 @@ $bot = new pimax\FbBotApp(mbot_woocommerce_token);
                 $command = "";
 
                 //If Authentication Callback is received
-                if (!empty($message['optin'])) {
+                if ( !empty( $message['optin'] ) ) {
 
                     $bot->send( new pimax\Messages\Message( $message['sender']['id'], 'Optin, sender id: ' . $message['sender']['id'] ) );
                     
@@ -81,5 +82,4 @@ $bot = new pimax\FbBotApp(mbot_woocommerce_token);
     }
 
 }
-
 
