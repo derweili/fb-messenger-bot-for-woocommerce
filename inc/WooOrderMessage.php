@@ -42,7 +42,7 @@ class WooOrderMessage extends pimax\Messages\StructuredMessage {
         $this->summary = new pimax\Messages\Summary([
                             'subtotal' => number_format( $order->get_subtotal(), 2 ),
                             'shipping_cost' => number_format( $order->order_shipping, 2 ),
-                            'total_tax' => number_format( $order->order_tax, 2 ),
+                            'total_tax' => number_format( $order->get_total_tax(), 2 ),
                             'total_cost' => number_format( $order->order_total, 2 ),
                         ]);
 
