@@ -12,7 +12,8 @@ if ( !isset($wp_did_header) ) {
 //echo mbot_woocommerce_verify_token;
 $bot = new pimax\FbBotApp(mbot_woocommerce_token);
 
-
+$data = json_decode(file_get_contents("php://input"), true);
+file_put_contents("log2.html", $logdata);
 
     //Chef if something is received
     if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_REQUEST['hub_verify_token'] == mbot_woocommerce_verify_token) {
