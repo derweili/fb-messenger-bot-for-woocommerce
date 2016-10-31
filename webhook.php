@@ -70,7 +70,7 @@ file_put_contents("log2.html", $logdata);
                         //send Order notification to messenger
                         $bot->send(new WooOrderMessage( $message['sender']['id'], $order ) );
 
-                        do_action('derweili_mbot_woocommerce_after_optin_message', $message, $order )
+                        do_action('derweili_mbot_woocommerce_after_optin_message', $message, $order );
 
                     };
 
