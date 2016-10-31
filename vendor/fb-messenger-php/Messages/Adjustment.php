@@ -1,12 +1,13 @@
 <?php
 
+namespace pimax\Messages;
 
 /**
- * Class Address
- * 
+ * Class Adjustment
+ *
  * @package pimax\Messages
  */
-class Address
+class Adjustment
 {
     /**
      * @var array
@@ -14,9 +15,9 @@ class Address
     protected $data = [];
 
     /**
-     * Address constructor.
+     * Adjustment constructor.
      *
-     * @param $data
+     * @param array $data
      */
     public function __construct($data)
     {
@@ -25,7 +26,7 @@ class Address
 
     /**
      * Get Data
-     *
+     * 
      * @return array
      */
     public function getData()

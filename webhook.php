@@ -10,7 +10,7 @@ if ( !isset($wp_did_header) ) {
 
 
 //echo mbot_woocommerce_verify_token;
-$bot = new FbBotApp(mbot_woocommerce_token);
+$bot = new pimax\FbBotApp(mbot_woocommerce_token);
 
 
     //Chef if something is received

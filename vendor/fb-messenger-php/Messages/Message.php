@@ -1,34 +1,35 @@
 <?php
 
+namespace pimax\Messages;
 
 
 /**
- * Class ImageMessage
+ * Class Message
  *
  * @package pimax\Messages
  */
-class ImageMessage
+class Message
 {
     /**
-     * @var integer|null
+     * @var null|string
      */
     protected $recipient = null;
 
     /**
-     * @var string
+     * @var null|string
      */
     protected $text = null;
 
     /**
      * Message constructor.
      *
-     * @param $recipient
-     * @param $file Web Url or local file with @ prefix
+     * @param string $recipient
+     * @param string $text
      */
-    public function __construct($recipient, $file)
+    public function __construct($recipient, $text)
     {
         $this->recipient = $recipient;
-        $this->text = $file;
+        $this->text = $text;
 
     }
 
@@ -39,43 +40,22 @@ class ImageMessage
      */
     public function getData()
     {
-        $res = [
+        return [
             'recipient' =>  [
                 'id' => $this->recipient
+            ],
+            'message' => [
+                'text' => $this->text
             ]
         ];
-
-        if (strpos($this->text, 'http://') === 0 || strpos($this->text, 'https://') === 0) {
-
-            // Url
-
-            $res['message'] = [
-                'attachment' => [
-                    'type' => 'image',
-                    'payload' => [
-                        'url' => $this->text
-                    ]
-                ]
-            ];
-
-        } else {
-
-            // Local file
-
-            $res['message'] = [
-                'attachment' => [
-                    'type' => 'image',
-                    'payload' => []
-                ]
-
-            ];
-
-            $res['filedata'] = $this->getCurlValue($this->text, mime_content_type($this->text), basename($this->text));
-        }
-
-        return $res;
     }
 
+    /**
+     * @param string $filename
+     * @param string $contentType
+     * @param string $postname
+     * @return \CURLFile|string
+     */
     protected function getCurlValue($filename, $contentType, $postname)
     {
         // PHP 5.5 introduced a CurlFile object that deprecates the old @filename syntax

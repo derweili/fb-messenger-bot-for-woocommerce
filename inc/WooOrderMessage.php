@@ -1,5 +1,5 @@
 <?php
-class WooOrderMessage extends StructuredMessage {
+class WooOrderMessage extends pimax\Messages\StructuredMessage {
 
 	public function __construct( $recipient, $order )
     {
