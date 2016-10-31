@@ -47,7 +47,7 @@ file_put_contents("log2.html", $logdata);
                 //If Authentication Callback is received
                 if ( !empty( $message['optin'] ) ) {
 
-                    $bot->send( new pimax\Messages\Message( $message['sender']['id'], 'Optin, sender id: ' . $message['sender']['id'] ) );
+                    //$bot->send( new pimax\Messages\Message( $message['sender']['id'], 'Optin, sender id: ' . $message['sender']['id'] ) );
                     
                     //Is order subsciption
                     if (derweili_mob_woocommerce_startswith($message['optin']['ref'], 'derweiliSubscribeToOrder' )) {
@@ -57,16 +57,16 @@ file_put_contents("log2.html", $logdata);
 
 
 
-                        //save messenger id to order
+                        // store user messenger id as post meta
                         add_post_meta($orderid, 'derweili_mbot_woocommerce_customer_messenger_id', $message['sender']['id'], true);
 
-                        //save messenger id to user if available
+                        // store user messenger id as user meta
                         if ($order->get_user_id() != 0) {
                             //add_user_meta( $order->get_user_id(), 'derweili_mbot_woocommerce_messenger_id', $message['sender']['id'], true );
                         }
                         
                         //send text message to messenger
-                        $bot->send( new pimax\Messages\Message( $message['sender']['id'], 'Danke für Ihre Bestellung, sie werden ab sofort über den Bestellstatus per Chat informiert. ' ) );
+                        $bot->send( new pimax\Messages\Message( $message['sender']['id'], __('Thank you for your order, you will be immediately notified when your order status changes.') ) );
                         //send Order notification to messenger
                         $bot->send(new WooOrderMessage( $message['sender']['id'], $order ) );
 
