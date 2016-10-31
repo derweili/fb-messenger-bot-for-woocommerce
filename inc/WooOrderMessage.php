@@ -18,10 +18,17 @@ class WooOrderMessage extends pimax\Messages\StructuredMessage {
 
         //Elements
         foreach ($order->get_items() as $item) {
+
+            $image_url = "";
+            $product_id = $item["product_id"];
+            if ( has_post_thumbnail( $product_id ) ) {
+                $image_url = get_the_post_thumbnail_url( $product_id, "full" );
+            }
+
         	$this->elements[] = new pimax\Messages\MessageReceiptElement(
 	        		$item['name'], //headline
 	        		"", //subline
-	        		"", //image url
+	        		$image_url, //image url
 	        		$item['qty'], //quantity
 	        		number_format( $item['line_subtotal'], 2 ), //price
 	        		$order->order_currency //currency
