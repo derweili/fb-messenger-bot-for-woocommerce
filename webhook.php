@@ -44,7 +44,8 @@ $bot = new pimax\FbBotApp(mbot_woocommerce_token);
                 //If Authentication Callback is received
                 if (!empty($message['optin'])) {
 
-
+                    $bot->send( new pimax\Messages\Message( $message['sender']['id'], 'Optin, sender id: ' . $message['sender']['id'] ) );
+                    
                     //Is order subsciption
                     if (derweili_mob_woocommerce_startswith($message['optin']['ref'], 'derweiliSubscribeToOrder' )) {
 
@@ -62,7 +63,7 @@ $bot = new pimax\FbBotApp(mbot_woocommerce_token);
                         }
                         
                         //send text message to messenger
-                        $bot->send( new Message( $message['sender']['id'], 'Danke für Ihre Bestellung, sie werden ab sofort über den Bestellstatus per Chat informiert. ' ) );
+                        $bot->send( new pimax\Messages\Message( $message['sender']['id'], 'Danke für Ihre Bestellung, sie werden ab sofort über den Bestellstatus per Chat informiert. ' ) );
                         //send Order notification to messenger
                         $bot->send(new WooOrderMessage( $message['sender']['id'], $order ) );
 
@@ -76,8 +77,6 @@ $bot = new pimax\FbBotApp(mbot_woocommerce_token);
 
 
         }; //endif
-
-       
 
     }
 
