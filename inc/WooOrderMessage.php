@@ -37,12 +37,12 @@ class WooOrderMessage extends pimax\Messages\StructuredMessage {
 
         //Address
         $this->address = new pimax\Messages\Address([
-                            'country' => $order->shipping_country,
-                            'state' => '#',
-                            'postal_code' => $order->shipping_postcode,
-                            'city' => $order->shipping_city,
-                            'street_1' => $order->shipping_address_1,
-                            'street_2' => $order->shipping_address_2
+                            'country' => apply_filters( 'derweili_mbot_wooorder_address_country', $order->shipping_country ),
+                            'state' => apply_filters( 'derweili_mbot_wooorder_address_state', $order->shipping_state ),
+                            'postal_code' => apply_filters( 'derweili_mbot_wooorder_address_postcode', $order->shipping_postcode ),
+                            'city' => apply_filters( 'derweili_mbot_wooorder_address_city', $order->shipping_city ),
+                            'street_1' => apply_filters( 'derweili_mbot_wooorder_address_street_1', $order->shipping_address_1 ),
+                            'street_2' => apply_filters( 'derweili_mbot_wooorder_address_street_2', $order->shipping_address_2 ),
                         ]);
 
         //Summary

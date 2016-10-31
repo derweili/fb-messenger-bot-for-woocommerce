@@ -92,6 +92,7 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		
 		include('inc/WooOrderMessage.php');
 		include('inc/woocommerce-thank-you.php');
+		include('inc/filter-functions.php');
 
 	}
 
@@ -99,6 +100,13 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 
 		include('inc/woocommerce-order-status-messages.php');
 		include('inc/settingspage.php');
+
+
+	}
+
+	public function load_filter_functions() {
+
+		include('inc/filter-functions.php');
 
 
 	}
