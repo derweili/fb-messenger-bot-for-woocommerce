@@ -86,5 +86,6 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
         return apply_filters( 'wc_settings_tab_demo_settings', $settings );
     }
 }
+
 DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE::init();
 
