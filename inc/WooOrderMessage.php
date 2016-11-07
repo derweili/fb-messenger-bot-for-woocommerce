@@ -53,15 +53,28 @@ class WooOrderMessage extends pimax\Messages\StructuredMessage {
                             'total_cost' => number_format( $order->order_total, 2 ),
                         ]);
 
+        // fees
+        if ( $order->get_fees() ) { //Only display cupouns and discount when available
+
+            foreach ( $order->get_fees() as $order_fee) {
+                $this->adjustments[] =
+                new pimax\Messages\Adjustment([
+                    'name' => $order_fee["name"],
+                    'amount' => $order_fee["line_total"]
+                ]);
+            }
+        	
+
+        }
+
         //Adjustments (Cupouns/Discount)
         if ($order->get_total_discount() != 0) { //Only display cupouns and discount when available
 
-        	$this->adjustments = [
-        		new pimax\Messages\Adjustment([
+            $this->adjustments[] =
+                new pimax\Messages\Adjustment([
                     'name' => 'Gutscheine und Rabatte',
                     'amount' => $order->get_total_discount()
-                ])
-        	];
+                ]);
 
         }
         
