@@ -24,3 +24,12 @@ The Callback URL is https://yoururl.com/wp-content/plugins/%pluginfolder%/webhoo
 ## Credits:
 Many Thanks to pimax. This WordPress Plugins makes use of the PHP implementation for Facebook Messenger Bot API developed by [Pimax Interactive](https://github.com/pimax)
 https://github.com/pimax/fb-messenger-php
+
+## Changelog:
+
+**0.2**
+New feature: Send order fees as "adjustments" to Facebook
+New feature: Send customer order notes as messenger text message
+
+
+**0.1** initial release
