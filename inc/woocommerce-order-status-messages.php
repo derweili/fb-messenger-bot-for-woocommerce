@@ -20,6 +20,8 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		add_action( 'woocommerce_order_status_completed', array( &$this, 'derweili_mbot_woocommerce_orderstatus_message_completed' ) );
 		add_action( 'woocommerce_order_status_refunded', array( &$this, 'derweili_mbot_woocommerce_orderstatus_message_refunded' ) );
 		add_action( 'woocommerce_order_status_cancelled', array( &$this, 'derweili_mbot_woocommerce_orderstatus_message_cancelled' ) );
+		
+		add_action( 'wp_ajax_woocommerce_add_order_note', array( &$this, 'derweili_mbot_woocommerce_new_order_note' ), 1 );
 
 	}
 
@@ -122,6 +124,27 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		$this->exec_message_update();
 
 		error_log("$order_id set to CANCELLED", 0);
+	}
+
+
+	public function derweili_mbot_woocommerce_new_order_note() {
+
+		if ( isset( $_POST['post_id'] ) && isset( $_POST['note'] ) && isset( $_POST['note_type'] ) && 'customer' == $_POST['note_type'] ) {
+
+			if ( current_user_can( 'manage_woocommerce' ) ) { // check if user can manage orders
+
+				$this->prepare_message_update( intval( $_POST['post_id'] ) );
+
+				$this->message = apply_filters( 'derweili_mbot_woocommerce_customer_order_note',  $_POST['note'], $order_id, $this->receiver_id );
+
+				$this->exec_message_update();
+
+
+			}
+
+		}
+
+
 	}
 
 
