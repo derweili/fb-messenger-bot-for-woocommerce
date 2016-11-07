@@ -29,6 +29,7 @@ https://github.com/pimax/fb-messenger-php
 
 **0.2**
 New feature: Send order fees as "adjustments" to Facebook
+
 New feature: Send customer order notes as messenger text message
 
 
