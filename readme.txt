@@ -51,11 +51,27 @@ This section describes how to install the plugin and get it working.
 
 e.g.
 
-1. Upload the plugin files to the `/wp-content/plugins/plugin-name` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
-1. Use the Settings->Plugin Name screen to configure the plugin
-1. (Make your instructions match the desired user flow for activating and installing your plugin. Include any steps that might be needed for explanatory purposes)
+1. Upload the plugin files to the `/wp-content/plugins/fb-messenger-bot-for-woocomemrce` directory, or install the plugin through the WordPress plugins screen directly.
+2. Activate the plugin through the 'Plugins' screen in WordPress
 
+
+
+
+= How do I configure the plugin =
+
+You can find the plugin settings screen here:
+WooCommerce->Settings->Messenger Bot
+
+To Configure the plugin follow theese steps
+
+1. Go to https://developers.facebook.com/apps/ and add an new app (or use an existing one)
+1.1 Store the App ID on the Plugins Settings Page
+2. Got to your Facebook App Settings and fill out the forms (spectialy the Display Name and contact mail)
+3. Add "Messenger" as a Product
+3. Get the Page Access Token:
+3.1. Go to the "Token Generation" section on the Products->Messenger Screen.
+3.2. Select the Page you want to use
+3.3. Take the Access token you get and save it
 
 == Frequently Asked Questions ==
 

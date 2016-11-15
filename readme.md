@@ -19,7 +19,7 @@ https://developers.facebook.com/docs/messenger-platform/quickstart
 
 Go To WooCommerce > Settings > Messenger Bot and enter your credentials
 
-The Callback URL is https://yoururl.com/wp-content/plugins/%pluginfolder%/webhook.php
+You can find the callback URL on the WooCommerce > Settings > Messenger Bot screen
 
 ## Credits:
 Many Thanks to pimax. This WordPress Plugins makes use of the PHP implementation for Facebook Messenger Bot API developed by [Pimax Interactive](https://github.com/pimax)
