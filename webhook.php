@@ -28,11 +28,15 @@ file_put_contents("log2.html", $logdata);
         // Other event
         $data = json_decode(file_get_contents("php://input"), true);
     
-        //Log latest connections    
-        
-        $logdata = print_r($data['entry'], true);
 
-      //  file_put_contents("log.html", $logdata);
+        // Log Webhook Calls if wp_debug is turned on
+        if (defined('WP_DEBUG') && true === WP_DEBUG) {
+        //Log latest connections    
+            $logdata = print_r($data['entry'], true);
+
+            file_put_contents("log.html", $logdata);
+
+        }
 
 
         if (!empty($data['entry'][0]['messaging'])) {
