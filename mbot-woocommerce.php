@@ -10,6 +10,7 @@
  * License:           GNU General Public License v3.0
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
  * Domain Path:       /mbot-for-woocommerce/languages/
+ * Text Domain:		  mbot-woocommerce
  * GitHub Plugin URI: https://github.com/derweili/fb-messenger-bot-for-woocommerce
  *
  */
@@ -19,14 +20,7 @@ if (!defined('ABSPATH'))
 }
 
 
-//Include PHP Classes for API Call and Structured Messages
 
-
-
-
-function derweili_mob_woocommerce_startswith($haystack, $needle){ 
-    return strpos($haystack, $needle) === 0;
-}
 
 
 /**

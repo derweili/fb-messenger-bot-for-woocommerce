@@ -42,7 +42,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 			
 		$this->prepare_message_update( $order_id );
 
-		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_pending', 'Your order is no pendig.', $order_id, $this->receiver_id );
+		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_pending', __( 'Your order is no pendig.', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
 
 		$this->exec_message_update();
 
@@ -54,7 +54,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		
 		$this->prepare_message_update( $order_id );
 
-		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_failed', 'Your order failed.', $order_id, $this->receiver_id );
+		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_failed', __( 'Your order failed.', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
 		
 		$bot->send(new pimax\Messages\Message($receiver_id, $message ));
 		
@@ -68,7 +68,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		
 		$this->prepare_message_update( $order_id );
 
-		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_hold', 'Your order is now on hold.', $order_id, $this->receiver_id );
+		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_hold', __( 'Your order is now on hold.', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
 
 		$this->exec_message_update();
 
@@ -80,7 +80,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		
 		$this->prepare_message_update( $order_id );
 
-		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_processing', 'Your order is now processing', $order_id, $this->receiver_id );
+		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_processing', __( 'Your order is now processing', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
 
 		$this->exec_message_update();
 
@@ -93,7 +93,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		
 		$this->prepare_message_update( $order_id );
 
-		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_completed', 'Your order has been completed', $order_id, $this->receiver_id );
+		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_completed', __( 'Your order has been completed', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
 
 		$this->exec_message_update();
 
@@ -106,7 +106,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		
 		$this->prepare_message_update( $order_id );
 
-		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_refunded', 'Your order has been refunded', $order_id, $this->receiver_id );
+		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_refunded', __( 'Your order has been refunded', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
 
 		$this->exec_message_update();
 
@@ -119,7 +119,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		
 		$this->prepare_message_update( $order_id );
 
-		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_cancelled', 'Your order has been cancelled', $order_id, $this->receiver_id );
+		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_cancelled', __( 'Your order has been cancelled', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
 
 		$this->exec_message_update();
 

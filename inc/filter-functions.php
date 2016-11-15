@@ -16,3 +16,8 @@ function derweili_mbot_prevent_empty_value( $shipping_state ) {
 		return $shipping_state;
 	}
 }
+
+
+function derweili_mbot_woocommerce_startswith($haystack, $needle){ 
+    return strpos($haystack, $needle) === 0;
+}

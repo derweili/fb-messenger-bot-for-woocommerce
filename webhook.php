@@ -32,11 +32,8 @@ file_put_contents("log2.html", $logdata);
         
         $logdata = print_r($data['entry'], true);
 
-        file_put_contents("log.html", $logdata);
+      //  file_put_contents("log.html", $logdata);
 
-       /* if (!empty($data['error'])) {
-            file_put_contents("error.html", $data['error']['message']);
-        }*/
 
         if (!empty($data['entry'][0]['messaging'])) {
             foreach ($data['entry'][0]['messaging'] as $message) {
@@ -50,7 +47,7 @@ file_put_contents("log2.html", $logdata);
                     //$bot->send( new pimax\Messages\Message( $message['sender']['id'], 'Optin, sender id: ' . $message['sender']['id'] ) );
                     
                     //Is order subsciption
-                    if (derweili_mob_woocommerce_startswith($message['optin']['ref'], 'derweiliSubscribeToOrder' )) {
+                    if (derweili_mbot_woocommerce_startswith($message['optin']['ref'], 'derweiliSubscribeToOrder' )) {
 
                         $orderid = str_replace("derweiliSubscribeToOrder", "", $message['optin']['ref']);
                         $order = new WC_Order($orderid);
@@ -66,7 +63,7 @@ file_put_contents("log2.html", $logdata);
                         }
                         
                         //send text message to messenger
-                        $bot->send( new pimax\Messages\Message( $message['sender']['id'], __('Thank you for your order, you will be immediately notified when your order status changes.') ) );
+                        $bot->send( new pimax\Messages\Message( $message['sender']['id'], __('Thank you for your order, you will be immediately notified when your order status changes.', 'mbot-woocommerce') ) );
                         //send Order notification to messenger
                         $bot->send(new WooOrderMessage( $message['sender']['id'], $order ) );
 
