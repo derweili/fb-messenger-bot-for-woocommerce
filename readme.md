@@ -34,3 +34,13 @@ https://github.com/pimax/fb-messenger-php
 
 
 **0.1** initial release
+
+
+
+
+## To Do's:
+
+- **implementing domain whitelisting**
+- Code on thankyoupage for checkbox plugin
+- Hide Checkout fields
+- Connection Checkbox events (checked status) with input field
