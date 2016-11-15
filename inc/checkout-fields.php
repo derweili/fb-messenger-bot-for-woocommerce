@@ -72,7 +72,7 @@ class Derweili_Mbot_Checkout_Code
 		  page_id=' . mbot_woocommerce_page_id . '
 		  messenger_app_id=' . mbot_woocommerce_app_id . '
 		  user_ref="' . $this->user_ref . '" 
-		  prechecked="true" 
+		  prechecked="false" 
 		  allow_login="true" 
 		  size="large"></div>
 	  ';
