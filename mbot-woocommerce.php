@@ -87,6 +87,7 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		include('inc/WooOrderMessage.php');
 		include('inc/woocommerce-thank-you.php');
 		include('inc/filter-functions.php');
+		include('inc/checkout-fields.php');
 
 	}
 
