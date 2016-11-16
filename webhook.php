@@ -34,7 +34,8 @@ file_put_contents("log2.html", $logdata);
         //Log latest connections    
             $logdata = print_r($data['entry'], true);
 
-            file_put_contents("log.html", $logdata);
+            file_put_contents("log.html", '<hr>', FILE_APPEND);
+            file_put_contents("log.html", $logdata, FILE_APPEND);
 
         }
 
