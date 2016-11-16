@@ -63,6 +63,7 @@ class Derweili_Mbot_Thank_You_Page
 			   }(document, 'script', 'facebook-jssdk'));
 
 				jQuery(document).ready(function($) {
+					window.fbAsyncInit = function() {
 				  <?php 
 				  	if ( 'checked' == $this->messenger_checkbox) {
 				  		
@@ -75,6 +76,7 @@ class Derweili_Mbot_Thank_You_Page
 
 				  	}
 				   ?>
+				   	};
 				}); // ready
 
 		</script>
