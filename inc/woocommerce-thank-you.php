@@ -86,6 +86,16 @@ class Derweili_Mbot_Thank_You_Page
 
 					        echo "};
 				}); // ready";
+					  	}else{
+					  		echo "jQuery(document).ready(function($) {
+					window.fbAsyncInit = function() {";
+					  		echo "FB.init({
+						      appId      : '" . mbot_woocommerce_app_id . "',
+						      xfbml      : true,
+						      version    : 'v2.6'
+						    });";
+						     echo "};
+				}); // ready";
 					  	}
 					  ?>
 
