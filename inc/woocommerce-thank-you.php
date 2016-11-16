@@ -54,6 +54,9 @@ class Derweili_Mbot_Thank_You_Page
 			    });
 			  };*/
 
+
+
+
 			  (function(d, s, id){
 			     var js, fjs = d.getElementsByTagName(s)[0];
 			     if (d.getElementById(id)) {return;}
@@ -72,16 +75,18 @@ class Derweili_Mbot_Thank_You_Page
 					      version    : 'v2.6'
 					    });";
 				  		echo "FB.AppEvents.logEvent('MessengerCheckboxUserConfirmation', null, {
-	            'app_id':'" . mbot_woocommerce_app_id . "',
-	            'page_id':'" . mbot_woocommerce_page_id . "',
-	            'ref':'derweiliSubscribeToOrder" . $this->order_id . "',
-	            'user_ref':'" . $this->messenger_checkbox_user_ref . "'
-	          });";
+				            'app_id':'" . mbot_woocommerce_app_id . "',
+				            'page_id':'" . mbot_woocommerce_page_id . "',
+				            'ref':'derweiliSubscribeToOrder" . $this->order_id . "',
+				            'user_ref':'" . $this->messenger_checkbox_user_ref . "'
+				          });";
 
 				  	}
-				   ?>
-				   	};
+				  ?>
 				}); // ready
+
+
+
 
 		</script>
 	<?php
