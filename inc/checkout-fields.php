@@ -26,6 +26,8 @@ class Derweili_Mbot_Checkout_Code
 {	
 
 	private $user_ref;
+
+	private $is_checkout_page = false;
 	
 	function __construct()
 	{
@@ -83,35 +85,40 @@ class Derweili_Mbot_Checkout_Code
 
 	public function checkout_messenger_checkbox( $checkout ) {
 
-		$checkbox_plugin_code = '
-		<div class="fb-messenger-checkbox"  
-		  origin=' . get_home_url() . '
-		  page_id=' . mbot_woocommerce_page_id . '
-		  messenger_app_id=' . mbot_woocommerce_app_id . '
-		  user_ref="' . $this->user_ref . '" 
-		  prechecked="false" 
-		  allow_login="true" 
-		  size="large"></div>
-	  ';
+		if ( $this->is_checkout_page ) { // show script only on checkout page
+
+			$checkbox_plugin_code = '
+			<div class="fb-messenger-checkbox"  
+			  origin=' . get_home_url() . '
+			  page_id=' . mbot_woocommerce_page_id . '
+			  messenger_app_id=' . mbot_woocommerce_app_id . '
+			  user_ref="' . $this->user_ref . '" 
+			  prechecked="false" 
+			  allow_login="true" 
+			  size="large"></div>
+		  ';
 
 
-	    echo '<div id="my_custom_checkout_field"><h3>' . __('Contact Options') . '</h3><strong>Receive updates in Messenger</strong>' . $checkbox_plugin_code;
+		    echo '<div id="my_custom_checkout_field"><h3>' . __('Contact Options') . '</h3><strong>Receive updates in Messenger</strong>' . $checkbox_plugin_code;
 
-	    woocommerce_form_field( 'messenger_checkbox_user_ref', array(
-	        'type'          => 'text',
-	        'class'         => array('my-field-class form-row-wide'),
-	        //'label'         => __('Fill in this field'),
-	        'placeholder'   => __('Enter something'),
-	        ), $this->user_ref);
-	    woocommerce_form_field( 'messenger_checkbox_user_test', array(
-	        'type'          => 'text',
-	        'class'         => array('my-field-class form-row-wide'),
-	        //'label'         => __('Fill in this field'),
-	        'placeholder'   => __('Enter something'),
-	        ), 'test');
+		    woocommerce_form_field( 'messenger_checkbox_user_ref', array(
+		        'type'          => 'text',
+		        'class'         => array('my-field-class form-row-wide'),
+		        //'label'         => __('Fill in this field'),
+		        'placeholder'   => __('Enter something'),
+		        ), $this->user_ref);
+		    woocommerce_form_field( 'messenger_checkbox_user_test', array(
+		        'type'          => 'text',
+		        'class'         => array('my-field-class form-row-wide'),
+		        //'label'         => __('Fill in this field'),
+		        'placeholder'   => __('Enter something'),
+		        ), 'test');
 
-	    echo '</div>';
+		    echo '</div>';
 
+
+		    $this->is_checkout_page = true;
+		}
 	}
 
 
