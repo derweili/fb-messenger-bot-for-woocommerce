@@ -44,7 +44,13 @@ class Derweili_Mbot_Checkout_Code
 	}
 
 
-	public function woocommerce_checkout_script(){ ?>
+	public function woocommerce_checkout_script(){
+
+
+				if ( $this->is_checkout_page ) { // show script only on checkout
+?>
+
+
 
 		<script>
 
@@ -80,12 +86,12 @@ class Derweili_Mbot_Checkout_Code
 		</script>
 
 	<?php
+		}// endif 
 
 	}
 
 	public function checkout_messenger_checkbox( $checkout ) {
 
-		if ( $this->is_checkout_page ) { // show script only on checkout page
 
 			$checkbox_plugin_code = '
 			<div class="fb-messenger-checkbox"  
@@ -118,7 +124,6 @@ class Derweili_Mbot_Checkout_Code
 
 
 		    $this->is_checkout_page = true;
-		}
 	}
 
 
