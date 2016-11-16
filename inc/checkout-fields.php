@@ -37,6 +37,8 @@ class Derweili_Mbot_Checkout_Code
 		add_action( 'woocommerce_after_order_notes', array( &$this, 'checkout_messenger_checkbox' ) );
 		add_action( 'wp_footer', array( &$this, 'woocommerce_checkout_script' ) );
 
+		add_action('woocommerce_checkout_update_order_meta', array( &$this, 'save_messenger_checkbox_fields' ) );
+
 	}
 
 
@@ -111,6 +113,19 @@ class Derweili_Mbot_Checkout_Code
 	    echo '</div>';
 
 	}
+
+
+	function save_messenger_checkbox_fields( $order_id ) {
+
+	   if ( ! empty( $_POST['messenger_checkbox_user_ref'] ) ) {
+	       update_post_meta( $order_id, 'derweili_mbot_messenger_checkbox_user_ref', $_POST['messenger_checkbox_user_ref'] );
+	   }
+	   if ( ! empty( $_POST['messenger_checkbox_user_test'] ) ) {
+	       update_post_meta( $order_id, 'derweili_mbot_messenger_checkbox_user_test', $_POST['messenger_checkbox_user_test'] );
+	   }
+
+	 }
+
 
 
 }
