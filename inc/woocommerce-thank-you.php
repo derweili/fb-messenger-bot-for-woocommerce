@@ -32,6 +32,7 @@ class Derweili_Mbot_Thank_You_Page
 		$messenger_checkbox_checked = get_post_meta( $order->id, 'derweili_mbot_messenger_checkbox_user_test', true );
 		$this->messenger_checkbox = $messenger_checkbox_checked;
 		$this->messenger_checkbox_user_ref = $messenger_checkbox_user_ref;
+		$this->order_id = $order->id;
 
 		if ( !empty( $messenger_checkbox_user_ref ) && !empty( $messenger_checkbox_checked ) && 'checked' == $messenger_checkbox_checked ) {
 			
