@@ -44,6 +44,8 @@ class Derweili_Mbot_Checkout_Code
 
 		<script>
 
+			var messengerCheckboxUserTest = jQuery("#messenger_checkbox_user_test")
+
 		  window.fbAsyncInit = function() {
 		    FB.init({
 		      appId      : '<?php echo mbot_woocommerce_app_id; ?>',
@@ -60,6 +62,7 @@ class Derweili_Mbot_Checkout_Code
 		      } else if (e.event == 'checkbox') {
 		        var checkboxState = e.state;
 		        console.log("Checkbox state: " + checkboxState);
+		        jQuery( messengerCheckboxUserTest ).val( checkboxState );
 		      } else if (e.event == 'not_you') {
 		        console.log("User clicked 'not you'");
 		      } else if (e.event == 'hidden') {
