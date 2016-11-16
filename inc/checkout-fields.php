@@ -39,7 +39,7 @@ class Derweili_Mbot_Checkout_Code
 	}
 
 
-	public function checkout_script(){ ?>
+	public function woocommerce_checkout_script(){ ?>
 
 		<script>
 		    FB.Event.subscribe('messenger_checkbox', function(e) {
