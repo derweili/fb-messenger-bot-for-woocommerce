@@ -63,7 +63,7 @@ file_put_contents("log2.html", $logdata);
                         if ( isset( $message['sender']['id'] ) ) {
                             add_post_meta($orderid, 'derweili_mbot_woocommerce_customer_messenger_id', $message['sender']['id'], true);
                             $receiver_id = $message['sender']['id'];
-                        }elseif ( isset( $message['optin']['user_ref'] ){
+                        }elseif ( isset( $message['optin']['user_ref'] ) ){
                             add_post_meta($orderid, 'derweili_mbot_woocommerce_customer_messenger_id', $message['optin']['user_ref'] true);
                             $receiver_id = $message['optin']['user_ref'];
                         }
