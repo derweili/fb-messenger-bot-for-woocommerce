@@ -21,10 +21,11 @@ class Derweili_Mbot_Thank_You_Page
 
 	function woocommerce_thank_you_message( $example, $order ) {
 
+		//get messenger id from user
+		//$usermessengerid = get_user_meta( $order->get_user_id(), 'derweili_mbot_woocommerce_messenger_id', true );
+		//if ( empty( $usermessengerid ) ) { // Display send to messenger button if no messenger id is stored
 
-
-		$this->send_to_messenger( $example, $order );
-
+		    return $this->display_send_to_messenger_button( $example, $order );
 	}
 
 
@@ -49,19 +50,16 @@ class Derweili_Mbot_Thank_You_Page
 	<?php
 	}
 
-	function send_to_messenger( $example, $order ) {
-		//get messenger id from user
-		//$usermessengerid = get_user_meta( $order->get_user_id(), 'derweili_mbot_woocommerce_messenger_id', true );
-		//if ( empty( $usermessengerid ) ) { // Display send to messenger button if no messenger id is stored
+	function display_send_to_messenger_button( $example, $order ){
+		    
+		    $send_to_messenger_button = '<div class="fb-send-to-messenger" 
+		                  messenger_app_id="' . mbot_woocommerce_app_id . '" 
+		                  page_id="' . mbot_woocommerce_page_id . '" 
+		                  data-ref="derweiliSubscribeToOrder' . $order->id . '" 
+		                  color="blue" 
+		                  size="standard"></div>';
+		    return '<div style="width: 100%; background-color:white; padding: 20px; margin-bottom:20px;"><h3>' . __( 'Get notified about Updates via Facebook Messenger', 'mbot-woocommerce' ) . '</h3>' . $send_to_messenger_button . '</div>' . $example;
 
-	    $send_to_messenger_button = '<div class="fb-send-to-messenger" 
-	                  messenger_app_id="' . mbot_woocommerce_app_id . '" 
-	                  page_id="' . mbot_woocommerce_page_id . '" 
-	                  data-ref="derweiliSubscribeToOrder' . $order->id . '" 
-	                  color="blue" 
-	                  size="standard"></div>';
-	    return '<div style="width: 100%; background-color:white; padding: 20px; margin-bottom:20px;"><h3>' . __( 'Get notified about Updates via Facebook Messenger', 'mbot-woocommerce' ) . '</h3>' . $send_to_messenger_button . '</div>' . $example;
-	    
 	}
 
 }
