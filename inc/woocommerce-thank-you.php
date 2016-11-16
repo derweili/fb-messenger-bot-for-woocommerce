@@ -37,7 +37,8 @@ class Derweili_Mbot_Thank_You_Page
 		if ( !empty( $messenger_checkbox_user_ref ) && !empty( $messenger_checkbox_checked ) && 'checked' == $messenger_checkbox_checked ) {
 			
 			//directy call Facebook
-			return $this->display_send_to_messenger_button( $example, $order );
+			//return $this->display_send_to_messenger_button( $example, $order );
+			return $example;
 		}else{
 			//display send to messenger button
 		    return $this->display_send_to_messenger_button( $example, $order );
