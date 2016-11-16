@@ -41,21 +41,21 @@ add_action('wp_footer', 'derweili_mbot_woocommerce_thank_you_script', 10);
 
 function derweili_mbot_woocommerce_thank_you_script(){ ?>
 	<script>
-	  window.fbAsyncInit = function() {
-	    FB.init({
-	      appId      : '<?php echo mbot_woocommerce_app_id; ?>',
-	      xfbml      : true,
-	      version    : 'v2.6'
-	    });
-	  };
+	  /*window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '<?php echo mbot_woocommerce_app_id; ?>',
+		      xfbml      : true,
+		      version    : 'v2.6'
+		    });
+		  };*/
 
-	  (function(d, s, id){
-	     var js, fjs = d.getElementsByTagName(s)[0];
-	     if (d.getElementById(id)) {return;}
-	     js = d.createElement(s); js.id = id;
-	     js.src = "//connect.facebook.net/en_US/sdk.js";
-	     fjs.parentNode.insertBefore(js, fjs);
-	   }(document, 'script', 'facebook-jssdk'));
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
 	</script>
 <?php
 }
