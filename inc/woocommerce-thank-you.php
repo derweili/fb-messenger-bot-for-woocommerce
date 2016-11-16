@@ -10,6 +10,10 @@ if (!defined('ABSPATH'))
 */
 class Derweili_Mbot_Thank_You_Page
 {
+
+	private $order_id;
+	private $messenger_checkbox;
+	private $messenger_checkbox_user_ref;
 	
 	function __construct()
 	{
@@ -24,8 +28,19 @@ class Derweili_Mbot_Thank_You_Page
 		//get messenger id from user
 		//$usermessengerid = get_user_meta( $order->get_user_id(), 'derweili_mbot_woocommerce_messenger_id', true );
 		//if ( empty( $usermessengerid ) ) { // Display send to messenger button if no messenger id is stored
+		$messenger_checkbox_user_ref = get_post_meta( $order->id, 'derweili_mbot_messenger_checkbox_user_ref', true );
+		$messenger_checkbox_checked = get_post_meta( $order->id, 'derweili_mbot_messenger_checkbox_user_test', true );
+		$this->messenger_checkbox = $messenger_checkbox_checked;
+		$this->messenger_checkbox_user_ref = $messenger_checkbox_user_ref;
 
+		if ( !empty( $messenger_checkbox_user_ref ) && !empty( $messenger_checkbox_checked ) && 'checked' == $messenger_checkbox_checked ) {
+			
+			//directy call Facebook
+
+		}else{
+			//display send to messenger button
 		    return $this->display_send_to_messenger_button( $example, $order );
+		}
 	}
 
 
@@ -46,6 +61,22 @@ class Derweili_Mbot_Thank_You_Page
 			     js.src = "//connect.facebook.net/en_US/sdk.js";
 			     fjs.parentNode.insertBefore(js, fjs);
 			   }(document, 'script', 'facebook-jssdk'));
+
+				jQuery(document).ready(function($) {
+				  <?php 
+				  	if ( 'checked' = $this->messenger_checkbox) {
+				  		
+				  		echo "FB.AppEvents.logEvent('MessengerCheckboxUserConfirmation', null, {
+	            'app_id':'" . mbot_woocommerce_app_id . "',
+	            'page_id':'" . mbot_woocommerce_page_id . "',
+	            'ref':'derweiliSubscribeToOrder" . $this->order_id . "',
+	            'user_ref':'" . $this->messenger_checkbox_user_ref . "'
+	          });";
+
+				  	}
+				   ?>
+				}); // ready
+
 		</script>
 	<?php
 	}
