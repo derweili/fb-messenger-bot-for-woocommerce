@@ -21,6 +21,7 @@ class Derweili_Mbot_Thank_You_Page
 
 	function woocommerce_thank_you_message( $example, $order ) {
 
+		
 
 		$this->send_to_messenger( $example, $order );
 
