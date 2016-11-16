@@ -63,10 +63,14 @@ class Derweili_Mbot_Thank_You_Page
 			   }(document, 'script', 'facebook-jssdk'));
 
 				jQuery(document).ready(function($) {
-					window.fbAsyncInit = function() {
+
 				  <?php 
 				  	if ( 'checked' == $this->messenger_checkbox) {
-				  		
+				  		echo "FB.init({
+					      appId      : '" . mbot_woocommerce_app_id . "',
+					      xfbml      : true,
+					      version    : 'v2.6'
+					    });"
 				  		echo "FB.AppEvents.logEvent('MessengerCheckboxUserConfirmation', null, {
 	            'app_id':'" . mbot_woocommerce_app_id . "',
 	            'page_id':'" . mbot_woocommerce_page_id . "',
