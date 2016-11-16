@@ -64,7 +64,7 @@ class Derweili_Mbot_Thank_You_Page
 
 				jQuery(document).ready(function($) {
 				  <?php 
-				  	if ( 'checked' = $this->messenger_checkbox) {
+				  	if ( 'checked' == $this->messenger_checkbox) {
 				  		
 				  		echo "FB.AppEvents.logEvent('MessengerCheckboxUserConfirmation', null, {
 	            'app_id':'" . mbot_woocommerce_app_id . "',
