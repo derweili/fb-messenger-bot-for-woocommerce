@@ -139,7 +139,7 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
     public function domain_whitelisting_button() {
 
 
-            if ( $_GET["tab"] == "settings_tab_demo" ) {
+            if ( isset( $_GET["tab"]) && $_GET["tab"] == "settings_tab_demo" ) {
 
 
                 $ch = curl_init();
