@@ -65,10 +65,11 @@ class Derweili_Mbot_Thank_You_Page
 			     fjs.parentNode.insertBefore(js, fjs);
 			   }(document, 'script', 'facebook-jssdk'));
 
-				jQuery(document).ready(function($) {
-					window.fbAsyncInit = function() {
+				
 					  <?php 
 					  	if ( 'checked' == $this->messenger_checkbox) {
+					  		echo "jQuery(document).ready(function($) {
+					window.fbAsyncInit = function() {";
 					  		echo "FB.init({
 						      appId      : '" . mbot_woocommerce_app_id . "',
 						      xfbml      : true,
@@ -81,10 +82,11 @@ class Derweili_Mbot_Thank_You_Page
 					            'user_ref':'" . $this->messenger_checkbox_user_ref . "'
 					          });";
 
+					        echo "};
+				}); // ready";
 					  	}
 					  ?>
-		  			};
-				}); // ready
+
 
 
 
