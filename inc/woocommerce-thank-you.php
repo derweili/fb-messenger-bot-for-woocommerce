@@ -21,7 +21,7 @@ class Derweili_Mbot_Thank_You_Page
 
 	function woocommerce_thank_you_message( $example, $order ) {
 
-		
+
 
 		$this->send_to_messenger( $example, $order );
 
@@ -49,9 +49,9 @@ class Derweili_Mbot_Thank_You_Page
 	<?php
 	}
 
-	function send_to_messenger() {
+	function send_to_messenger( $example, $order ) {
 		//get messenger id from user
-		$usermessengerid = get_user_meta( $order->get_user_id(), 'derweili_mbot_woocommerce_messenger_id', true );
+		//$usermessengerid = get_user_meta( $order->get_user_id(), 'derweili_mbot_woocommerce_messenger_id', true );
 		//if ( empty( $usermessengerid ) ) { // Display send to messenger button if no messenger id is stored
 
 	    $send_to_messenger_button = '<div class="fb-send-to-messenger" 
