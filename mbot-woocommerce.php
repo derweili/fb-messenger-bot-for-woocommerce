@@ -64,13 +64,13 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		//Define Messenger App Token
 		define( "mbot_woocommerce_token", get_option( 'derweili_mbot_page_token' ) );
 
-		//Define Messenger App Token
+		//Define Webhook Verify Token
 		define("mbot_woocommerce_verify_token", get_option( 'derweili_mbot_verify_token' ) );
 
-		//Define Messenger App Token
+		//Define Messenger App ID
 		define("mbot_woocommerce_app_id", get_option( 'derweili_mbot_messenger_app_id' ) );
 
-		//Define Messenger App Token
+		//Define Page ID
 		define("mbot_woocommerce_page_id", get_option( 'derweili_mbot_page_id' ) );
 
 	}

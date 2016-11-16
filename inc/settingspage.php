@@ -2,10 +2,20 @@
 
 
 class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
+
+
     /**
      * Bootstraps the class and hooks required actions & filters.
      *
      */
+    function __construct()
+    {
+        $this->domain_whitelisting_button();
+
+        $this->init();
+
+    }
+
     public static function init() {
         add_filter( 'woocommerce_settings_tabs_array', __CLASS__ . '::add_settings_tab', 50 );
         add_action( 'woocommerce_settings_tabs_settings_tab_demo', __CLASS__ . '::settings_tab' );
@@ -40,6 +50,8 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
      */
     public static function update_settings() {
         woocommerce_update_options( self::get_settings() );
+
+
     }
     /**
      * Get all the settings for this plugin for @see woocommerce_admin_fields() function.
@@ -85,7 +97,95 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
         );
         return apply_filters( 'wc_settings_tab_demo_settings', $settings );
     }
+
+
+    private function domain_whitelisting( $action_type = 'add' ) {
+        $ch = curl_init();
+
+        $post_params = array(
+            'setting_type' => 'domain_whitelisting', 
+            'whitelisted_domains' => array( get_home_url() ), 
+            'domain_action_type' => $action_type, 
+        );
+
+        $post_params = http_build_query( $post_params );
+
+        curl_setopt($ch, CURLOPT_URL,"https://graph.facebook.com/v2.6/me/thread_settings?access_token=" . mbot_woocommerce_token);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_params );
+
+
+        // in real life you should use something like:
+        // curl_setopt($ch, CURLOPT_POSTFIELDS, 
+        //          http_build_query(array('postvar1' => 'value1')));
+
+        // receive server response ...
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        $server_output = curl_exec ($ch);
+
+        curl_close ($ch);
+
+        // further processing ....
+
+        echo "whitelistfunction";
+        var_dump( $server_output );
+
+        //if ($server_output == "OK") {  } else { }
+
+    }
+
+    
+    public function domain_whitelisting_button() {
+
+
+            if ( $_GET["tab"] == "settings_tab_demo" ) {
+
+
+                $ch = curl_init();
+
+                curl_setopt($ch, CURLOPT_URL,"https://graph.facebook.com/v2.6/me/thread_settings?fields=whitelisted_domains&access_token=" . mbot_woocommerce_token );
+                curl_setopt($ch, CURLOPT_POST, 0);
+                //curl_setopt($ch, CURLOPT_POSTFIELDS,
+                //            "setting_type=domain_whitelisting&whitelisted_domains=" . get_home_url() . "&domain_action_type=" . $action_type );
+
+                // in real life you should use something like:
+                // curl_setopt($ch, CURLOPT_POSTFIELDS, 
+                //          http_build_query(array('postvar1' => 'value1')));
+
+                // receive server response ...
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+                $server_output = curl_exec ($ch);
+
+                curl_close ($ch);
+
+                // further processing ....
+              //var_dump( $server_output );
+              var_dump( json_decode( $server_output ) );
+              $server_output_json = json_decode( $server_output );
+              echo "<br />";
+              //echo $server_output;
+              echo count( $server_output_json->data );
+
+              echo $whitelisted_urls = $server_output_json->data[0]->whitelisted_domains;
+
+              if ( in_array( get_home_url(), $whitelisted_urls)) {
+                  // everythin is ok
+              }else{
+
+                $this->domain_whitelisting();
+
+              }
+
+           
+        }
+
+    }
+
+
 }
 
-DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE::init();
+$derweili_mbot_settings_page = new DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE();
+
 
