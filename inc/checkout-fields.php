@@ -32,7 +32,7 @@ class Derweili_Mbot_Checkout_Code
 
 		// set Individual user reference
 		$this->user_ref = mt_rand() . microtime();
-		$this->user_ref = str_replace(' ', '_', $this->user_ref)
+		$this->user_ref = str_replace(' ', '_', $this->user_ref );
 
 		add_action( 'woocommerce_after_order_notes', array( &$this, 'checkout_messenger_checkbox' ) );
 		add_action( 'wp_footer', array( &$this, 'woocommerce_checkout_script' ) );
