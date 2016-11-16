@@ -42,22 +42,24 @@ class Derweili_Mbot_Checkout_Code
 	public function woocommerce_checkout_script(){ ?>
 
 		<script>
-		    FB.Event.subscribe('messenger_checkbox', function(e) {
-		      console.log("messenger_checkbox event");
-		      console.log(e);
-		      
-		      if (e.event == 'rendered') {
-		        console.log("Plugin was rendered");
-		      } else if (e.event == 'checkbox') {
-		        var checkboxState = e.state;
-		        console.log("Checkbox state: " + checkboxState);
-		      } else if (e.event == 'not_you') {
-		        console.log("User clicked 'not you'");
-		      } else if (e.event == 'hidden') {
-		        console.log("Plugin was hidden");
-		      }
-		      
-		    });
+			.jQuery(document).ready(function($) {
+			    FB.Event.subscribe('messenger_checkbox', function(e) {
+			      console.log("messenger_checkbox event");
+			      console.log(e);
+			      
+			      if (e.event == 'rendered') {
+			        console.log("Plugin was rendered");
+			      } else if (e.event == 'checkbox') {
+			        var checkboxState = e.state;
+			        console.log("Checkbox state: " + checkboxState);
+			      } else if (e.event == 'not_you') {
+			        console.log("User clicked 'not you'");
+			      } else if (e.event == 'hidden') {
+			        console.log("Plugin was hidden");
+			      }
+			      
+			    });
+			});
 		</script>
 
 	<?php
