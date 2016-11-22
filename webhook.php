@@ -87,6 +87,7 @@ file_put_contents("log2.html", $logdata);
                         //$bot->send(new WooOrderMessage( $receiver_id, $order ) );
 
                         file_put_contents("log2.html", print_r( $sendmessage, true ), FILE_APPEND);
+                        file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
 
                         $mbot_Order->send_order();
 
