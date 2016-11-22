@@ -90,6 +90,7 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		include('inc/filter-functions.php');
 		include('inc/checkout-fields.php');
 		include('inc/mbot-order.php');
+		include('inc/footer-script.php');
 
 	}
 

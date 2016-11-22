@@ -20,7 +20,7 @@ class Derweili_Mbot_Thank_You_Page
 		add_filter( 'woocommerce_thankyou_order_received_text',  array( &$this, 'woocommerce_thank_you_message' ), 10, 2 );
 
 		// place messenger script into footer
-		add_action('wp_footer',  array( &$this, 'woocommerce_thank_you_script' ), 10);
+		add_action('derweili_mbot_after_fb_init',  array( &$this, 'woocommerce_thank_you_script' ), 10);
 	}
 
 	function woocommerce_thank_you_message( $example, $order ) {
@@ -47,63 +47,22 @@ class Derweili_Mbot_Thank_You_Page
 
 
 	function woocommerce_thank_you_script(){ ?>
-		<script>
-		  /*window.fbAsyncInit = function() {
-			    FB.init({
-			      appId      : '<?php echo mbot_woocommerce_app_id; ?>',
-			      xfbml      : true,
-			      version    : 'v2.6'
-			    });
-			  };*/
-
-
-
-
-			  (function(d, s, id){
-			     var js, fjs = d.getElementsByTagName(s)[0];
-			     if (d.getElementById(id)) {return;}
-			     js = d.createElement(s); js.id = id;
-			     js.src = "//connect.facebook.net/en_US/sdk.js";
-			     fjs.parentNode.insertBefore(js, fjs);
-			   }(document, 'script', 'facebook-jssdk'));
 
 				
-					  <?php 
-					  	if ( 'checked' == $this->messenger_checkbox) {
-					  		echo "jQuery(document).ready(function($) {
-					window.fbAsyncInit = function() {";
-					  		echo "FB.init({
-						      appId      : '" . mbot_woocommerce_app_id . "',
-						      xfbml      : true,
-						      version    : 'v2.6'
-						    });";
-					  		echo "FB.AppEvents.logEvent('MessengerCheckboxUserConfirmation', null, {
-					            'app_id':'" . mbot_woocommerce_app_id . "',
-					            'page_id':'" . mbot_woocommerce_page_id . "',
-					            'ref':'derweiliSubscribeToOrder" . $this->order_id . "',
-					            'user_ref':'" . $this->messenger_checkbox_user_ref . "'
-					          });";
+		<?php 
+			if ( 'checked' == $this->messenger_checkbox) {
 
-					        echo "};
-				}); // ready";
-					  	}else{
-					  		echo "jQuery(document).ready(function($) {
-					window.fbAsyncInit = function() {";
-					  		echo "FB.init({
-						      appId      : '" . mbot_woocommerce_app_id . "',
-						      xfbml      : true,
-						      version    : 'v2.6'
-						    });";
-						     echo "};
-				}); // ready";
-					  	}
-					  ?>
+				echo "FB.AppEvents.logEvent('MessengerCheckboxUserConfirmation', null, {
+		        'app_id':'" . mbot_woocommerce_app_id . "',
+		        'page_id':'" . mbot_woocommerce_page_id . "',
+		        'ref':'derweiliSubscribeToOrder" . $this->order_id . "',
+		        'user_ref':'" . $this->messenger_checkbox_user_ref . "'
+		      });";
+
+			}
+		?>
 
 
-
-
-
-		</script>
 	<?php
 	}
 
