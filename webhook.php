@@ -55,29 +55,38 @@ file_put_contents("log2.html", $logdata);
                     if (derweili_mbot_woocommerce_startswith($message['optin']['ref'], 'derweiliSubscribeToOrder' )) {
 
                         $orderid = str_replace("derweiliSubscribeToOrder", "", $message['optin']['ref']);
-                        $order = new WC_Order($orderid);
+                        $mbot_Order = new Derweili_Mbot_Order($orderid);
 
 
 
                         // store user messenger id as post meta
                         if ( isset( $message['sender']['id'] ) ) {
-                            add_post_meta($orderid, 'derweili_mbot_woocommerce_customer_messenger_id', $message['sender']['id'], true);
-                            $receiver_id = $message['sender']['id'];
+
+                            $mbot_Order->add_user_id($message['sender']['id']);
+
+                            //add_post_meta($orderid, 'derweili_mbot_woocommerce_customer_messenger_id', $message['sender']['id'], true);
+                            //$receiver_id = $message['sender']['id'];
                         }elseif ( isset( $message['optin']['user_ref'] ) ){
-                            add_post_meta($orderid, 'derweili_mbot_woocommerce_customer_messenger_id', $message['optin']['user_ref'], true);
-                            add_post_meta($orderid, 'derweili_mbot_woocommerce_customer_ref', true, true);
-                            $receiver_id = $message['optin']['user_ref'];
+
+                            $mbot_Order->add_user_reference( $message['optin']['user_ref'] );
+
+                           // add_post_meta($orderid, 'derweili_mbot_woocommerce_customer_messenger_id', $message['optin']['user_ref'], true);
+                           // add_post_meta($orderid, 'derweili_mbot_woocommerce_customer_ref', true, true);
+                           // $receiver_id = $message['optin']['user_ref'];
                         }
 
                         // store user messenger id as user meta
-                        if ($order->get_user_id() != 0) {
+                       /* if ($order->get_user_id() != 0) {
                             //add_user_meta( $order->get_user_id(), 'derweili_mbot_woocommerce_messenger_id', $message['sender']['id'], true );
-                        }
+                        }*/
                         
                         //send text message to messenger
-                        $bot->send( new Der_Weili_Message( $receiver_id, __('Thank you for your order, you will be immediately notified when your order status changes.', 'mbot-woocommerce') ) );
+                        $mbot_Order->send_text_message( __('Thank you for your order, you will be immediately notified when your order status changes.', 'mbot-woocommerce') );
+                        //$bot->send( new Der_Weili_Message( $receiver_id, __('Thank you for your order, you will be immediately notified when your order status changes.', 'mbot-woocommerce') ) );
                         //send Order notification to messenger
-                        $bot->send(new WooOrderMessage( $receiver_id, $order ) );
+                        //$bot->send(new WooOrderMessage( $receiver_id, $order ) );
+                        
+                        $mbot_Order->send_order();
 
                         do_action('derweili_mbot_woocommerce_after_optin_message', $message, $order );
 
