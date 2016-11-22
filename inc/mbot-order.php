@@ -74,6 +74,8 @@ class Derweili_Mbot_Order
 
 		}
 
+		$this->get_user_id();
+
 	}
 
 	public function add_user_reference( $new_user_reference ) {
