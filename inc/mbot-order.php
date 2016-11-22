@@ -77,7 +77,7 @@ class Derweili_Mbot_Order
 			
 			add_post_meta( $this->order_id, 'derweili_mbot_woocommerce_customer_ref', true, true);
 			
-			$this->is_reference();
+			$this->is_reference = true;
 			
 			return true;
 
