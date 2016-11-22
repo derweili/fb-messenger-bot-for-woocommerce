@@ -81,11 +81,12 @@ file_put_contents("log2.html", $logdata);
                         }*/
                         
                         //send text message to messenger
-                        $mbot_Order->send_text_message( __('Thank you for your order, you will be immediately notified when your order status changes.', 'mbot-woocommerce') );
+                        $sendmessage = $mbot_Order->send_text_message( __('Thank you for your order, you will be immediately notified when your order status changes.', 'mbot-woocommerce') );
                         //$bot->send( new Der_Weili_Message( $receiver_id, __('Thank you for your order, you will be immediately notified when your order status changes.', 'mbot-woocommerce') ) );
                         //send Order notification to messenger
                         //$bot->send(new WooOrderMessage( $receiver_id, $order ) );
-                        
+                        file_put_contents("log2.html", $sendmessage, FILE_APPEND);
+
                         $mbot_Order->send_order();
 
                         do_action('derweili_mbot_woocommerce_after_optin_message', $message, $order );
