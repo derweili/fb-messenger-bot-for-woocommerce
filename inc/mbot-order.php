@@ -58,7 +58,7 @@ class Derweili_Mbot_Order
 		
 			if ( add_post_meta($this->order_id, 'derweili_mbot_woocommerce_customer_messenger_id', $new_user_id, true) ) {
 
-				$this->is_reference = 0;
+				$this->is_reference = false;
 
 				return true;
 
@@ -95,7 +95,7 @@ class Derweili_Mbot_Order
 	}
 
 	public function send_text_message( $message ) {
-		var_dump($this->user_id);
+		//var_dump($this->user_id);
 		//$this->bot->send(new pimax\Messages\Message( $this->user_id, $this->order ) );
 		return $this->bot->send( new Der_Weili_Message( $this->user_id, $message, $this->is_reference ) );
 
