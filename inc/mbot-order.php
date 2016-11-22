@@ -62,8 +62,8 @@ class Derweili_Mbot_Order
 
 			$this->get_user_id();
 
-		file_put_contents("log2.html", 'After add user id – user id = : ' . $this->user_id, FILE_APPEND);
-        file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
+		//file_put_contents("log2.html", 'After add user id – user id = : ' . $this->user_id, FILE_APPEND);
+        //file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
 
 	
 		}else{
@@ -85,8 +85,8 @@ class Derweili_Mbot_Order
 			
 			$this->is_reference = true;
 
-		file_put_contents("log2.html", 'After add reference – user reference = : ' . $this->is_reference, FILE_APPEND);
-        file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
+		//file_put_contents("log2.html", 'After add reference – user reference = : ' . $this->is_reference, FILE_APPEND);
+        //file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
 
 
 		}
@@ -97,8 +97,8 @@ class Derweili_Mbot_Order
 		//var_dump($this->user_id);
 		//$this->bot->send(new pimax\Messages\Message( $this->user_id, $this->order ) );
 
-		file_put_contents("log2.html", 'Before send text message – is_reference: ' . $this->is_reference, FILE_APPEND);
-        file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
+		//file_put_contents("log2.html", 'Before send text message – is_reference: ' . $this->is_reference, FILE_APPEND);
+        //file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
 
 
 		return $this->bot->send( new Der_Weili_Message( $this->user_id, $message, $this->is_reference ) );
