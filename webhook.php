@@ -65,6 +65,7 @@ file_put_contents("log2.html", $logdata);
                             $receiver_id = $message['sender']['id'];
                         }elseif ( isset( $message['optin']['user_ref'] ) ){
                             add_post_meta($orderid, 'derweili_mbot_woocommerce_customer_messenger_id', $message['optin']['user_ref'], true);
+                            add_post_meta($orderid, 'derweili_mbot_woocommerce_customer_ref', true, true);
                             $receiver_id = $message['optin']['user_ref'];
                         }
 
@@ -74,7 +75,7 @@ file_put_contents("log2.html", $logdata);
                         }
                         
                         //send text message to messenger
-                        $bot->send( new pimax\Messages\Message( $receiver_id, __('Thank you for your order, you will be immediately notified when your order status changes.', 'mbot-woocommerce') ) );
+                        $bot->send( new Der_Weili_Message( $receiver_id, __('Thank you for your order, you will be immediately notified when your order status changes.', 'mbot-woocommerce') ) );
                         //send Order notification to messenger
                         $bot->send(new WooOrderMessage( $receiver_id, $order ) );
 

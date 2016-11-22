@@ -40,7 +40,4 @@ https://github.com/pimax/fb-messenger-php
 
 ## To Do's:
 
-- **implementing domain whitelisting**
-- Code on thankyoupage for checkbox plugin
-- Hide Checkout fields
-- Connection Checkbox events (checked status) with input field
+-- check why Order status updated do not work anymore

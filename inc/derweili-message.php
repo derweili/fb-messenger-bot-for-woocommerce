@@ -30,6 +30,7 @@ class Der_Weili_Message extends pimax\Messages\Message
         $this->recipient = $recipient;
         $this->text = $text;
         $this->is_reference = $is_reference;
+        var_dump( $is_reference );
 
     }
 
@@ -53,6 +54,8 @@ class Der_Weili_Message extends pimax\Messages\Message
                 'id' => $this->recipient
             ];
         }
+
+        var_dump( $this->get_data_return );
 
         return $this->get_data_return;
 

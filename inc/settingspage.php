@@ -128,8 +128,8 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
 
         // further processing ....
 
-        echo "whitelistfunction";
-        var_dump( $server_output );
+        //echo "whitelistfunction";
+        //var_dump( $server_output );
 
         //if ($server_output == "OK") {  } else { }
 
@@ -162,13 +162,13 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
 
                 // further processing ....
               //var_dump( $server_output );
-              var_dump( json_decode( $server_output ) );
+              //var_dump( json_decode( $server_output ) );
               $server_output_json = json_decode( $server_output );
-              echo "<br />";
+              //echo "<br />";
               //echo $server_output;
-              echo count( $server_output_json->data );
+              //echo count( $server_output_json->data );
 
-              echo $whitelisted_urls = $server_output_json->data[0]->whitelisted_domains;
+              //echo $whitelisted_urls = $server_output_json->data[0]->whitelisted_domains;
 
               if ( in_array( get_home_url(), $whitelisted_urls)) {
                   // everythin is ok

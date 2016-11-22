@@ -39,14 +39,10 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 	}
 
 	public function derweili_mbot_woocommerce_orderstatus_message_pending( $order_id ) {
-			
-		$this->prepare_message_update( $order_id );
+	
+		$order = new Derweili_Mbot_Order( $order_id );	
 
-		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_pending', __( 'Your order is no pendig.', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
-
-		$this->exec_message_update();
-
-		error_log("$order_id set to PENDING", 0);
+		$order->send_text_message( __( 'Your order is no pendig.', 'mbot-woocommerce' ) );		
 
 	}
 
@@ -116,14 +112,19 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 
 
 	public function derweili_mbot_woocommerce_orderstatus_message_cancelled($order_id) {
+
+		echo "<h1>test</h1>";
+
+		$order = new Derweili_Mbot_Order( intval( $order_id ) );
+		$order->send_text_message( __( 'Your order has been cancelled', 'mbot-woocommerce' ) );
 		
-		$this->prepare_message_update( $order_id );
+		/*$this->prepare_message_update( $order_id );
 
 		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_cancelled', __( 'Your order has been cancelled', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
 
 		$this->exec_message_update();
 
-		error_log("$order_id set to CANCELLED", 0);
+		error_log("$order_id set to CANCELLED", 0);*/
 	}
 
 
@@ -133,12 +134,8 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 
 			if ( current_user_can( 'manage_woocommerce' ) ) { // check if user can manage orders
 
-				$this->prepare_message_update( intval( $_POST['post_id'] ) );
-
-				$this->message = apply_filters( 'derweili_mbot_woocommerce_customer_order_note',  $_POST['note'], $order_id, $this->receiver_id );
-
-				$this->exec_message_update();
-
+				$order = new Derweili_Mbot_Order( intval( $_POST['post_id'] ) );
+				$order->send_text_message( $_POST['note'] );
 
 			}
 

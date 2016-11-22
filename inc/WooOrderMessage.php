@@ -148,9 +148,7 @@ class WooOrderMessage extends pimax\Messages\StructuredMessage {
             break;
         }
 
-        $this->get_data_return['message'] = [
-            'message' => $result
-        ];
+        $this->get_data_return['message'] = $result;
 
         if ( $this->is_reference ) {
             $this->get_data_return['recipient'] = [
