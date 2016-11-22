@@ -81,7 +81,9 @@ class Derweili_Mbot_Order
 		if ( $this->add_user_id( $new_user_reference ) ) {
 			
 			add_post_meta( $this->order_id, 'derweili_mbot_woocommerce_customer_ref', true, true);
-						
+			
+			$this->is_reference();
+			
 			return true;
 
 		}else{
