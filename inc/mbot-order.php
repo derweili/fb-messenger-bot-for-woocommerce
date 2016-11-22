@@ -56,17 +56,11 @@ class Derweili_Mbot_Order
 		
 		if ( empty( $this->user_id ) ) {
 		
-			if ( add_post_meta($this->order_id, 'derweili_mbot_woocommerce_customer_messenger_id', $new_user_id, true) ) {
+			add_post_meta($this->order_id, 'derweili_mbot_woocommerce_customer_messenger_id', $new_user_id, true)
 
-				$this->is_reference = false;
+			$this->is_reference = false;
 
-				return true;
-
-			}else{
-
-				return false;
-
-			}
+			$this->get_user_id();
 		
 		}else{
 
@@ -74,7 +68,6 @@ class Derweili_Mbot_Order
 
 		}
 
-		$this->get_user_id();
 
 	}
 
