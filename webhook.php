@@ -85,7 +85,8 @@ file_put_contents("log2.html", $logdata);
                         //$bot->send( new Der_Weili_Message( $receiver_id, __('Thank you for your order, you will be immediately notified when your order status changes.', 'mbot-woocommerce') ) );
                         //send Order notification to messenger
                         //$bot->send(new WooOrderMessage( $receiver_id, $order ) );
-                        file_put_contents("log2.html", $sendmessage, FILE_APPEND);
+
+                        file_put_contents("log2.html", print_r( $sendmessage, true ), FILE_APPEND);
 
                         $mbot_Order->send_order();
 
