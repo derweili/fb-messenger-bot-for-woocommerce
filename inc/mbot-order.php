@@ -61,7 +61,11 @@ class Derweili_Mbot_Order
 			$this->is_reference = false;
 
 			$this->get_user_id();
-		
+
+		file_put_contents("log2.html", 'After add user id – user id = : ' . $this->user_id, FILE_APPEND);
+        file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
+
+	
 		}else{
 
 			return false;
@@ -73,16 +77,18 @@ class Derweili_Mbot_Order
 
 	public function add_user_reference( $new_user_reference ) {
 
-		if ( $this->add_user_id( $new_user_reference ) ) {
+		if ( empty( $this->user_id ) ) {
+
+			$this->add_user_id( $new_user_reference );
 			
 			add_post_meta( $this->order_id, 'derweili_mbot_woocommerce_customer_ref', true, true);
 			
 			$this->is_reference = true;
-			
-			return true;
 
-		}else{
-			return false;
+		file_put_contents("log2.html", 'After add reference – user reference = : ' . $this->is_reference, FILE_APPEND);
+        file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
+
+
 		}
 
 	}
