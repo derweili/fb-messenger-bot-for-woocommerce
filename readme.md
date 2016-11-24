@@ -27,6 +27,9 @@ https://github.com/pimax/fb-messenger-php
 
 ## Changelog:
 
+**1.0**
+- New feature: support for checkbox plugin added
+
 **0.2**
 
 - New feature: Send order fees as "adjustments" to Facebook
