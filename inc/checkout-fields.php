@@ -42,13 +42,13 @@ class Derweili_Mbot_Checkout_Code
 
 		    woocommerce_form_field( 'messenger_checkbox_user_ref', array(
 		        'type'          => 'text',
-		        'class'         => array('my-field-class form-row-wide'),
+		        'class'         => array('mbot-woocommerce-hiddenfield form-row-wide'),
 		        //'label'         => __('Fill in this field'),
 		        'placeholder'   => __('Enter something'),
 		        ), $this->user_ref);
 		    woocommerce_form_field( 'messenger_checkbox_user_test', array(
 		        'type'          => 'text',
-		        'class'         => array('my-field-class form-row-wide'),
+		        'class'         => array('mbot-woocommerce-hiddenfield form-row-wide'),
 		        //'label'         => __('Fill in this field'),
 		        'placeholder'   => __('Enter something'),
 		        ), 'test');
