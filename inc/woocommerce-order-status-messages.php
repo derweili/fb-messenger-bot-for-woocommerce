@@ -10,7 +10,9 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 	private $order_id;
 	private $message;
 
-	
+	/**
+	* Hook into order status updates and send fb message to user
+	*/
 	public function __construct()
 	{
 		add_action( 'woocommerce_order_status_pending', array( &$this, 'derweili_mbot_woocommerce_orderstatus_message_pending') );
@@ -25,106 +27,61 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 
 	}
 
-	private function prepare_message_update( $order_id ) {
-
-		$this->order_id = $order_id;
-
-		$this->bot = new pimax\FbBotApp( mbot_woocommerce_token );
-
-		$this->receiver_id = get_post_meta( $order_id, 'derweili_mbot_woocommerce_customer_messenger_id', true );
-	}
-
-	private function exec_message_update(){
-		$this->bot->send(new pimax\Messages\Message( $this->receiver_id, $this->message ));
-	}
-
 	public function derweili_mbot_woocommerce_orderstatus_message_pending( $order_id ) {
-	
-		$order = new Derweili_Mbot_Order( $order_id );	
 
-		$order->send_text_message( __( 'Your order is no pendig.', 'mbot-woocommerce' ) );		
+		$order = new Derweili_Mbot_Order( $order_id );
+		$order->send_text_message( __( 'Your order is now pendig.', 'mbot-woocommerce' ) );
 
 	}
 
 	public function derweili_mbot_woocommerce_orderstatus_message_failed( $order_id ) {
-		
-		$this->prepare_message_update( $order_id );
 
-		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_failed', __( 'Your order failed.', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
-		
-		$bot->send(new pimax\Messages\Message($receiver_id, $message ));
-		
-		$this->exec_message_update();
+		$order = new Derweili_Mbot_Order( $order_id );
+		$order->send_text_message( __( 'Your order unfortunately failed.', 'mbot-woocommerce' ) );
 
-		error_log("$order_id set to PENDING", 0);
 	}
 
 
 	public function derweili_mbot_woocommerce_orderstatus_message_hold( $order_id ) {
-		
-		$this->prepare_message_update( $order_id );
 
-		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_hold', __( 'Your order is now on hold.', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
+		$order = new Derweili_Mbot_Order( $order_id );
+		$order->send_text_message( __( 'Your order is now on hold.', 'mbot-woocommerce' ) );
 
-		$this->exec_message_update();
-
-		error_log("$order_id set to ON HOLD", 0);
 	}
 
 
 	public function derweili_mbot_woocommerce_orderstatus_message_processing( $order_id ) {
-		
-		$this->prepare_message_update( $order_id );
 
-		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_processing', __( 'Your order is now processing', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
-
-		$this->exec_message_update();
-
-		error_log("$order_id set to PROCESSING", 0);
+		$order = new Derweili_Mbot_Order( $order_id );
+		$order->send_text_message( __( 'Your order is now processing', 'mbot-woocommerce' ) );
 
 	}	
 
 
 	public function derweili_mbot_woocommerce_orderstatus_message_completed( $order_id ) {
-		
-		$this->prepare_message_update( $order_id );
 
-		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_completed', __( 'Your order has been completed', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
-
-		$this->exec_message_update();
-
-		error_log("$order_id set to COMPLETED", 0);
+		$order = new Derweili_Mbot_Order( $order_id );
+		$order->send_text_message( __( 'Your order has been completed', 'mbot-woocommerce' ) );
 
 	}
 
 
 	public function derweili_mbot_woocommerce_orderstatus_message_refunded($order_id) {
+
+		$order = new Derweili_Mbot_Order( $order_id );
+		$order->send_text_message( __( 'Your order has been refunded', 'mbot-woocommerce' ) );
 		
-		$this->prepare_message_update( $order_id );
-
-		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_refunded', __( 'Your order has been refunded', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
-
-		$this->exec_message_update();
-
-		error_log("$order_id set to REFUNDED", 0);
-
 	}
 
 
-	public function derweili_mbot_woocommerce_orderstatus_message_cancelled($order_id) {
+	public function derweili_mbot_woocommerce_orderstatus_message_cancelled( $order_id ) {
 
-		echo "<h1>test</h1>";
+		//echo "<h1>test</h1>";
 
-		$order = new Derweili_Mbot_Order( intval( $order_id ) );
+		$order = new Derweili_Mbot_Order( $order_id );
 		$order->send_text_message( __( 'Your order has been cancelled', 'mbot-woocommerce' ) );
 		
-		/*$this->prepare_message_update( $order_id );
 
-		$this->message = apply_filters( 'derweili_mbot_woocommerce_message_cancelled', __( 'Your order has been cancelled', 'mbot-woocommerce' ), $order_id, $this->receiver_id );
-
-		$this->exec_message_update();
-
-		error_log("$order_id set to CANCELLED", 0);*/
 	}
 
 
@@ -140,10 +97,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 			}
 
 		}
-
-
 	}
-
 
 }
 

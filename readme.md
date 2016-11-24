@@ -40,4 +40,4 @@ https://github.com/pimax/fb-messenger-php
 
 ## To Do's:
 
--- check why Order status updated do not work anymore
+-- find out why Order status updated do not work anymore

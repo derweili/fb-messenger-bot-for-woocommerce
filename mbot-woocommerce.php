@@ -40,7 +40,7 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		}
 
 		add_action( 'admin_init', array( &$this, 'load_admin_dependencies' ) );
-
+		add_action( 'init', array( &$this, 'load_text_domain' ) );
 	}
 
 	// include php messenger sdk
@@ -107,6 +107,15 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		include('inc/filter-functions.php');
 
 
+	}
+
+	/**
+	 * Load plugin textdomain.
+	 *
+	 * @since 1.0.0
+	 */
+	public function load_text_domain() {
+	  load_plugin_textdomain( 'mbot-woocommerce', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
 	}
 
 }
