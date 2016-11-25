@@ -7,6 +7,11 @@ class Derweili_Mbot_Checkout_Code
 	private $user_ref;
 
 	private $is_checkout_page = false;
+
+	private $checkbox_prechecked = false;
+	private $checkbox_allow_login = false;
+	private $checkbox_size = 'large';
+
 	
 	function __construct()
 	{
@@ -15,11 +20,26 @@ class Derweili_Mbot_Checkout_Code
 		$this->user_ref = mt_rand() . microtime();
 		$this->user_ref = str_replace(' ', '_', $this->user_ref );
 
+		$this->set_ui_settings();
+
 		add_action( 'woocommerce_after_order_notes', array( &$this, 'checkout_messenger_checkbox' ) );
 		//add_action( 'wp_footer', array( &$this, 'woocommerce_checkout_script' ) );
 
 		add_action('woocommerce_checkout_update_order_meta', array( &$this, 'save_messenger_checkbox_fields' ) );
 
+	}
+
+
+	function set_ui_settings(){
+		if ( !empty( $prechecked = get_option( 'derweili_mbot_fb_checkbox_prechecked' ) && is_bool( $prechecked ) ) ) {
+			$this->checkbox_prechecked = $prechecked;
+		};
+		if ( !empty( $allow_login = get_option( 'derweili_mbot_fb_checkbox_allow_login' ) && is_bool( $allow_login ) ) ) {
+			$this->checkbox_allow_login = $allow_login;
+		}
+		if ( !empty( $checkbox_size = get_option( 'derweili_mbot_checkbox_size' ) ) ) {
+			$this->checkbox_size = $checkbox_size;
+		}
 	}
 
 
@@ -32,9 +52,9 @@ class Derweili_Mbot_Checkout_Code
 			  page_id=' . mbot_woocommerce_page_id . '
 			  messenger_app_id=' . mbot_woocommerce_app_id . '
 			  user_ref="' . $this->user_ref . '" 
-			  prechecked="false" 
-			  allow_login="true" 
-			  size="large"></div>
+			  prechecked="' . $this->checkbox_prechecked . '" 
+			  allow_login="' . $this->checkbox_allow_login . '" 
+			  size="' . $this->checkbox_size . '"></div>
 		  ';
 
 

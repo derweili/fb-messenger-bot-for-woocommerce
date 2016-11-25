@@ -18,8 +18,10 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
 
     public static function init() {
         add_filter( 'woocommerce_settings_tabs_array', __CLASS__ . '::add_settings_tab', 50 );
-        add_action( 'woocommerce_settings_tabs_settings_tab_demo', __CLASS__ . '::settings_tab' );
-        add_action( 'woocommerce_update_options_settings_tab_demo', __CLASS__ . '::update_settings' );
+        add_action( 'woocommerce_settings_tabs_mbot_settings', __CLASS__ . '::settings_tab' );
+        add_action( 'woocommerce_update_options_mbot_settings', __CLASS__ . '::update_settings' );
+
+
     }
     
     
@@ -30,7 +32,7 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
      * @return array $settings_tabs Array of WooCommerce setting tabs & their labels, including the Subscription tab.
      */
     public static function add_settings_tab( $settings_tabs ) {
-        $settings_tabs['settings_tab_demo'] = __( 'Messenger Bot', 'mbot-woocommmerce' );
+        $settings_tabs['mbot_settings'] = __( 'Messenger Bot', 'mbot-woocommmerce' );
         return $settings_tabs;
     }
     /**
@@ -90,12 +92,45 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
                 'desc' => __( '', 'mbot-woocommmerce' ),
                 'id'   => 'derweili_mbot_messenger_app_id'
             ),
+            'checkbox-prechecked' => array(
+                'name'     => __( 'Precheck checkbox?', 'mbot-woocommmerce' ),
+                'type'     => 'checkbox',
+                //'desc'     => __( 'Your Callback URL is:', 'mbot-woocommmerce' ) . ' <u>' . plugin_dir_url( __FILE__ ) . 'webhook.php</u>' ,
+                'id'       => 'derweili_mbot_fb_checkbox_prechecked'
+            ),
+            'checkbox-allow-login' => array(
+                'name'     => __( 'Allow Login', 'mbot-woocommmerce' ),
+                'type'     => 'checkbox',
+                //'desc'     => __( 'Your Callback URL is:', 'mbot-woocommmerce' ) . ' <u>' . plugin_dir_url( __FILE__ ) . 'webhook.php</u>' ,
+                'id'       => 'derweili_mbot_fb_checkbox_allow_login'
+            ),
+            'checkbox-size' => array(
+                'name' => __( 'Checkbox size', 'mbot-woocommmerce' ),
+                 'type' => 'select',
+                 'id' => 'derweili_mbot_checkbox_size',
+                 'options' => array(
+                    'standard' => 'Standard',
+                    'small' => 'Small',
+                    'medium' => 'Medium',
+                    'large' => 'Large',
+                    'xlarge' => 'xLarge',
+                  )
+            ),
+            'send-to-messenger-color' => array(
+                'name' => __( 'Send to Messenger Button color', 'mbot-woocommmerce' ),
+                 'type' => 'select',
+                 'id' => 'derweili_mbot_button_color',
+                 'options' => array(
+                    'blue' => 'Blau',
+                    'white' => 'Weiß',
+                  )
+            ),
             'section_end' => array(
                  'type' => 'sectionend',
-                 'id' => 'wc_settings_tab_demo_section_end'
+                 'id' => 'wc_mbot_settings_section_end'
             )
         );
-        return apply_filters( 'wc_settings_tab_demo_settings', $settings );
+        return apply_filters( 'wc_mbot_settings_settings', $settings );
     }
 
 
@@ -139,7 +174,7 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
     public function domain_whitelisting_button() {
 
 
-            if ( isset( $_GET["tab"]) && $_GET["tab"] == "settings_tab_demo" ) {
+            if ( isset( $_GET["tab"]) && $_GET["tab"] == "mbot_settings" ) {
 
 
                 $ch = curl_init();
@@ -168,7 +203,7 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
               //echo $server_output;
               //echo count( $server_output_json->data );
 
-              //echo $whitelisted_urls = $server_output_json->data[0]->whitelisted_domains;
+              $whitelisted_urls = $server_output_json->data[0]->whitelisted_domains;
 
               if ( in_array( get_home_url(), $whitelisted_urls)) {
                   // everythin is ok
