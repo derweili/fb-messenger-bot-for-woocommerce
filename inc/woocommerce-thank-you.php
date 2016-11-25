@@ -31,6 +31,7 @@ class Derweili_Mbot_Thank_You_Page
 		add_action('derweili_mbot_after_fb_init',  array( &$this, 'woocommerce_thank_you_script' ), 10);
 	}
 
+	// handle send-to-messenger style attributes
 	function set_ui_settings(){
 		$prechecked = get_option( 'derweili_mbot_fb_checkbox_prechecked' );
 		if ( !empty( $prechecked && is_bool( $prechecked ) ) ) {
@@ -43,6 +44,13 @@ class Derweili_Mbot_Thank_You_Page
 		$checkbox_size = get_option( 'derweili_mbot_checkbox_size' );
 		if ( !empty( $checkbox_size ) ) {
 			$this->checkbox_size = $checkbox_size;
+
+			// set size to standard size if small or medium is selected
+			// small and medium are only available for the checkbox plugin but not for send-to-messenger plugin
+			if ( $this->checkbox_size == 'small' || $this->checkbox_size == 'medium' ) {
+				$this->checkbox_size = 'standard';
+			}
+
 		}
 		$button_color = get_option( 'derweili_mbot_button_color' );
 		if ( !empty( $button_color ) ) {
@@ -50,6 +58,9 @@ class Derweili_Mbot_Thank_You_Page
 		}
 	}
 
+
+	// check if user checked the checkbox plugin
+	// display send to messenger plugin if checkbox has not been checked
 	function woocommerce_thank_you_message( $example, $order ) {
 
 		//get messenger id from user
@@ -73,6 +84,7 @@ class Derweili_Mbot_Thank_You_Page
 	}
 
 
+	// send user confirmation if user checked the checkbox plugin on checkout page
 	function woocommerce_thank_you_script(){ ?>
 
 				
@@ -92,7 +104,7 @@ class Derweili_Mbot_Thank_You_Page
 
 	<?php
 	}
-
+	// display send to messenger
 	function display_send_to_messenger_button( $example, $order ){
 		    
 		    $send_to_messenger_button = '<div class="fb-send-to-messenger" 
