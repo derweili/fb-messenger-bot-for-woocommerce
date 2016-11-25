@@ -92,7 +92,7 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
                 'desc' => __( '', 'mbot-woocommmerce' ),
                 'id'   => 'derweili_mbot_messenger_app_id'
             ),
-            'checkbox-prechecked' => array(
+           /* 'checkbox-prechecked' => array(
                 'name'     => __( 'Precheck checkbox?', 'mbot-woocommmerce' ),
                 'type'     => 'checkbox',
                 //'desc'     => __( 'Your Callback URL is:', 'mbot-woocommmerce' ) . ' <u>' . plugin_dir_url( __FILE__ ) . 'webhook.php</u>' ,
@@ -103,7 +103,7 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
                 'type'     => 'checkbox',
                 //'desc'     => __( 'Your Callback URL is:', 'mbot-woocommmerce' ) . ' <u>' . plugin_dir_url( __FILE__ ) . 'webhook.php</u>' ,
                 'id'       => 'derweili_mbot_fb_checkbox_allow_login'
-            ),
+            ),*/
             'checkbox-size' => array(
                 'name' => __( 'Checkbox size', 'mbot-woocommmerce' ),
                  'type' => 'select',
