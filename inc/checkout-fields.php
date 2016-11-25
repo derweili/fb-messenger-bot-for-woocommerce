@@ -31,13 +31,16 @@ class Derweili_Mbot_Checkout_Code
 
 
 	function set_ui_settings(){
-		if ( !empty( $prechecked = get_option( 'derweili_mbot_fb_checkbox_prechecked' ) && is_bool( $prechecked ) ) ) {
+		$prechecked = get_option( 'derweili_mbot_fb_checkbox_prechecked' )
+		if ( !empty( $prechecked && is_bool( $prechecked ) ) ) {
 			$this->checkbox_prechecked = $prechecked;
 		};
-		if ( !empty( $allow_login = get_option( 'derweili_mbot_fb_checkbox_allow_login' ) && is_bool( $allow_login ) ) ) {
+		$allow_login = get_option( 'derweili_mbot_fb_checkbox_allow_login' 
+		if ( !empty( $allow_login ) && is_bool( $allow_login ) ) ) {
 			$this->checkbox_allow_login = $allow_login;
 		}
-		if ( !empty( $checkbox_size = get_option( 'derweili_mbot_checkbox_size' ) ) ) {
+		$checkbox_size = get_option( 'derweili_mbot_checkbox_size' )
+		if ( !empty( $checkbox_size ) ) {
 			$this->checkbox_size = $checkbox_size;
 		}
 	}
