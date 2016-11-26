@@ -134,6 +134,9 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
     }
 
 
+    /*
+    * Send the Site URL to facebook as Whitelisted URL
+    */
     private function domain_whitelisting( $action_type = 'add' ) {
         $ch = curl_init();
 
@@ -181,12 +184,6 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
 
                 curl_setopt($ch, CURLOPT_URL,"https://graph.facebook.com/v2.6/me/thread_settings?fields=whitelisted_domains&access_token=" . mbot_woocommerce_token );
                 curl_setopt($ch, CURLOPT_POST, 0);
-                //curl_setopt($ch, CURLOPT_POSTFIELDS,
-                //            "setting_type=domain_whitelisting&whitelisted_domains=" . get_home_url() . "&domain_action_type=" . $action_type );
-
-                // in real life you should use something like:
-                // curl_setopt($ch, CURLOPT_POSTFIELDS, 
-                //          http_build_query(array('postvar1' => 'value1')));
 
                 // receive server response ...
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -195,13 +192,8 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
 
                 curl_close ($ch);
 
-                // further processing ....
-              //var_dump( $server_output );
-              //var_dump( json_decode( $server_output ) );
               $server_output_json = json_decode( $server_output );
-              //echo "<br />";
-              //echo $server_output;
-              //echo count( $server_output_json->data );
+
 
               $whitelisted_urls = $server_output_json->data[0]->whitelisted_domains;
 

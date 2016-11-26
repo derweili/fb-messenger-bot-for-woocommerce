@@ -16,6 +16,7 @@ class DERWEILI_Mbot_Uninstall
 	function __construct()
 	{
 		$this->remove_site_from_whitelisted_domains();
+		$this->remove_options();
 	}
 
 	function remove_site_from_whitelisted_domains() {
@@ -25,7 +26,7 @@ class DERWEILI_Mbot_Uninstall
 
 	}
 
-	funciton remove_options() {
+	function remove_options() {
 		
 		delete_option( 'derweili_mbot_page_token' );
 		delete_option( 'derweili_mbot_verify_token' );
