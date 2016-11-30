@@ -42,6 +42,7 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		add_action( 'admin_init', array( &$this, 'load_admin_dependencies' ) );
 		add_action( 'init', array( &$this, 'load_text_domain' ) );
 		add_action( 'wp_head', array( &$this, 'inline_css' ) );
+		register_activation_hook( dirname( __FILE__ ) . '/install.php', 'mbot_install_mbot' );
 	}
 
 	// include php messenger sdk

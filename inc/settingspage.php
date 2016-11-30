@@ -69,7 +69,7 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
             'facebook_api_credentials_title' => array(
                 'name'     => __( 'Facebook API Credentials', 'mbot-woocommmerce' ),
                 'type'     => 'title',
-                'desc'     => __( 'Your Callback URL is:', 'mbot-woocommmerce' ) . ' <u>' . plugin_dir_url( __FILE__ ) . 'webhook.php</u>' ,
+                'desc'     => __( 'Your Callback URL is:', 'mbot-woocommmerce' ) . ' <u>' . get_home_url() . '/mbot-callback-webhook/</u>' ,
                 'id'       => 'derweili_mbot_fb_credentials_title'
             ),
             'page_token' => array(
