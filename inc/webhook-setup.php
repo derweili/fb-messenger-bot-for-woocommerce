@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH'))
+{
+   exit();
+}
 
 	add_action( 'init', 'mbot_webhook_endpoint' );
 	add_action( 'parse_request', 'mbot_webhook_parse_request' );

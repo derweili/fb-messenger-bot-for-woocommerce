@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH'))
+{
+   exit();
+}
 
 
 class Derweili_Mbot_Checkout_Code

@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH'))
+{
+   exit();
+}
 
 
 class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {

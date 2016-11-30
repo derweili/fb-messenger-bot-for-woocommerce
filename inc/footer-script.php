@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH'))
+{
+   exit();
+}
 
 
 add_action( 'wp_footer', 'derweili_footer_script' );

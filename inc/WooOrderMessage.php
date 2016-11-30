@@ -1,4 +1,10 @@
 <?php
+if (!defined('ABSPATH'))
+{
+   exit();
+}
+
+
 class WooOrderMessage extends pimax\Messages\StructuredMessage {
 
     /**

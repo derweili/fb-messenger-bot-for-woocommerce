@@ -1,4 +1,10 @@
 <?php
+if (!defined('ABSPATH'))
+{
+   exit();
+}
+
+
 /**
 * Override values with "#" when empty to prevent API error
 */

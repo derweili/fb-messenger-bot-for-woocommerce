@@ -1,4 +1,10 @@
 <?php
+if (!defined('ABSPATH'))
+{
+   exit();
+}
+
+
 /**
 * handle order status updates
 */
