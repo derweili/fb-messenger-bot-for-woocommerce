@@ -4,15 +4,6 @@ if (!defined('ABSPATH'))
    exit();
 }
 
-//Load WordPress functions
-/*
-if ( !isset($wp_did_header) ) {
-
-    define('WP_USE_THEMES', false);
-    require('../../../wp-load.php');
-*/
-
-
 add_action( 'mbot_messenger_callback_webhook', 'mbot_messenger_callback_webhook_handler' );
 
 function mbot_messenger_callback_webhook_handler() {
