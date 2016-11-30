@@ -93,6 +93,9 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		include('inc/mbot-order.php');
 		include('inc/footer-script.php');
 
+		include('inc/webhook-setup.php');
+		include('webhook.php');
+
 	}
 
 	public function load_admin_dependencies() {
