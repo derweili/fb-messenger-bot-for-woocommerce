@@ -1,10 +1,11 @@
 <?php
+namespace pimax;
+
 if (!defined('ABSPATH'))
 {
    exit();
 }
 
-namespace pimax;
 
 class UserProfile
 {

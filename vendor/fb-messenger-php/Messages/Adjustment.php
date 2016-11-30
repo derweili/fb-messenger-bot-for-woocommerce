@@ -2,6 +2,11 @@
 
 namespace pimax\Messages;
 
+if (!defined('ABSPATH'))
+{
+   exit();
+}
+
 /**
  * Class Adjustment
  *

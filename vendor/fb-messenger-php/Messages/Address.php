@@ -1,11 +1,12 @@
 <?php
+namespace pimax\Messages;
+
 if (!defined('ABSPATH'))
 {
    exit();
 }
 
 
-namespace pimax\Messages;
 
 /**
  * Class Address
