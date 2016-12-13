@@ -65,6 +65,9 @@ To Configure the plugin follow theese steps
 
 5. You have finished. Well done!
 
+== Screenshots ==
+
+1. **Plugin Settings Screen**
 
 == Changelog ==
 
