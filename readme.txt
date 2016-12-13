@@ -1,10 +1,10 @@
 === Messengerbot for WooCommerce ===
 Contributors: derweili
-Donate link: http://derweili.com/
+Donate link: http://derweili.de/
 Tags: facebook, woocommerce, messenger
 Requires at least: 4.6
 Tested up to: 4.7
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,7 +12,7 @@ Send order summaries and notices to your WooCommerce customers via Facebook Mess
 
 == Description ==
 
-This Plugin gives you the ability to send your customer messages to via Facebook Messenger.
+This Plugin gives you the ability to send your customers order notifications via the Facebook Messenger API.
 
 Following Messages are supported:
 
@@ -26,7 +26,17 @@ Following Messages are supported:
 1. Upload the plugin files to the `/wp-content/plugins/fb-messenger-bot-for-woocomemrce` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
 
+== Frequently Asked Questions ==
 
+= Why are the messenger checkbox and send to messenger button not displayed? =
+
+If your FB-App is in development mode only the FB-App Developers can see the Buttons.
+
+
+= Where can I report bugs? =
+
+Please open an issue on [Github](https://github.com/derweili/fb-messenger-bot-for-woocommerce, "Github") if you found a bug:
+https://github.com/derweili/fb-messenger-bot-for-woocommerce
 
 
 = How do I configure the plugin =
