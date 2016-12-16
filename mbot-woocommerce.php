@@ -86,6 +86,7 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 	// load other dependencies
 	private function load_dependencies() {
 		
+		include('inc/error-log.php');
 		include('inc/WooOrderMessage.php');
 		include('inc/derweili-message.php');
 		include('inc/woocommerce-thank-you.php');
