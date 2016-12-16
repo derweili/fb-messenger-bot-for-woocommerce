@@ -108,9 +108,9 @@ file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
                         file_put_contents("log2.html", print_r( $sendmessage, true ), FILE_APPEND);
                         file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
 
-                        $mbot_Order->send_order();
+                        $receipt_send_return = $mbot_Order->send_order();
                         derweili_mbot_log( "Order Sent" );
-                        //derweili_mbot_log( $receipt_send_return );
+                        derweili_mbot_log( $receipt_send_return );
 
                         do_action('derweili_mbot_woocommerce_after_optin_message', $message, $order );
 
