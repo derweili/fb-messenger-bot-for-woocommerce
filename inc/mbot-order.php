@@ -113,6 +113,8 @@ class Derweili_Mbot_Order
 	}
 
 	public function send_order() {
+		derweili_mbot_log( 'send receipt' );
+		derweili_mbot_log( new WooOrderMessage( $this->user_id, $this->order, $this->is_reference ) );
 		return $this->bot->send(new WooOrderMessage( $this->user_id, $this->order, $this->is_reference ) );
 	}
 
