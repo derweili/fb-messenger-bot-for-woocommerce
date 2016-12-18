@@ -61,8 +61,6 @@ class Der_Weili_Message extends pimax\Messages\Message
 
         //var_dump( $this->get_data_return );
 
-        //file_put_contents("log2.html", print_r( $this->get_data_return, true ), FILE_APPEND);
-        //file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
 
         return $this->get_data_return;
 

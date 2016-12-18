@@ -19,7 +19,7 @@ class DERWEILI_Mbot_Uninstall
 	
 	function __construct()
 	{
-		$this->remove_site_from_whitelisted_domains();
+		//$this->remove_site_from_whitelisted_domains();
 		$this->remove_options();
 	}
 

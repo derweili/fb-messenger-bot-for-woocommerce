@@ -27,7 +27,6 @@ class Derweili_Mbot_Checkout_Code
 		$this->set_ui_settings();
 
 		add_action( 'woocommerce_after_order_notes', array( &$this, 'checkout_messenger_checkbox' ) );
-		//add_action( 'wp_footer', array( &$this, 'woocommerce_checkout_script' ) );
 
 		add_action('woocommerce_checkout_update_order_meta', array( &$this, 'save_messenger_checkbox_fields' ) );
 

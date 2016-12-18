@@ -4,7 +4,7 @@ Donate link: http://derweili.de/
 Tags: facebook, woocommerce, messenger
 Requires at least: 4.6
 Tested up to: 4.7
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -70,6 +70,10 @@ To Configure the plugin follow theese steps
 1. **Plugin Settings Screen**
 
 == Changelog ==
+
+= 1.1 =
+* Added: Error log for Webhook Calls when WP_DEBUG is enabled 
+
 
 = 1.1 =
 * Webhook function refactored to match WordPress plugin directory guidelines

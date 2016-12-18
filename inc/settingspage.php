@@ -157,9 +157,6 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post_params );
 
 
-        // in real life you should use something like:
-        // curl_setopt($ch, CURLOPT_POSTFIELDS, 
-        //          http_build_query(array('postvar1' => 'value1')));
 
         // receive server response ...
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -168,12 +165,6 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
 
         curl_close ($ch);
 
-        // further processing ....
-
-        //echo "whitelistfunction";
-        //var_dump( $server_output );
-
-        //if ($server_output == "OK") {  } else { }
 
     }
 

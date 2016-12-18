@@ -68,11 +68,15 @@ class Derweili_Mbot_Order
 
 			$this->get_user_id();
 
+			derweili_mbot_log( "New User ID " . $new_user_id . " added for Order " . $this->order_id );
+
 		//file_put_contents("log2.html", 'After add user id – user id = : ' . $this->user_id, FILE_APPEND);
         //file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
 
 	
 		}else{
+
+			derweili_mbot_log( "Tried to add user id " . $new_user_id . " but a user ID " . $this->user_id .  " already exists for order " . $this->order_id );
 
 			return false;
 
@@ -91,22 +95,24 @@ class Derweili_Mbot_Order
 			
 			$this->is_reference = true;
 
-		//file_put_contents("log2.html", 'After add reference – user reference = : ' . $this->is_reference, FILE_APPEND);
-        //file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
+			derweili_mbot_log( "New User Reference " . $new_user_reference . " added for Order " . $this->order_id );
 
+
+
+		}else{
+
+			derweili_mbot_log( "Tried to add user reference " . $new_user_reference . " but a user ID " . $this->user_id .  " already exists for order " . $this->order_id );
+
+			return false;
 
 		}
 
 	}
 
 	public function send_text_message( $message ) {
-		//var_dump($this->user_id);
-		//$this->bot->send(new pimax\Messages\Message( $this->user_id, $this->order ) );
 
-		//file_put_contents("log2.html", 'Before send text message – is_reference: ' . $this->is_reference, FILE_APPEND);
-        //file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
-
-
+		derweili_mbot_log( 'send text message' );
+		derweili_mbot_log( new Der_Weili_Message( $this->user_id, $message, $this->is_reference ) );
 		return $this->bot->send( new Der_Weili_Message( $this->user_id, $message, $this->is_reference ) );
 
 

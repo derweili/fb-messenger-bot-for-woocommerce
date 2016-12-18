@@ -53,8 +53,11 @@ class Derweili_Mbot_Thank_You_Page
 
 		}
 		$button_color = get_option( 'derweili_mbot_button_color' );
-		if ( !empty( $button_color ) ) {
+		
+		if ( ! empty( $button_color ) ) {
+
 			$this->button_color = $button_color;
+
 		}
 	}
 
@@ -64,8 +67,6 @@ class Derweili_Mbot_Thank_You_Page
 	function woocommerce_thank_you_message( $example, $order ) {
 
 		//get messenger id from user
-		//$usermessengerid = get_user_meta( $order->get_user_id(), 'derweili_mbot_woocommerce_messenger_id', true );
-		//if ( empty( $usermessengerid ) ) { // Display send to messenger button if no messenger id is stored
 		$messenger_checkbox_user_ref = get_post_meta( $order->id, 'derweili_mbot_messenger_checkbox_user_ref', true );
 		$messenger_checkbox_checked = get_post_meta( $order->id, 'derweili_mbot_messenger_checkbox_user_test', true );
 		$this->messenger_checkbox = $messenger_checkbox_checked;
@@ -74,12 +75,12 @@ class Derweili_Mbot_Thank_You_Page
 
 		if ( !empty( $messenger_checkbox_user_ref ) && !empty( $messenger_checkbox_checked ) && 'checked' == $messenger_checkbox_checked ) {
 			
-			//directy call Facebook
-			//return $this->display_send_to_messenger_button( $example, $order );
 			return $example;
+
 		}else{
-			//display send to messenger button
+
 		    return $this->display_send_to_messenger_button( $example, $order );
+
 		}
 	}
 
@@ -89,7 +90,11 @@ class Derweili_Mbot_Thank_You_Page
 
 				
 		<?php 
+
+
 			if ( 'checked' == $this->messenger_checkbox) {
+
+				derweili_mbot_log( 'Load user checkbox confirmation script for order ' . $this->order_id );
 
 				echo "FB.AppEvents.logEvent('MessengerCheckboxUserConfirmation', null, {
 		        'app_id':'" . mbot_woocommerce_app_id . "',
@@ -106,6 +111,8 @@ class Derweili_Mbot_Thank_You_Page
 	}
 	// display send to messenger
 	function display_send_to_messenger_button( $example, $order ){
+
+			derweili_mbot_log( 'Display send to messenger button for order ' . $order->id );
 		    
 		    $send_to_messenger_button = '<div class="fb-send-to-messenger" 
 		                  messenger_app_id="' . mbot_woocommerce_app_id . '" 
@@ -120,11 +127,3 @@ class Derweili_Mbot_Thank_You_Page
 }
 
 new Derweili_Mbot_Thank_You_Page;
-
-//
-// hook into thank you page
-//
-
-
-
-

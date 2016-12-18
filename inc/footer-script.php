@@ -5,6 +5,9 @@ if (!defined('ABSPATH'))
 }
 
 
+/*
+* Load initials fb javascript sdk
+*/
 add_action( 'wp_footer', 'derweili_footer_script' );
 function derweili_footer_script() {
 
@@ -29,7 +32,10 @@ function derweili_footer_script() {
 				  version    : 'v2.6'
 				});
 
-				<?php do_action( 'derweili_mbot_after_fb_init' ) ?>
+				<?php
+					// load additional scripts for fb plugins (checkbox + send to messenger)
+					do_action( 'derweili_mbot_after_fb_init' );
+				?>
 
 			}
 
@@ -50,6 +56,10 @@ function derweili_checkbox_script_before_init() {
 
 }
 
+
+/*
+* Load checkbox script to footer of checkout page
+*/
 
 add_action( 'derweili_mbot_after_fb_init', 'derweili_checkbox_script');
 

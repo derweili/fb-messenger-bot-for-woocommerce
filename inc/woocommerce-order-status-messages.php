@@ -6,7 +6,7 @@ if (!defined('ABSPATH'))
 
 
 /**
-* handle order status updates
+* handle order status updates and customer note
 */
 class DERWEILI_STATUS_UPDATE_MESSAGES
 {
@@ -42,6 +42,8 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 
 	public function derweili_mbot_woocommerce_orderstatus_message_failed( $order_id ) {
 
+		derweili_mbot_log( 'Send order status notification for failed order.' );
+
 		$order = new Derweili_Mbot_Order( $order_id );
 		$order->send_text_message( __( 'Your order unfortunately failed.', 'mbot-woocommerce' ) );
 
@@ -49,6 +51,8 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 
 
 	public function derweili_mbot_woocommerce_orderstatus_message_hold( $order_id ) {
+
+		derweili_mbot_log( 'Send order status notification for status "on hold".' );
 
 		$order = new Derweili_Mbot_Order( $order_id );
 		$order->send_text_message( __( 'Your order is now on hold.', 'mbot-woocommerce' ) );
@@ -58,6 +62,8 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 
 	public function derweili_mbot_woocommerce_orderstatus_message_processing( $order_id ) {
 
+		derweili_mbot_log( 'Send order status notification for status "processing".' );
+
 		$order = new Derweili_Mbot_Order( $order_id );
 		$order->send_text_message( __( 'Your order is now processing', 'mbot-woocommerce' ) );
 
@@ -65,6 +71,8 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 
 
 	public function derweili_mbot_woocommerce_orderstatus_message_completed( $order_id ) {
+
+		derweili_mbot_log( 'Send order status notification for completed order.' );
 
 		$order = new Derweili_Mbot_Order( $order_id );
 		$order->send_text_message( __( 'Your order has been completed', 'mbot-woocommerce' ) );
@@ -74,6 +82,8 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 
 	public function derweili_mbot_woocommerce_orderstatus_message_refunded($order_id) {
 
+		derweili_mbot_log( 'Send order status notification for refunded order.' );
+
 		$order = new Derweili_Mbot_Order( $order_id );
 		$order->send_text_message( __( 'Your order has been refunded', 'mbot-woocommerce' ) );
 		
@@ -82,12 +92,11 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 
 	public function derweili_mbot_woocommerce_orderstatus_message_cancelled( $order_id ) {
 
-		//echo "<h1>test</h1>";
+		derweili_mbot_log( 'Send order status notification for cancelled order.' );
 
 		$order = new Derweili_Mbot_Order( $order_id );
 		$order->send_text_message( __( 'Your order has been cancelled', 'mbot-woocommerce' ) );
 		
-
 	}
 
 
@@ -96,6 +105,8 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		if ( isset( $_POST['post_id'] ) && isset( $_POST['note'] ) && isset( $_POST['note_type'] ) && 'customer' == $_POST['note_type'] ) {
 
 			if ( current_user_can( 'manage_woocommerce' ) ) { // check if user can manage orders
+
+				derweili_mbot_log( 'Send order note to customer.' );
 
 				$order = new Derweili_Mbot_Order( intval( $_POST['post_id'] ) );
 				$order->send_text_message( $_POST['note'] );
