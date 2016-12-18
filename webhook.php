@@ -16,14 +16,14 @@ derweili_mbot_log( "New Mbot Webhook Call" );
 
 $data = json_decode(file_get_contents("php://input"), true);
 $logdata = print_r($data['entry'], true);
-file_put_contents("log2.html", $logdata);
-file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
+//file_put_contents("log2.html", $logdata);
+//file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
 
     //Chef if something is received
     if (!empty($_REQUEST['hub_mode']) && $_REQUEST['hub_mode'] == 'subscribe' && $_REQUEST['hub_verify_token'] == mbot_woocommerce_verify_token) {
 
         // Webhook setup request
-        file_put_contents("log.html", $_REQUEST['hub_challenge']);
+        //file_put_contents("log.html", $_REQUEST['hub_challenge']);
         echo $_REQUEST['hub_challenge'];
 
         derweili_mbot_log( "Webhook setup request received" );
@@ -44,8 +44,8 @@ file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
         //Log latest connections    
             $logdata = print_r($data['entry'], true);
 
-            file_put_contents("log.html", '<hr>', FILE_APPEND);
-            file_put_contents("log.html", $logdata, FILE_APPEND);
+            //file_put_contents("log.html", '<hr>', FILE_APPEND);
+            //file_put_contents("log.html", $logdata, FILE_APPEND);
 
         }
 
@@ -105,8 +105,8 @@ file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
                         //send Order notification to messenger
                         //$bot->send(new WooOrderMessage( $receiver_id, $order ) );
 
-                        file_put_contents("log2.html", print_r( $sendmessage, true ), FILE_APPEND);
-                        file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
+                        //file_put_contents("log2.html", print_r( $sendmessage, true ), FILE_APPEND);
+                        //file_put_contents("log2.html", print_r( '<hr />', true ), FILE_APPEND);
 
                         $receipt_send_return = $mbot_Order->send_order();
                         derweili_mbot_log( "Order Sent" );
