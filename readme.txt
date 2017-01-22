@@ -4,7 +4,7 @@ Donate link: http://derweili.de/
 Tags: facebook, woocommerce, messenger
 Requires at least: 4.6
 Tested up to: 4.7
-Stable tag: 1.4
+Stable tag: 1.5
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -27,17 +27,6 @@ Following Messages are supported:
 2. Activate the plugin through the 'Plugins' screen in WordPress
 
 == Frequently Asked Questions ==
-
-= Why are the messenger checkbox and send to messenger button not displayed? =
-
-If your FB-App is in development mode only the FB-App Developers can see the Buttons.
-
-
-= Where can I report bugs? =
-
-Please open an issue on [Github](https://github.com/derweili/fb-messenger-bot-for-woocommerce, "Github") if you found a bug:
-https://github.com/derweili/fb-messenger-bot-for-woocommerce
-
 
 = How do I configure the plugin =
 
@@ -65,11 +54,27 @@ To Configure the plugin follow theese steps
 
 5. You have finished. Well done!
 
+= Why are the messenger checkbox and send to messenger button not displayed? =
+
+If your FB-App is in development mode (The review process hasn't finished) only the FB-App Developers can see the Buttons while they are logged in into their Facebook Account.
+
+= The Callback verification failed with HTTP Status Code 404 =
+
+Go to Settings > Permalink and resave the Permalink settings. After this, try again.
+
+= Where can I report bugs? =
+
+Please open an issue on [Github](https://github.com/derweili/fb-messenger-bot-for-woocommerce, "Github") if you found a bug:
+https://github.com/derweili/fb-messenger-bot-for-woocommerce
+
 == Screenshots ==
 
 1. **Plugin Settings Screen**
 
 == Changelog ==
+
+= 1.5 =
+* Bugfix: Domain Whitelisting failed while WordPress is installed in subdirectory
 
 = 1.1 =
 * Added: Error log for Webhook Calls when WP_DEBUG is enabled 
