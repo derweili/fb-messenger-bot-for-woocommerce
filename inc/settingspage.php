@@ -146,7 +146,7 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
 
         $post_params = array(
             'setting_type' => 'domain_whitelisting', 
-            'whitelisted_domains' => array( get_home_url() ), 
+            'whitelisted_domains' => array( get_home_url(), 'https://' . $_SERVER['HTTP_HOST'] ), 
             'domain_action_type' => $action_type, 
         );
 
@@ -187,12 +187,12 @@ class DERWEEILI_MBOT_WOOCOMMERCE_SETTINGS_PAGE {
 
                 curl_close ($ch);
 
-              $server_output_json = json_decode( $server_output );
+                $server_output_json = json_decode( $server_output );
 
 
-              $whitelisted_urls = $server_output_json->data[0]->whitelisted_domains;
+                $whitelisted_urls = $server_output_json->data[0]->whitelisted_domains;
 
-              if ( in_array( get_home_url(), $whitelisted_urls)) {
+              if ( in_array( get_home_url(), $whitelisted_urls) || in_array( 'https://' . $_SERVER['HTTP_HOST'] , $whitelisted_urls) ) {
                   // everythin is ok
               }else{
 

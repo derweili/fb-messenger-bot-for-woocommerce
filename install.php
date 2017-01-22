@@ -8,7 +8,7 @@ if (!defined('ABSPATH'))
 /**
 * Delete all plugin data on deinstallation
 */
-class DERWEILI_Mbot_Uninstall
+class DERWEILI_Mbot_Install
 {
 
 	
@@ -29,5 +29,5 @@ class DERWEILI_Mbot_Uninstall
 }
 
 function mbot_install_mbot() {
-	new DERWEILI_Mbot_Uninstall();
+	new DERWEILI_Mbot_Install();
 }

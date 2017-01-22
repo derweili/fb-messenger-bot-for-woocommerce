@@ -58,8 +58,8 @@ function derweili_checkbox_script_before_init() {
 
 
 /*
-* Load checkbox script to footer of checkout page
-*/
+ * Load checkbox script to footer of checkout page
+ */
 
 add_action( 'derweili_mbot_after_fb_init', 'derweili_checkbox_script');
 
@@ -85,6 +85,7 @@ FB.Event.subscribe('messenger_checkbox', function(e) {
     console.log("User clicked 'not you'");
   } else if (e.event == 'hidden') {
     console.log("Plugin was hidden");
+    jQuery("#derweili_mbot_checkout_field").hide();
   }
   
 });
