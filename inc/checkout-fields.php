@@ -64,7 +64,7 @@ class Derweili_Mbot_Checkout_Code
 		  ';
 
 
-		    echo '<div id="derweili_mbot_checkout_field"><h3>' . __('Contact Options') . '</h3><strong>Receive updates in Messenger</strong>' . $checkbox_plugin_code;
+		    echo '<div id="derweili_mbot_checkout_field"><h3>' . __( 'Contact Options', 'mbot-woocommerce' ) . '</h3><strong>' . __( 'Receive updates in Messenger', 'mbot-woocommerce' ) . '</strong>' . $checkbox_plugin_code;
 
 		    woocommerce_form_field( 'messenger_checkbox_user_ref', array(
 		        'type'          => 'text',
