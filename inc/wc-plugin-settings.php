@@ -22,7 +22,7 @@ class WC_Settings_My_Plugin extends WC_Settings_Page {
      * @return array
      */
     public function add_settings_tab( $settings_tabs ) {
-        $settings_tabs[$this->id] = __( 'Settings Demo Tab', 'woocommerce-settings-tab-demo' );
+        $settings_tabs[$this->id] = __( 'Messenger Bot', 'woocommerce-settings-tab-demo' );
         return $settings_tabs;
     }
 
