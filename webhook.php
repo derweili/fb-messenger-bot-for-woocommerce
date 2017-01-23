@@ -100,7 +100,7 @@ $logdata = print_r($data['entry'], true);
                         }*/
                         
                         //send text message to messenger
-                        $sendmessage = $mbot_Order->send_text_message( __('Thank you for your order, you will be immediately notified when your order status changes.', 'mbot-woocommerce') );
+                        $sendmessage = $mbot_Order->send_text_message( get_site_option( 'derweili_mbot_new_order_message' ) );
                         //$bot->send( new Der_Weili_Message( $receiver_id, __('Thank you for your order, you will be immediately notified when your order status changes.', 'mbot-woocommerce') ) );
                         //send Order notification to messenger
                         //$bot->send(new WooOrderMessage( $receiver_id, $order ) );

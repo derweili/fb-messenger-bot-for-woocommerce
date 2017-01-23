@@ -36,7 +36,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 	public function derweili_mbot_woocommerce_orderstatus_message_pending( $order_id ) {
 
 		$order = new Derweili_Mbot_Order( $order_id );
-		$order->send_text_message( __( 'Your order is now pendig.', 'mbot-woocommerce' ) );
+		$order->send_text_message( get_site_option( 'derweili_mbot_pending_order_message' ) );
 
 	}
 
@@ -45,7 +45,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		derweili_mbot_log( 'Send order status notification for failed order.' );
 
 		$order = new Derweili_Mbot_Order( $order_id );
-		$order->send_text_message( __( 'Your order unfortunately failed.', 'mbot-woocommerce' ) );
+		$order->send_text_message( get_site_option( 'derweili_mbot_failed_order_message' ) );
 
 	}
 
@@ -55,7 +55,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		derweili_mbot_log( 'Send order status notification for status "on hold".' );
 
 		$order = new Derweili_Mbot_Order( $order_id );
-		$order->send_text_message( __( 'Your order is now on hold.', 'mbot-woocommerce' ) );
+		$order->send_text_message( get_site_option( 'derweili_mbot_on_hold_order_message' ) );
 
 	}
 
@@ -65,7 +65,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		derweili_mbot_log( 'Send order status notification for status "processing".' );
 
 		$order = new Derweili_Mbot_Order( $order_id );
-		$order->send_text_message( __( 'Your order is now processing', 'mbot-woocommerce' ) );
+		$order->send_text_message( get_site_option( 'derweili_mbot_new_order_message' ) );
 
 	}	
 
@@ -75,7 +75,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		derweili_mbot_log( 'Send order status notification for completed order.' );
 
 		$order = new Derweili_Mbot_Order( $order_id );
-		$order->send_text_message( __( 'Your order has been completed', 'mbot-woocommerce' ) );
+		$order->send_text_message( get_site_option( 'derweili_mbot_completed_order_message' ) );
 
 	}
 
@@ -85,7 +85,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		derweili_mbot_log( 'Send order status notification for refunded order.' );
 
 		$order = new Derweili_Mbot_Order( $order_id );
-		$order->send_text_message( __( 'Your order has been refunded', 'mbot-woocommerce' ) );
+		$order->send_text_message( get_site_option( 'derweili_mbot_refunded_order_message' ) );
 		
 	}
 
@@ -95,7 +95,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		derweili_mbot_log( 'Send order status notification for cancelled order.' );
 
 		$order = new Derweili_Mbot_Order( $order_id );
-		$order->send_text_message( __( 'Your order has been cancelled', 'mbot-woocommerce' ) );
+		$order->send_text_message( get_site_option( 'derweili_mbot_cancelled_order_message' ) );
 		
 	}
 
