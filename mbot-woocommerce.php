@@ -130,7 +130,15 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 	 * @since 1.0.0
 	 */
 	public function load_text_domain() {
-	  load_plugin_textdomain( 'mbot-woocommerce', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
+	  //load_plugin_textdomain( 'mbot-woocommerce', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
+
+		$domain = 'mbot-woocommerce';
+		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
+		// wp-content/languages/plugin-name/plugin-name-de_DE.mo
+		load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' );
+		// wp-content/plugins/plugin-name/languages/plugin-name-de_DE.mo
+		load_plugin_textdomain( $domain, FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+		
 	}
 
 	public function inline_css() {
