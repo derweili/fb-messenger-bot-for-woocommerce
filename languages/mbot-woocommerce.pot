@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Messengerbot for WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Messengerbot for WooCommerce 1.9\n"
+"Project-Id-Version: Messengerbot for WooCommerce 1.11\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/messenger-bot-for-"
 "woocommerce\n"
-"POT-Creation-Date: 2017-01-24 09:50:06+00:00\n"
+"POT-Creation-Date: 2017-01-24 22:24:22+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,19 +38,19 @@ msgid "Your Callback URL is:"
 msgstr ""
 
 #: inc/settingspage.php:77 inc/wc-plugin-settings.php:157
-msgid "Page Tooken"
-msgstr ""
-
-#: inc/settingspage.php:83 inc/wc-plugin-settings.php:163
-msgid "Verify Token"
-msgstr ""
-
-#: inc/settingspage.php:89 inc/wc-plugin-settings.php:169
 msgid "Page ID"
 msgstr ""
 
-#: inc/settingspage.php:95 inc/wc-plugin-settings.php:175
+#: inc/settingspage.php:83 inc/wc-plugin-settings.php:163
 msgid "Messenger App ID"
+msgstr ""
+
+#: inc/settingspage.php:89 inc/wc-plugin-settings.php:169
+msgid "Page Tooken"
+msgstr ""
+
+#: inc/settingspage.php:95 inc/wc-plugin-settings.php:175
+msgid "Verify Token"
 msgstr ""
 
 #: inc/settingspage.php:113 inc/wc-plugin-settings.php:193
@@ -204,6 +204,12 @@ msgid ""
 "This is a paragraph describing the setting. Lorem ipsum yadda yadda yadda. "
 "Lorem ipsum yadda yadda yadda. Lorem ipsum yadda yadda yadda. Lorem ipsum "
 "yadda yadda yadda."
+msgstr ""
+
+#: inc/wc-plugin-settings.php:153
+msgid ""
+"Following URLs are currently whitelisted for the use of the messenger "
+"checkbox plugin: <br />"
 msgstr ""
 
 #: inc/woocommerce-thank-you.php:123

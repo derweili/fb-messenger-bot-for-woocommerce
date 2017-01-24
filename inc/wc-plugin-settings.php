@@ -56,57 +56,57 @@ class WC_Settings_My_Plugin extends WC_Settings_Page {
             case 'messages':
                 $settings = array(
                     'section_title' => array(
-                        'name'     => __( 'Messages', 'woocommerce-settings-tab-demo' ),
+                        'name'     => __( 'Messages', 'mbot-woocommmerce' ),
                         'type'     => 'title',
                         'desc'     => '',
                         'id'       => 'derweili_mbot_messages_title'
                     ),
                     'new_order_message' => array(
-                        'name' => __( 'New Order', 'woocommerce-settings-tab-demo' ),
+                        'name' => __( 'New Order', 'mbot-woocommmerce' ),
                         'type' => 'text',
-                        'desc' => __( 'This is the message the user will recieve when they placed the order.', 'woocommerce-settings-tab-demo' ),
+                        'desc' => __( 'This is the message the user will recieve when they placed the order.', 'mbot-woocommmerce' ),
                         'id'   => 'derweili_mbot_new_order_message'
                     ),
                     'pending_order_message' => array(
-                        'name' => __( 'Pending Order', 'woocommerce-settings-tab-demo' ),
+                        'name' => __( 'Pending Order', 'mbot-woocommmerce' ),
                         'type' => 'text',
-                        'desc' => __( 'This is the message the user will recieve when the order status changed to "pending".', 'woocommerce-settings-tab-demo' ),
+                        'desc' => __( 'This is the message the user will recieve when the order status changed to "pending".', 'mbot-woocommmerce' ),
                         'id'   => 'derweili_mbot_pending_order_message'
                     ),
                     'failed_order_message' => array(
-                        'name' => __( 'Failed Order', 'woocommerce-settings-tab-demo' ),
+                        'name' => __( 'Failed Order', 'mbot-woocommmerce' ),
                         'type' => 'text',
-                        'desc' => __( 'This is the message the user will recieve when the order failed.', 'woocommerce-settings-tab-demo' ),
+                        'desc' => __( 'This is the message the user will recieve when the order failed.', 'mbot-woocommmerce' ),
                         'id'   => 'derweili_mbot_failed_order_message'
                     ),
                     'on_hold_message' => array(
-                        'name' => __( 'On Hold', 'woocommerce-settings-tab-demo' ),
+                        'name' => __( 'On Hold', 'mbot-woocommmerce' ),
                         'type' => 'text',
-                        'desc' => __( 'This is the message the user will recieve when the order gets the status "on hold".', 'woocommerce-settings-tab-demo' ),
+                        'desc' => __( 'This is the message the user will recieve when the order gets the status "on hold".', 'mbot-woocommmerce' ),
                         'id'   => 'derweili_mbot_on_hold_order_message'
                     ),
                     'processing_message' => array(
-                        'name' => __( 'Processing', 'woocommerce-settings-tab-demo' ),
+                        'name' => __( 'Processing', 'mbot-woocommmerce' ),
                         'type' => 'text',
-                        'desc' => __( 'This is the message the user will recieve when the order gets the status "processing".', 'woocommerce-settings-tab-demo' ),
+                        'desc' => __( 'This is the message the user will recieve when the order gets the status "processing".', 'mbot-woocommmerce' ),
                         'id'   => 'derweili_mbot_processing_order_message'
                     ),
                     'completed_message' => array(
-                        'name' => __( 'Completed Order', 'woocommerce-settings-tab-demo' ),
+                        'name' => __( 'Completed Order', 'mbot-woocommmerce' ),
                         'type' => 'text',
-                        'desc' => __( 'This is the message the user will recieve when the order gets the status "completed".', 'woocommerce-settings-tab-demo' ),
+                        'desc' => __( 'This is the message the user will recieve when the order gets the status "completed".', 'mbot-woocommmerce' ),
                         'id'   => 'derweili_mbot_completed_order_message'
                     ),
                     'refunded_message' => array(
-                        'name' => __( 'Refunded Order', 'woocommerce-settings-tab-demo' ),
+                        'name' => __( 'Refunded Order', 'mbot-woocommmerce' ),
                         'type' => 'text',
-                        'desc' => __( 'This is the message the user will recieve when the order gets the status "refunded".', 'woocommerce-settings-tab-demo' ),
+                        'desc' => __( 'This is the message the user will recieve when the order gets the status "refunded".', 'mbot-woocommmerce' ),
                         'id'   => 'derweili_mbot_refunded_order_message'
                     ),
                     'cancelled_message' => array(
-                        'name' => __( 'Cancelled Order', 'woocommerce-settings-tab-demo' ),
+                        'name' => __( 'Cancelled Order', 'mbot-woocommmerce' ),
                         'type' => 'text',
-                        'desc' => __( 'This is the message the user will recieve when the order gets the status "cancelled".', 'woocommerce-settings-tab-demo' ),
+                        'desc' => __( 'This is the message the user will recieve when the order gets the status "cancelled".', 'mbot-woocommmerce' ),
                         'id'   => 'derweili_mbot_cancelled_order_message'
                     ),
                     'section_end' => array(
@@ -118,21 +118,21 @@ class WC_Settings_My_Plugin extends WC_Settings_Page {
             case 'section-2':
                 $settings = array(
                     'section_title' => array(
-                        'name'     => __( 'Section Two Title', 'woocommerce-settings-tab-demo' ),
+                        'name'     => __( 'Section Two Title', 'mbot-woocommmerce' ),
                         'type'     => 'title',
                         'desc'     => '',
                         'id'       => 'wc_settings_tab_demo_section_title'
                     ),
                     'title' => array(
-                        'name' => __( 'Section Two Title', 'woocommerce-settings-tab-demo' ),
+                        'name' => __( 'Section Two Title', 'mbot-woocommmerce' ),
                         'type' => 'text',
-                        'desc' => __( 'This is some helper text', 'woocommerce-settings-tab-demo' ),
+                        'desc' => __( 'This is some helper text', 'mbot-woocommmerce' ),
                         'id'   => 'wc_settings_tab_demo_title'
                     ),
                     'description' => array(
-                        'name' => __( 'Section Two Description', 'woocommerce-settings-tab-demo' ),
+                        'name' => __( 'Section Two Description', 'mbot-woocommmerce' ),
                         'type' => 'textarea',
-                        'desc' => __( 'This is a paragraph describing the setting. Lorem ipsum yadda yadda yadda. Lorem ipsum yadda yadda yadda. Lorem ipsum yadda yadda yadda. Lorem ipsum yadda yadda yadda.', 'woocommerce-settings-tab-demo' ),
+                        'desc' => __( 'This is a paragraph describing the setting. Lorem ipsum yadda yadda yadda. Lorem ipsum yadda yadda yadda. Lorem ipsum yadda yadda yadda. Lorem ipsum yadda yadda yadda.', 'mbot-woocommmerce' ),
                         'id'   => 'wc_settings_tab_demo_description'
                     ),
                     'section_end' => array(

@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Messengerbot for WooCommerce 1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/messenger-bot-for-"
 "woocommerce\n"
-"POT-Creation-Date: 2017-01-24 09:50:06+00:00\n"
-"PO-Revision-Date: 2017-01-24 10:50+0100\n"
+"POT-Creation-Date: 2017-01-24 22:24:22+00:00\n"
+"PO-Revision-Date: 2017-01-24 23:31+0100\n"
 "Last-Translator: Julian Weiland <jw@julian-weiland.de>\n"
 "Language-Team: \n"
 "Language: Deutsch\n"
@@ -40,20 +40,20 @@ msgid "Your Callback URL is:"
 msgstr "Deine Webhook URL lautet:"
 
 #: inc/settingspage.php:77 inc/wc-plugin-settings.php:157
-msgid "Page Tooken"
-msgstr "Seiten Token"
-
-#: inc/settingspage.php:83 inc/wc-plugin-settings.php:163
-msgid "Verify Token"
-msgstr "Verifizierungs Token"
-
-#: inc/settingspage.php:89 inc/wc-plugin-settings.php:169
 msgid "Page ID"
 msgstr "Seiten ID"
 
-#: inc/settingspage.php:95 inc/wc-plugin-settings.php:175
+#: inc/settingspage.php:83 inc/wc-plugin-settings.php:163
 msgid "Messenger App ID"
 msgstr "Messenger APP ID"
+
+#: inc/settingspage.php:89 inc/wc-plugin-settings.php:169
+msgid "Page Tooken"
+msgstr "Seiten Token"
+
+#: inc/settingspage.php:95 inc/wc-plugin-settings.php:175
+msgid "Verify Token"
+msgstr "Verifizierungs Token"
 
 #: inc/settingspage.php:113 inc/wc-plugin-settings.php:193
 msgid "Checkbox size"
@@ -114,83 +114,98 @@ msgstr "Facebook API Zugangsdaten"
 
 #: inc/wc-plugin-settings.php:38 inc/wc-plugin-settings.php:59
 msgid "Messages"
-msgstr ""
+msgstr "Nachrichten"
 
 #: inc/wc-plugin-settings.php:65
 msgid "New Order"
-msgstr ""
+msgstr "Neue Bestellung"
 
 #: inc/wc-plugin-settings.php:67
 msgid "This is the message the user will recieve when they placed the order."
 msgstr ""
+"Diese Nachricht wird versendet, sobald der Nutzer die Bestellung "
+"abgeschlossen hat."
 
 #: inc/wc-plugin-settings.php:71
 msgid "Pending Order"
-msgstr ""
+msgstr "Ausstehende Bestellung"
 
 #: inc/wc-plugin-settings.php:73
 msgid ""
 "This is the message the user will recieve when the order status changed to "
 "\"pending\"."
 msgstr ""
+"Diese Nachricht wird an den Kunden gesendet, sobald die Bestellung den "
+"Status \"Zahlung ausstehend\" erhält."
 
 #: inc/wc-plugin-settings.php:77
 msgid "Failed Order"
-msgstr ""
+msgstr "Fehlgeschlagende Bestellung"
 
 #: inc/wc-plugin-settings.php:79
 msgid "This is the message the user will recieve when the order failed."
 msgstr ""
+"Diese Nachricht wird an den Nutzer gesendet, sobald die Bestellung den "
+"Status \"Fehlgeschlagen\" erhält"
 
 #: inc/wc-plugin-settings.php:83
 msgid "On Hold"
-msgstr ""
+msgstr "Wartestellung"
 
 #: inc/wc-plugin-settings.php:85
 msgid ""
 "This is the message the user will recieve when the order gets the status "
 "\"on hold\"."
 msgstr ""
+"Diese Nachricht wird an den Nutze gesendet, sobald die Bestellung den Status "
+"\"Wartestellung\" erhält."
 
 #: inc/wc-plugin-settings.php:89
 msgid "Processing"
-msgstr ""
+msgstr "In Bearbeitung"
 
 #: inc/wc-plugin-settings.php:91
 msgid ""
 "This is the message the user will recieve when the order gets the status "
 "\"processing\"."
 msgstr ""
+"Diese Nachricht wird versendet, sobald die Bestellung den Status \"In "
+"Bearbeitung\" erhält"
 
 #: inc/wc-plugin-settings.php:95
 msgid "Completed Order"
-msgstr ""
+msgstr "Bestellung Fertiggestellt"
 
 #: inc/wc-plugin-settings.php:97
 msgid ""
 "This is the message the user will recieve when the order gets the status "
 "\"completed\"."
 msgstr ""
+"Diese Nachricht wird versendet, sobald die Bestellung fertiggestellt wurde"
 
 #: inc/wc-plugin-settings.php:101
 msgid "Refunded Order"
-msgstr ""
+msgstr "Rückerstattet"
 
 #: inc/wc-plugin-settings.php:103
 msgid ""
 "This is the message the user will recieve when the order gets the status "
 "\"refunded\"."
 msgstr ""
+"Diese Nachricht wird versendet, sobald die Bestellung den Status "
+"\"Rückerstattung\" erhält."
 
 #: inc/wc-plugin-settings.php:107
 msgid "Cancelled Order"
-msgstr ""
+msgstr "Stornierte Bestellung"
 
 #: inc/wc-plugin-settings.php:109
 msgid ""
 "This is the message the user will recieve when the order gets the status "
 "\"cancelled\"."
 msgstr ""
+"Diese Nachricht wird versendet, sobald die Bestellung den Status "
+"\"Stornierte Bestellung\" erhält."
 
 #: inc/wc-plugin-settings.php:121 inc/wc-plugin-settings.php:127
 msgid "Section Two Title"
@@ -210,6 +225,14 @@ msgid ""
 "Lorem ipsum yadda yadda yadda. Lorem ipsum yadda yadda yadda. Lorem ipsum "
 "yadda yadda yadda."
 msgstr ""
+
+#: inc/wc-plugin-settings.php:153
+msgid ""
+"Following URLs are currently whitelisted for the use of the messenger "
+"checkbox plugin: <br />"
+msgstr ""
+"Folgende URLs wurden aktuell für die Nutzung des Checkbox Plugins "
+"freigeschaltet:"
 
 #: inc/woocommerce-thank-you.php:123
 msgid "Get notified about Updates via Facebook Messenger"
