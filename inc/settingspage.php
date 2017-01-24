@@ -73,18 +73,6 @@ if ( 1 == 2 ){
                     'desc'     => __( 'Your Callback URL is:', 'mbot-woocommmerce' ) . ' <u>' . get_home_url() . '/mbot-callback-webhook/</u>' ,
                     'id'       => 'derweili_mbot_fb_credentials_title'
                 ),
-                'page_token' => array(
-                    'name' => __( 'Page Tooken', 'mbot-woocommmerce' ),
-                    'type' => 'text',
-                    'desc' => __( '', 'mbot-woocommmerce' ),
-                    'id'   => 'derweili_mbot_page_token'
-                ),
-                'verify_tooken' => array(
-                    'name' => __( 'Verify Token', 'mbot-woocommmerce' ),
-                    'type' => 'text',
-                    'desc' => __( '', 'mbot-woocommmerce' ),
-                    'id'   => 'derweili_mbot_verify_token'
-                ),
                 'Page_ID' => array(
                     'name' => __( 'Page ID', 'mbot-woocommmerce' ),
                     'type' => 'text',
@@ -96,6 +84,18 @@ if ( 1 == 2 ){
                     'type' => 'text',
                     'desc' => __( '', 'mbot-woocommmerce' ),
                     'id'   => 'derweili_mbot_messenger_app_id'
+                ),
+                'page_token' => array(
+                    'name' => __( 'Page Tooken', 'mbot-woocommmerce' ),
+                    'type' => 'text',
+                    'desc' => __( '', 'mbot-woocommmerce' ),
+                    'id'   => 'derweili_mbot_page_token'
+                ),
+                'verify_tooken' => array(
+                    'name' => __( 'Verify Token', 'mbot-woocommmerce' ),
+                    'type' => 'text',
+                    'desc' => __( '', 'mbot-woocommmerce' ),
+                    'id'   => 'derweili_mbot_verify_token'
                 ),
                /* 'checkbox-prechecked' => array(
                     'name'     => __( 'Precheck checkbox?', 'mbot-woocommmerce' ),

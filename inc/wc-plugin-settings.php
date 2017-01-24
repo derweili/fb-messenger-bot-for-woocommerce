@@ -150,20 +150,8 @@ class WC_Settings_My_Plugin extends WC_Settings_Page {
                         'facebook_api_credentials_title' => array(
                         'name'     => __( 'Facebook API Credentials', 'mbot-woocommmerce' ),
                         'type'     => 'title',
-                        'desc'     => __( 'Your Callback URL is:', 'mbot-woocommmerce' ) . ' <u>' . get_home_url() . '/mbot-callback-webhook/</u>' ,
+                        'desc'     => __( 'Your Callback URL is:', 'mbot-woocommmerce' ) . ' <u>' . get_home_url() . '/mbot-callback-webhook/</u>' . '<br />' .  __( 'Following URLs are currently whitelisted for the use of the messenger checkbox plugin: <br />', 'mbot-woocommmerce' ) . derweili_get_whitelisted_domains() ,
                         'id'       => 'derweili_mbot_fb_credentials_title'
-                    ),
-                    'page_token' => array(
-                        'name' => __( 'Page Tooken', 'mbot-woocommmerce' ),
-                        'type' => 'text',
-                        'desc' => __( '', 'mbot-woocommmerce' ),
-                        'id'   => 'derweili_mbot_page_token'
-                    ),
-                    'verify_tooken' => array(
-                        'name' => __( 'Verify Token', 'mbot-woocommmerce' ),
-                        'type' => 'text',
-                        'desc' => __( '', 'mbot-woocommmerce' ),
-                        'id'   => 'derweili_mbot_verify_token'
                     ),
                     'Page_ID' => array(
                         'name' => __( 'Page ID', 'mbot-woocommmerce' ),
@@ -176,6 +164,18 @@ class WC_Settings_My_Plugin extends WC_Settings_Page {
                         'type' => 'text',
                         'desc' => __( '', 'mbot-woocommmerce' ),
                         'id'   => 'derweili_mbot_messenger_app_id'
+                    ),
+                    'page_token' => array(
+                        'name' => __( 'Page Tooken', 'mbot-woocommmerce' ),
+                        'type' => 'text',
+                        'desc' => __( '', 'mbot-woocommmerce' ),
+                        'id'   => 'derweili_mbot_page_token'
+                    ),
+                    'verify_tooken' => array(
+                        'name' => __( 'Verify Token', 'mbot-woocommmerce' ),
+                        'type' => 'text',
+                        'desc' => __( '', 'mbot-woocommmerce' ),
+                        'id'   => 'derweili_mbot_verify_token'
                     ),
                    /* 'checkbox-prechecked' => array(
                         'name'     => __( 'Precheck checkbox?', 'mbot-woocommmerce' ),

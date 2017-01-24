@@ -13,7 +13,7 @@ class Derweili_Mbot_Checkout_Code
 	private $is_checkout_page = false;
 
 	private $checkbox_prechecked = false;
-	private $checkbox_allow_login = false;
+	private $checkbox_allow_login = "true";
 	private $checkbox_size = 'large';
 
 	

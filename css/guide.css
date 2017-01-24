@@ -1,0 +1,25 @@
+.qtip-bootstrap{
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	border-radius: 0;
+}
+
+#mbot_settings_tutorial_button{
+	position: absolute;
+	top: 150px;
+	right: 50px;
+}
+
+@media (max-width: 780px) {
+	#mbot_settings_tutorial_button{
+		position: fixed;
+		top: auto;
+		bottom: 10px;
+		width: calc( 100% - 20px );
+		right: auto;
+		text-align: center;
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+}
