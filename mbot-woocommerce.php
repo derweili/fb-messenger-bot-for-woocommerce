@@ -4,7 +4,7 @@
  * Plugin Name:       Messengerbot for WooCommerce
  * Plugin URI:        http://www.derweili.de
  * Description:       Stay in contact with you customers via Facebook Messenger. Send them notifications when the order status changes.
- * Version:           1.9
+ * Version:           1.10
  * Author:            derweili
  * Author URI:        http://www.derweili.de/
  * License:           GNU General Public License v3.0
@@ -138,7 +138,7 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . $domain . '/' . $domain . '-' . $locale . '.mo' );
 		// wp-content/plugins/plugin-name/languages/plugin-name-de_DE.mo
 		load_plugin_textdomain( $domain, FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
-		
+
 	}
 
 	public function inline_css() {
