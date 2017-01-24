@@ -1,98 +1,213 @@
-# Copyright (C) 2016 Messengerbot for WooCommerce
+# Copyright (C) 2017 Messengerbot for WooCommerce
 # This file is distributed under the same license as the Messengerbot for WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Messengerbot for WooCommerce 1.1\n"
+"Project-Id-Version: Messengerbot for WooCommerce 1.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/messenger-bot-for-"
 "woocommerce\n"
-"POT-Creation-Date: 2016-12-13 22:02:10+00:00\n"
+"POT-Creation-Date: 2017-01-24 09:50:06+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: inc/checkout-fields.php:68
+#: inc/checkout-fields.php:67
 msgid "Contact Options"
 msgstr ""
 
-#: inc/checkout-fields.php:74 inc/checkout-fields.php:80
+#: inc/checkout-fields.php:67
+msgid "Receive updates in Messenger"
+msgstr ""
+
+#: inc/checkout-fields.php:73 inc/checkout-fields.php:79
 msgid "Enter something"
 msgstr ""
 
-#: inc/settingspage.php:39
+#: inc/settingspage.php:40 inc/wc-plugin-settings.php:25
 msgid "Messenger Bot"
 msgstr ""
 
-#: inc/settingspage.php:70
+#: inc/settingspage.php:71 inc/wc-plugin-settings.php:151
 msgid "Facebook API Credentials"
 msgstr ""
 
-#: inc/settingspage.php:72
+#: inc/settingspage.php:73 inc/wc-plugin-settings.php:153
 msgid "Your Callback URL is:"
 msgstr ""
 
-#: inc/settingspage.php:76
+#: inc/settingspage.php:77 inc/wc-plugin-settings.php:157
 msgid "Page Tooken"
 msgstr ""
 
-#: inc/settingspage.php:82
+#: inc/settingspage.php:83 inc/wc-plugin-settings.php:163
 msgid "Verify Token"
 msgstr ""
 
-#: inc/settingspage.php:88
+#: inc/settingspage.php:89 inc/wc-plugin-settings.php:169
 msgid "Page ID"
 msgstr ""
 
-#: inc/settingspage.php:94
+#: inc/settingspage.php:95 inc/wc-plugin-settings.php:175
 msgid "Messenger App ID"
 msgstr ""
 
-#: inc/settingspage.php:112
+#: inc/settingspage.php:113 inc/wc-plugin-settings.php:193
 msgid "Checkbox size"
 msgstr ""
 
-#: inc/settingspage.php:124
+#: inc/settingspage.php:125 inc/wc-plugin-settings.php:205
 msgid "Send to Messenger Button color"
 msgstr ""
 
-#: inc/woocommerce-order-status-messages.php:39
-msgid "Your order is now pendig."
+#: inc/settingspage.php:153
+msgid "Nachrichten"
 msgstr ""
 
-#: inc/woocommerce-order-status-messages.php:46
-msgid "Your order unfortunately failed."
+#: inc/settingspage.php:154
+msgid "testsection"
 msgstr ""
 
-#: inc/woocommerce-order-status-messages.php:54
-msgid "Your order is now on hold."
-msgstr ""
-
-#: inc/woocommerce-order-status-messages.php:62
-msgid "Your order is now processing"
-msgstr ""
-
-#: inc/woocommerce-order-status-messages.php:70
-msgid "Your order has been completed"
-msgstr ""
-
-#: inc/woocommerce-order-status-messages.php:78
-msgid "Your order has been refunded"
-msgstr ""
-
-#: inc/woocommerce-order-status-messages.php:88
-msgid "Your order has been cancelled"
-msgstr ""
-
-#: inc/woocommerce-thank-you.php:116
-msgid "Get notified about Updates via Facebook Messenger"
-msgstr ""
-
-#: webhook.php:85
+#: inc/update.php:57
 msgid ""
 "Thank you for your order, you will be immediately notified when your order "
 "status changes."
+msgstr ""
+
+#: inc/update.php:58
+msgid "Your order is now pendig."
+msgstr ""
+
+#: inc/update.php:59
+msgid "Your order unfortunately failed."
+msgstr ""
+
+#: inc/update.php:60
+msgid "Your order is now on hold."
+msgstr ""
+
+#: inc/update.php:61
+msgid "Your order is now processing"
+msgstr ""
+
+#: inc/update.php:62
+msgid "Your order has been completed"
+msgstr ""
+
+#: inc/update.php:63
+msgid "Your order has been refunded"
+msgstr ""
+
+#: inc/update.php:64
+msgid "Your order has been cancelled"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:37
+msgid "API Credentials"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:38 inc/wc-plugin-settings.php:59
+msgid "Messages"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:65
+msgid "New Order"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:67
+msgid "This is the message the user will recieve when they placed the order."
+msgstr ""
+
+#: inc/wc-plugin-settings.php:71
+msgid "Pending Order"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:73
+msgid ""
+"This is the message the user will recieve when the order status changed to "
+"\"pending\"."
+msgstr ""
+
+#: inc/wc-plugin-settings.php:77
+msgid "Failed Order"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:79
+msgid "This is the message the user will recieve when the order failed."
+msgstr ""
+
+#: inc/wc-plugin-settings.php:83
+msgid "On Hold"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:85
+msgid ""
+"This is the message the user will recieve when the order gets the status "
+"\"on hold\"."
+msgstr ""
+
+#: inc/wc-plugin-settings.php:89
+msgid "Processing"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:91
+msgid ""
+"This is the message the user will recieve when the order gets the status "
+"\"processing\"."
+msgstr ""
+
+#: inc/wc-plugin-settings.php:95
+msgid "Completed Order"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:97
+msgid ""
+"This is the message the user will recieve when the order gets the status "
+"\"completed\"."
+msgstr ""
+
+#: inc/wc-plugin-settings.php:101
+msgid "Refunded Order"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:103
+msgid ""
+"This is the message the user will recieve when the order gets the status "
+"\"refunded\"."
+msgstr ""
+
+#: inc/wc-plugin-settings.php:107
+msgid "Cancelled Order"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:109
+msgid ""
+"This is the message the user will recieve when the order gets the status "
+"\"cancelled\"."
+msgstr ""
+
+#: inc/wc-plugin-settings.php:121 inc/wc-plugin-settings.php:127
+msgid "Section Two Title"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:129
+msgid "This is some helper text"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:133
+msgid "Section Two Description"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:135
+msgid ""
+"This is a paragraph describing the setting. Lorem ipsum yadda yadda yadda. "
+"Lorem ipsum yadda yadda yadda. Lorem ipsum yadda yadda yadda. Lorem ipsum "
+"yadda yadda yadda."
+msgstr ""
+
+#: inc/woocommerce-thank-you.php:123
+msgid "Get notified about Updates via Facebook Messenger"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
