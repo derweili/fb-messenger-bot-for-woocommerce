@@ -4,7 +4,7 @@ Donate link: http://derweili.de/
 Tags: facebook, woocommerce, messenger
 Requires at least: 4.6
 Tested up to: 4.7
-Stable tag: 1.12
+Stable tag: 1.13
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -76,6 +76,9 @@ https://github.com/derweili/fb-messenger-bot-for-woocommerce
 1. **Plugin Settings Screen**
 
 == Changelog ==
+
+= 1.13 =
+* Feature: The FB Plugins now Language from the WordPress Settings
 
 = 1.11 =
 * Feature: Settings page refactored
