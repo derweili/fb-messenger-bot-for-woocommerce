@@ -9,7 +9,7 @@
  * Author URI:        http://www.derweili.de/
  * License:           GNU General Public License v3.0
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
- * Domain Path:       /mbot-for-woocommerce/languages/
+ * Domain Path:       /languages/
  * Text Domain:		  mbot-woocommerce
  * GitHub Plugin URI: https://github.com/derweili/fb-messenger-bot-for-woocommerce
  *
