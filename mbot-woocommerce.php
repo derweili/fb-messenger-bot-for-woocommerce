@@ -81,7 +81,17 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 
 	// function to check if credentials are stored and available
 	private function credentials_not_empty() {
-		if ( !empty( mbot_woocommerce_token ) && !empty( mbot_woocommerce_verify_token ) && !empty( mbot_woocommerce_app_id ) && !empty( mbot_woocommerce_page_id ) ) return true;
+		if ( !empty( mbot_woocommerce_token ) && !empty( mbot_woocommerce_verify_token ) && !empty( mbot_woocommerce_app_id ) && !empty( mbot_woocommerce_page_id ) ){
+
+			define( 'mbot_credentials_defined', true);
+
+			return true;
+		}else{
+
+			define( 'mbot_credentials_defined', false);
+
+			return false;
+		}
 	}
 
 
@@ -108,6 +118,7 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		include('inc/settingspage.php');
 		include('inc/domain-whitelisting.php');
 		include('inc/update.php');
+		include('inc/guide.php');
 		
 
 	}
