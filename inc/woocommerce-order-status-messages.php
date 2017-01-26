@@ -79,7 +79,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 
 		$shipping = new Derweili_Order_Shipping_Handler( $order_id );
 		if ( $shipping->has_shipping() ) {
-			$order->send_text_message( get_site_option( $shipping->get_tracking_url() ) );
+			$order->send_text_message( $shipping->get_tracking_url() );
 		}
 
 	}
