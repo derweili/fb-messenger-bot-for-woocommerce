@@ -84,7 +84,7 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 					'buttons' => [
 						new pimax\Messages\MessageButton(
 							pimax\Messages\MessageButton::TYPE_WEB,
-							'Tracking',
+							__( 'View Tracking', 'mbot-woocommmerce' ),
 							$shipping->get_tracking_url()
 						)
 						/*new MessageButton(MessageButton::TYPE_POSTBACK, 'Second button'),
