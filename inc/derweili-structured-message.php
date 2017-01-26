@@ -10,7 +10,7 @@ if (!defined('ABSPATH'))
  *
  * @package pimax\Messages
  */
-class Der_Weili_Message extends pimax\Messages\StructuredMessage
+class Der_Weili_Structured_Message extends pimax\Messages\StructuredMessage
 {
 
     protected $get_data_return = array();
