@@ -75,11 +75,25 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		derweili_mbot_log( 'Send order status notification for completed order.' );
 
 		$order = new Derweili_Mbot_Order( $order_id );
-		$order->send_text_message( get_site_option( 'derweili_mbot_completed_order_message' ) );
 
 		$shipping = new Derweili_Order_Shipping_Handler( $order_id );
 		if ( $shipping->has_shipping() ) {
-			$order->send_text_message( $shipping->get_tracking_url() );
+			$order->send_structured_message(
+				[
+					'text' => get_site_option( 'derweili_mbot_completed_order_message' ),
+					'buttons' => [
+						new pimax\Messages\MessageButton(
+							pimax\Messages\MessageButton::TYPE_WEB,
+							'Tracking',
+							$shipping->get_tracking_url()
+						)
+						/*new MessageButton(MessageButton::TYPE_POSTBACK, 'Second button'),
+						new MessageButton(MessageButton::TYPE_POSTBACK, 'Third button')*/
+					]
+				]
+			);
+		}else{
+			$order->send_text_message( get_site_option( 'derweili_mbot_completed_order_message' ) );
 		}
 
 	}

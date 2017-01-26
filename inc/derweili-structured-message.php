@@ -24,7 +24,7 @@ class Der_Weili_Structured_Message extends pimax\Messages\StructuredMessage
      * @param string $type
      * @param array  $data
      */
-    public function __construct($recipient, $type, $data)
+    public function __construct($recipient, $type, $data, $is_reference)
     {
 
         if( $is_reference ) $this->recipient_type = 'user_ref';
