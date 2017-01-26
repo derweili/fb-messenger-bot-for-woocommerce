@@ -43,7 +43,6 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		add_action( 'init', array( &$this, 'load_text_domain' ) );
 		add_action( 'wp_head', array( &$this, 'inline_css' ) );
 		register_activation_hook( dirname( __FILE__ ) . '/install.php', 'mbot_install_mbot' );
-		add_filter( 'woocommerce_get_settings_pages', array( &$this, 'load_wc_settings' ) ); // Add Settings Page
 
 	}
 
@@ -119,6 +118,8 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		include('inc/domain-whitelisting.php');
 		include('inc/update.php');
 		include('inc/guide.php');
+
+		add_filter( 'woocommerce_get_settings_pages', array( &$this, 'load_wc_settings' ) ); // Add Settings Page
 		
 
 	}
