@@ -61,9 +61,14 @@ class Der_Weili_Message extends pimax\Messages\Message
                 'id' => $this->recipient
             ];
         }*/
-        $this->get_data_return['recipient'] = [
+
+        /*$this->get_data_return['recipient'] = [
             $this->$recipient_type => $this->recipient
-        ];
+        ];*/
+
+        $this->get_data_return['recipient'] = array();
+        $this->get_data_return['recipient'][$this->$recipient_type] = $this->recipient;
+
 
         //var_dump( $this->get_data_return );
 
