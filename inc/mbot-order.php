@@ -127,7 +127,7 @@ class Derweili_Mbot_Order
 	public function send_structured_message( $data ) {
 		derweili_mbot_log( 'send structured_message' );
 
-		return $this->$bot->send(
+		return $this->bot->send(
 			new Der_Weili_Structured_Message(
 				$this->user_id,
 				Der_Weili_Structured_Message::TYPE_BUTTON,
