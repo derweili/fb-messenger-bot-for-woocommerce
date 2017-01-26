@@ -74,7 +74,7 @@ class Derweili_Order_Shipping_Handler
 
 	}
 
-	private function get_tracking_url() {
+	public function get_tracking_url() {
 
 		$this->get_shipping_details();
 
