@@ -27,7 +27,7 @@ class Derweili_Mbot_Order
 	
 		$this->order_id = $order_id;
 
-		var_dump($this->order_id);
+		//var_dump($this->order_id);
 
 		$this->get_order();
 		$this->get_user_id();
