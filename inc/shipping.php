@@ -66,9 +66,9 @@ class Derweili_Order_Shipping_Handler
 
 	private function get_aftership_details() {
 
-		$this->tracking_code = get_post_meta( $this->order_id, '_aftership_tracking_number', true )
-		$this->tracking_provider_name = get_post_meta( $this->order_id, '_aftership_tracking_provider_name', true )
-		$this->tracking_provider = get_post_meta( $this->order_id, '_aftership_tracking_provider', true )
+		$this->tracking_code = get_post_meta( $this->order_id, '_aftership_tracking_number', true );
+		$this->tracking_provider_name = get_post_meta( $this->order_id, '_aftership_tracking_provider_name', true );
+		$this->tracking_provider = get_post_meta( $this->order_id, '_aftership_tracking_provider', true );
 		
 		$this->tracking_url = "https://track.aftership.com/" . $this->tracking_provider . "/" . $this->tracking_code;
 
