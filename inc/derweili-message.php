@@ -36,7 +36,7 @@ class Der_Weili_Message extends pimax\Messages\Message
         $this->recipient = $recipient;
         $this->text = $text;
         $this->is_reference = $is_reference;
-        if( $is_reference ) $this->$recipient_type = 'user_ref';
+        if( $is_reference ) $this->recipient_type = 'user_ref';
         var_dump( $is_reference );
 
     }
@@ -67,7 +67,7 @@ class Der_Weili_Message extends pimax\Messages\Message
         ];*/
 
         $this->get_data_return['recipient'] = array();
-        $this->get_data_return['recipient'][$this->$recipient_type] = $this->recipient;
+        $this->get_data_return['recipient'][$this->recipient_type] = $this->recipient;
 
 
         //var_dump( $this->get_data_return );
