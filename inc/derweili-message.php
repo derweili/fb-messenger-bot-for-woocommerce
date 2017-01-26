@@ -23,6 +23,8 @@ class Der_Weili_Message extends pimax\Messages\Message
      */
     protected $get_data_return = array();
 
+    protected $recipient_type = 'id';
+
     /**
      * Message constructor.
      *
@@ -34,6 +36,7 @@ class Der_Weili_Message extends pimax\Messages\Message
         $this->recipient = $recipient;
         $this->text = $text;
         $this->is_reference = $is_reference;
+        if( $is_reference ) $this->$recipient_type = 'user_ref';
         var_dump( $is_reference );
 
     }
@@ -49,7 +52,7 @@ class Der_Weili_Message extends pimax\Messages\Message
                 'text' => $this->text
             ];
 
-        if ( $this->is_reference ) {
+        /*if ( $this->is_reference ) {
             $this->get_data_return['recipient'] = [
                 'user_ref' => $this->recipient
             ];
@@ -57,7 +60,10 @@ class Der_Weili_Message extends pimax\Messages\Message
             $this->get_data_return['recipient'] = [
                 'id' => $this->recipient
             ];
-        }
+        }*/
+        $this->get_data_return['recipient'] = [
+            $this->$recipient_type => $this->recipient
+        ];
 
         //var_dump( $this->get_data_return );
 

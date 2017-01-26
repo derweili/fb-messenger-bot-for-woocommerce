@@ -16,12 +16,15 @@ class WooOrderMessage extends pimax\Messages\StructuredMessage {
      */
     protected $get_data_return = array();
 
+    protected $recipient_type = 'id';
+
 
 	public function __construct( $recipient, $order, $is_reference = false )
     {
         $this->recipient = $recipient;
         $this->type = "receipt";
         $this->is_reference = $is_reference;
+        if( $is_reference ) $this->$recipient_type = 'user_ref';
 
 
         $this->recipient_name = $order->get_formatted_shipping_full_name();
@@ -156,7 +159,7 @@ class WooOrderMessage extends pimax\Messages\StructuredMessage {
 
         $this->get_data_return['message'] = $result;
 
-        if ( $this->is_reference ) {
+        /*if ( $this->is_reference ) {
             $this->get_data_return['recipient'] = [
                 'user_ref' => $this->recipient
             ];
@@ -164,7 +167,10 @@ class WooOrderMessage extends pimax\Messages\StructuredMessage {
             $this->get_data_return['recipient'] = [
                 'id' => $this->recipient
             ];
-        }
+        }*/
+        $this->get_data_return['recipient'] = [
+            $this->$recipient_type => $this->recipient
+        ];
 
         return $this->get_data_return;
         
