@@ -133,7 +133,7 @@ class Derweili_Mbot_Order
 				Der_Weili_Structured_Message::TYPE_BUTTON,
 				$data,
 				$this->is_reference
-    		),
+    		)
 		);
 		/*derweili_mbot_log( new WooOrderMessage( $this->user_id, $this->order, $this->is_reference ) );
 		return $this->bot->send(new WooOrderMessage( $this->user_id, $this->order, $this->is_reference ) );*/
