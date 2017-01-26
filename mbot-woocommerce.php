@@ -100,11 +100,13 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		include('inc/error-log.php');
 		include('inc/WooOrderMessage.php');
 		include('inc/derweili-message.php');
+		include('inc/derweili-structured-message.php');
 		include('inc/woocommerce-thank-you.php');
 		include('inc/filter-functions.php');
 		include('inc/checkout-fields.php');
 		include('inc/mbot-order.php');
 		include('inc/footer-script.php');
+		include('inc/shipping.php');
 
 		include('inc/webhook-setup.php');
 		include('webhook.php');

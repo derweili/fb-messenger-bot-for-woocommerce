@@ -77,6 +77,11 @@ class DERWEILI_STATUS_UPDATE_MESSAGES
 		$order = new Derweili_Mbot_Order( $order_id );
 		$order->send_text_message( get_site_option( 'derweili_mbot_completed_order_message' ) );
 
+		$shipping = new Derweili_Order_Shipping_Handler( $order_id );
+		if ( $shipping->has_shipping() ) {
+			$order->send_text_message( get_site_option( $shipping->get_tracking_url() ) );
+		}
+
 	}
 
 

@@ -37,7 +37,7 @@ class Der_Weili_Message extends pimax\Messages\Message
         $this->text = $text;
         $this->is_reference = $is_reference;
         if( $is_reference ) $this->recipient_type = 'user_ref';
-        var_dump( $is_reference );
+        //var_dump( $is_reference );
 
     }
 
