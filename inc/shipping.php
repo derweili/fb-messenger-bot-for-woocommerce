@@ -40,6 +40,10 @@ class Derweili_Order_Shipping_Handler
 			
 			$this->tracking_plugin = "aftership";
 
+		}elseif ( ! empty( get_post_meta( $this->order_id, '_tracking_provider', true ) ) ) {
+			
+			$this->tracking_plugin = "WooCommerceShipmentTracking";
+
 		}
 
 	}
@@ -56,7 +60,12 @@ class Derweili_Order_Shipping_Handler
 				$this->get_aftership_details();
 
 				break;
-			
+			case 'WooCommerceShipmentTracking':
+				
+				$this->get_woocommerce_shipment_tracking();
+
+				break;
+
 			default:
 				# code...
 				break;
@@ -71,6 +80,15 @@ class Derweili_Order_Shipping_Handler
 		$this->tracking_provider = get_post_meta( $this->order_id, '_aftership_tracking_provider', true );
 		
 		$this->tracking_url = "https://track.aftership.com/" . $this->tracking_provider . "/" . $this->tracking_code;
+
+	}
+
+	private function get_woocommerce_shipment_tracking() {
+
+		$this->tracking_code = get_post_meta( $this->order_id, '_tracking_number', true );
+		$this->tracking_provider_name = get_post_meta( $this->order_id, '_tracking_provider', true );
+		
+		$this->tracking_url = get_post_meta( $this->order_id, '_custom_tracking_link', true );
 
 	}
 
