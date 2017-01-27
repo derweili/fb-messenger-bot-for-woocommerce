@@ -36,13 +36,17 @@ class Derweili_Order_Shipping_Handler
 
 	private function get_shipping_type() {
 
-		if ( ! empty( get_post_meta( $this->order_id, '_aftership_tracking_provider', true ) ) ) {
+		if ( ! empty( get_post_meta( $this->order_id, '_aftership_tracking_number', true ) ) ) {
 			
 			$this->tracking_plugin = "aftership";
 
-		}elseif ( ! empty( get_post_meta( $this->order_id, '_tracking_provider', true ) ) ) {
+		}elseif ( ! empty( get_post_meta( $this->order_id, '_tracking_number', true ) ) ) {
 			
 			$this->tracking_plugin = "WooCommerceShipmentTracking";
+
+		}elseif ( ! empty( get_post_meta( $this->order_id, '_wcst_order_trackno', true ) ) ) {
+			
+			$this->tracking_plugin = "wcst";
 
 		}
 
@@ -63,6 +67,11 @@ class Derweili_Order_Shipping_Handler
 			case 'WooCommerceShipmentTracking':
 				
 				$this->get_woocommerce_shipment_tracking();
+
+				break;
+			case 'wcst':
+				
+				$this->get_wcst_tracking();
 
 				break;
 
@@ -89,6 +98,15 @@ class Derweili_Order_Shipping_Handler
 		$this->tracking_provider_name = get_post_meta( $this->order_id, '_tracking_provider', true );
 		
 		$this->tracking_url = get_post_meta( $this->order_id, '_custom_tracking_link', true );
+
+	}
+
+	private function get_wcst_tracking() {
+
+		$this->tracking_code = get_post_meta( $this->order_id, '_wcst_order_trackno', true );
+		$this->tracking_provider_name = get_post_meta( $this->order_id, '_wcst_order_trackname', true );
+		
+		$this->tracking_url = get_post_meta( $this->order_id, '_wcst_order_track_http_url', true );
 
 	}
 
