@@ -46,12 +46,21 @@ class WooOrderMessage extends pimax\Messages\StructuredMessage {
                 $image_url = get_the_post_thumbnail_url( $product_id, "full" );
             }
 
+            $item_price = $item['line_subtotal'];
+
+            // Check if Store shows tax in card
+            if( 'incl' == get_option( 'woocommerce_tax_display_cart', $default ) ){
+
+                $item_price = $item_price + $item['line_subtotal_tax']; // add tax to line items when store displays tax in cart
+
+            };
+
         	$this->elements[] = new pimax\Messages\MessageReceiptElement(
 	        		$item['name'], //headline
 	        		"", //subline
 	        		$image_url, //image url
 	        		$item['qty'], //quantity
-	        		number_format( $item['line_subtotal'], 2 ), //price
+	        		number_format( $item_price, 2 ), //price
 	        		$order->order_currency //currency
         		);
         }
