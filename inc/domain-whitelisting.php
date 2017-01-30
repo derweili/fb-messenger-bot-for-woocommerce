@@ -121,8 +121,11 @@ function derweili_get_whitelisted_domains(){
     $whitelisting = new Derweili_Mbot_Domain_Whitelisting();
 
     $output = '';
-    foreach ( $whitelisting->get_whitelisted_domains() as $domain) {
-        $output .= $domain . ' ';
+    $whitelisted_domains = $whitelisting->get_whitelisted_domains();
+    if ( is_array( $whitelisted_domains ) ) {
+        foreach ( $whitelisted_domains as $domain) {
+            $output .= $domain . ' ';
+        }
     }
     return $output;
 };
