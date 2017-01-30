@@ -4,7 +4,7 @@ Donate link: http://derweili.de/
 Tags: facebook, woocommerce, messenger
 Requires at least: 4.6
 Tested up to: 4.7
-Stable tag: 1.14
+Stable tag: 1.15
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,7 @@ Following Messages are supported:
 *	[Order Receipts](https://developers.facebook.com/docs/messenger-platform/send-api-reference/receipt-template, "Facebook Documentation")
 *	Order status changes
 *	Customer Order notes
+*	Tracking information for [AfterShip Tracking Plugin](https://de.wordpress.org/plugins/aftership-woocommerce-tracking/) and "WooCommerce Shipping Tracking"
 
 
 == Installation ==
@@ -60,7 +61,7 @@ If your FB-App is in development mode (The review process hasn't finished) only 
 
 = I still can't see the checkbox and send to Messenger Button =
 
-Please go to the Plugin settings and resave the API Credentials. In most cases this solves the problem.
+Please go to the Plugin settings and resave the API Credentials. In most cases this solves the problem. Check if your url is show in the list of whitelisted domains (on the top of the plugin settings page)
 
 = The Callback verification failed with HTTP Status Code 404 =
 
@@ -77,8 +78,13 @@ https://github.com/derweili/fb-messenger-bot-for-woocommerce
 
 == Changelog ==
 
+= 1.15 =
+* Support for [AfterShip Tracking Plugin](https://de.wordpress.org/plugins/aftership-woocommerce-tracking/) added
+* Support for WooCommerce Shipping Tracking added
+* tax is now added to items when tax_display_cart option is set to „incl“
+
 = 1.13 =
-* Feature: The FB Plugins now Language from the WordPress Settings
+* Feature: The Facebook Plugins are now loaded in the correct language (if available)
 
 = 1.11 =
 * Feature: Settings page refactored
