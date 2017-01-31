@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Messengerbot for WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Messengerbot for WooCommerce 1.11\n"
+"Project-Id-Version: Messengerbot for WooCommerce 1.17\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/messenger-bot-for-"
 "woocommerce\n"
-"POT-Creation-Date: 2017-01-24 22:24:22+00:00\n"
+"POT-Creation-Date: 2017-01-31 19:19:51+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,51 +13,52 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: inc/checkout-fields.php:67
+#: inc/checkout-fields.php:64
 msgid "Contact Options"
 msgstr ""
 
-#: inc/checkout-fields.php:67
+#: inc/checkout-fields.php:64
 msgid "Receive updates in Messenger"
 msgstr ""
 
-#: inc/checkout-fields.php:73 inc/checkout-fields.php:79
+#: inc/checkout-fields.php:70 inc/checkout-fields.php:76
 msgid "Enter something"
 msgstr ""
 
-#: inc/settingspage.php:40 inc/wc-plugin-settings.php:25
+#: inc/order-status-action-manager.php:52 inc/settingspage.php:40
+#: inc/wc-plugin-settings.php:25
 msgid "Messenger Bot"
 msgstr ""
 
-#: inc/settingspage.php:71 inc/wc-plugin-settings.php:151
+#: inc/settingspage.php:71 inc/wc-plugin-settings.php:238
 msgid "Facebook API Credentials"
 msgstr ""
 
-#: inc/settingspage.php:73 inc/wc-plugin-settings.php:153
+#: inc/settingspage.php:73 inc/wc-plugin-settings.php:240
 msgid "Your Callback URL is:"
 msgstr ""
 
-#: inc/settingspage.php:77 inc/wc-plugin-settings.php:157
+#: inc/settingspage.php:77 inc/wc-plugin-settings.php:244
 msgid "Page ID"
 msgstr ""
 
-#: inc/settingspage.php:83 inc/wc-plugin-settings.php:163
+#: inc/settingspage.php:83 inc/wc-plugin-settings.php:250
 msgid "Messenger App ID"
 msgstr ""
 
-#: inc/settingspage.php:89 inc/wc-plugin-settings.php:169
+#: inc/settingspage.php:89 inc/wc-plugin-settings.php:256
 msgid "Page Tooken"
 msgstr ""
 
-#: inc/settingspage.php:95 inc/wc-plugin-settings.php:175
+#: inc/settingspage.php:95 inc/wc-plugin-settings.php:262
 msgid "Verify Token"
 msgstr ""
 
-#: inc/settingspage.php:113 inc/wc-plugin-settings.php:193
+#: inc/settingspage.php:113 inc/wc-plugin-settings.php:131
 msgid "Checkbox size"
 msgstr ""
 
-#: inc/settingspage.php:125 inc/wc-plugin-settings.php:205
+#: inc/settingspage.php:125 inc/wc-plugin-settings.php:178
 msgid "Send to Messenger Button color"
 msgstr ""
 
@@ -107,112 +108,192 @@ msgstr ""
 msgid "API Credentials"
 msgstr ""
 
-#: inc/wc-plugin-settings.php:38 inc/wc-plugin-settings.php:59
+#: inc/wc-plugin-settings.php:38
+msgid "Appearance"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:39 inc/wc-plugin-settings.php:60
 msgid "Messages"
 msgstr ""
 
-#: inc/wc-plugin-settings.php:65
+#: inc/wc-plugin-settings.php:66
 msgid "New Order"
 msgstr ""
 
-#: inc/wc-plugin-settings.php:67
+#: inc/wc-plugin-settings.php:68
 msgid "This is the message the user will recieve when they placed the order."
 msgstr ""
 
-#: inc/wc-plugin-settings.php:71
+#: inc/wc-plugin-settings.php:72
 msgid "Pending Order"
 msgstr ""
 
-#: inc/wc-plugin-settings.php:73
+#: inc/wc-plugin-settings.php:74
 msgid ""
 "This is the message the user will recieve when the order status changed to "
 "\"pending\"."
 msgstr ""
 
-#: inc/wc-plugin-settings.php:77
+#: inc/wc-plugin-settings.php:78
 msgid "Failed Order"
 msgstr ""
 
-#: inc/wc-plugin-settings.php:79
+#: inc/wc-plugin-settings.php:80
 msgid "This is the message the user will recieve when the order failed."
 msgstr ""
 
-#: inc/wc-plugin-settings.php:83
+#: inc/wc-plugin-settings.php:84
 msgid "On Hold"
 msgstr ""
 
-#: inc/wc-plugin-settings.php:85
+#: inc/wc-plugin-settings.php:86
 msgid ""
 "This is the message the user will recieve when the order gets the status "
 "\"on hold\"."
 msgstr ""
 
-#: inc/wc-plugin-settings.php:89
+#: inc/wc-plugin-settings.php:90
 msgid "Processing"
 msgstr ""
 
-#: inc/wc-plugin-settings.php:91
+#: inc/wc-plugin-settings.php:92
 msgid ""
 "This is the message the user will recieve when the order gets the status "
 "\"processing\"."
 msgstr ""
 
-#: inc/wc-plugin-settings.php:95
+#: inc/wc-plugin-settings.php:96
 msgid "Completed Order"
 msgstr ""
 
-#: inc/wc-plugin-settings.php:97
+#: inc/wc-plugin-settings.php:98
 msgid ""
 "This is the message the user will recieve when the order gets the status "
 "\"completed\"."
 msgstr ""
 
-#: inc/wc-plugin-settings.php:101
+#: inc/wc-plugin-settings.php:102
 msgid "Refunded Order"
 msgstr ""
 
-#: inc/wc-plugin-settings.php:103
+#: inc/wc-plugin-settings.php:104
 msgid ""
 "This is the message the user will recieve when the order gets the status "
 "\"refunded\"."
 msgstr ""
 
-#: inc/wc-plugin-settings.php:107
+#: inc/wc-plugin-settings.php:108
 msgid "Cancelled Order"
 msgstr ""
 
-#: inc/wc-plugin-settings.php:109
+#: inc/wc-plugin-settings.php:110
 msgid ""
 "This is the message the user will recieve when the order gets the status "
 "\"cancelled\"."
 msgstr ""
 
-#: inc/wc-plugin-settings.php:121 inc/wc-plugin-settings.php:127
-msgid "Section Two Title"
-msgstr ""
-
-#: inc/wc-plugin-settings.php:129
-msgid "This is some helper text"
-msgstr ""
-
-#: inc/wc-plugin-settings.php:133
-msgid "Section Two Description"
+#: inc/wc-plugin-settings.php:125
+msgid "Appearance of the Facebook Messenger Plugins"
 msgstr ""
 
 #: inc/wc-plugin-settings.php:135
+msgid "Small"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:136
+msgid "Medium"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:137 inc/wc-plugin-settings.php:172
+msgid "Large"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:138 inc/wc-plugin-settings.php:173
+msgid "Standard"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:139 inc/wc-plugin-settings.php:174
+msgid "xLarge"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:150
+msgid "Initial checkbox status"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:154
+msgid "Checked"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:155
+msgid "Unchecked"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:159
+msgid "Allow / disallow login"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:163
+msgid "Allow Login"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:164
+msgid "Disallow Login"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:168
+msgid "Send-to-Messenger Button size"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:182
+msgid "Blue"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:183
+msgid "Weiß"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:187
+msgid "Send-to-Messenger User Login"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:191
+msgid "Enforce Login for every user"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:192
+msgid "Enable Login only for logged out users"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:208 inc/wc-plugin-settings.php:214
+msgid "Section Two Title"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:216
+msgid "This is some helper text"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:220
+msgid "Section Two Description"
+msgstr ""
+
+#: inc/wc-plugin-settings.php:222
 msgid ""
 "This is a paragraph describing the setting. Lorem ipsum yadda yadda yadda. "
 "Lorem ipsum yadda yadda yadda. Lorem ipsum yadda yadda yadda. Lorem ipsum "
 "yadda yadda yadda."
 msgstr ""
 
-#: inc/wc-plugin-settings.php:153
+#: inc/wc-plugin-settings.php:240
 msgid ""
 "Following URLs are currently whitelisted for the use of the messenger "
 "checkbox plugin: <br />"
 msgstr ""
 
-#: inc/woocommerce-thank-you.php:123
+#: inc/woocommerce-order-status-messages.php:87
+msgid "View Tracking"
+msgstr ""
+
+#: inc/woocommerce-thank-you.php:112
 msgid "Get notified about Updates via Facebook Messenger"
 msgstr ""
 

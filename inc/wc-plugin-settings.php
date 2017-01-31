@@ -180,7 +180,7 @@ class WC_Settings_My_Plugin extends WC_Settings_Page {
                              'id' => 'derweili_mbot_button_color',
                              'options' => array(
                                 'blue' => __('Blue', 'mbot-woocommerce' ),
-                                'white' => __('Weiß', 'mbot-woocommerce')
+                                'white' => __('White', 'mbot-woocommerce')
                               )
                         ),
                         'send-to-messenger-login' => array(
@@ -198,35 +198,6 @@ class WC_Settings_My_Plugin extends WC_Settings_Page {
                         )
                     );
 
-
-
-            break;
-
-            case 'section-2':
-                $settings = array(
-                    'section_title' => array(
-                        'name'     => __( 'Section Two Title', 'mbot-woocommmerce' ),
-                        'type'     => 'title',
-                        'desc'     => '',
-                        'id'       => 'wc_settings_tab_demo_section_title'
-                    ),
-                    'title' => array(
-                        'name' => __( 'Section Two Title', 'mbot-woocommmerce' ),
-                        'type' => 'text',
-                        'desc' => __( 'This is some helper text', 'mbot-woocommmerce' ),
-                        'id'   => 'wc_settings_tab_demo_title'
-                    ),
-                    'description' => array(
-                        'name' => __( 'Section Two Description', 'mbot-woocommmerce' ),
-                        'type' => 'textarea',
-                        'desc' => __( 'This is a paragraph describing the setting. Lorem ipsum yadda yadda yadda. Lorem ipsum yadda yadda yadda. Lorem ipsum yadda yadda yadda. Lorem ipsum yadda yadda yadda.', 'mbot-woocommmerce' ),
-                        'id'   => 'wc_settings_tab_demo_description'
-                    ),
-                    'section_end' => array(
-                         'type' => 'sectionend',
-                         'id' => 'wc_settings_tab_demo_section_end'
-                    )
-                );
 
 
             break;
