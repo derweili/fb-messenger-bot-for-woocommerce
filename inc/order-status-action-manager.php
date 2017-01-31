@@ -42,6 +42,7 @@ class Derweili_Custom_Order_Status_Handler
 
 			);
 		}
+		derweili_mbot_log($this->custom_order_status);
 
 	}
 
@@ -106,9 +107,8 @@ class Derweili_Custom_Order_Status_Handler
 
 	public function register_custom_order_status_messages() {
 		foreach ($this->custom_order_status as $key => $value) {
-			# code...
+			add_action( 'woocommerce_order_status_' . $key, array( &$this, 'derweili_mbot_woocommerce_orderstatus_custom' ) );
 		}
-		add_action( 'woocommerce_order_status_' . 'key', array( &$this, 'derweili_mbot_woocommerce_orderstatus_custom' ) );
 	}
 
 	public function derweili_mbot_woocommerce_orderstatus_custom( $order_id ) {
