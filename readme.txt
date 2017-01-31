@@ -4,7 +4,7 @@ Donate link: http://derweili.de/
 Tags: facebook, woocommerce, messenger
 Requires at least: 4.6
 Tested up to: 4.7
-Stable tag: 1.15
+Stable tag: 1.16
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -77,6 +77,10 @@ https://github.com/derweili/fb-messenger-bot-for-woocommerce
 1. **Plugin Settings Screen**
 
 == Changelog ==
+
+= 1.16 =
+* Support for [WooCommerce Order Status & Actions Manager
+](https://codecanyon.net/item/woocommerce-order-status-actions-manager/6392174) added
 
 = 1.15 =
 * Support for [AfterShip Tracking Plugin](https://de.wordpress.org/plugins/aftership-woocommerce-tracking/) added
