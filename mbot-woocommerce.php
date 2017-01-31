@@ -120,6 +120,7 @@ class DERWEILI_WOOCOMMERCE_FBBOT
 		include('inc/domain-whitelisting.php');
 		include('inc/update.php');
 		include('inc/guide.php');
+		include('inc/order-status-action-manager.php');
 
 		add_filter( 'woocommerce_get_settings_pages', array( &$this, 'load_wc_settings' ) ); // Add Settings Page
 		
