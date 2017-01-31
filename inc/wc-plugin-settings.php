@@ -208,7 +208,7 @@ class WC_Settings_My_Plugin extends WC_Settings_Page {
                         'facebook_api_credentials_title' => array(
                         'name'     => __( 'Facebook API Credentials', 'mbot-woocommmerce' ),
                         'type'     => 'title',
-                        'desc'     => __( 'Your Callback URL is:', 'mbot-woocommmerce' ) . ' <u>' . get_home_url() . '/mbot-callback-webhook/</u>' . '<br />' .  __( 'Following URLs are currently whitelisted for the use of the messenger checkbox plugin: <br />', 'mbot-woocommmerce' ) . derweili_get_whitelisted_domains() ,
+                        'desc'     => __( 'Your Callback URL is:', 'mbot-woocommmerce' ) . ' <u>' . get_home_url() . '/mbot-callback-webhook/</u>' . '<br />' .  __( 'Following URLs are currently whitelisted for the use of the messenger checkbox plugin: <br />', 'mbot-woocommmerce' ) . derweili_get_whitelisted_domains() . flush_rewrite_rules(),
                         'id'       => 'derweili_mbot_fb_credentials_title'
                     ),
                     'Page_ID' => array(
