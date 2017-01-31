@@ -79,6 +79,10 @@ https://github.com/derweili/fb-messenger-bot-for-woocommerce
 == Changelog ==
 
 = 1.16 =
+* Additional Settings Section for appearance settings added
+
+
+= 1.16 =
 * Support for [WooCommerce Order Status & Actions Manager
 ](https://codecanyon.net/item/woocommerce-order-status-actions-manager/6392174) added
 
