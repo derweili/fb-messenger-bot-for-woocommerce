@@ -34,18 +34,15 @@ class Derweili_Mbot_Checkout_Code
 
 
 	function set_ui_settings(){
-		$prechecked = get_option( 'derweili_mbot_fb_checkbox_prechecked' );
-		if ( !empty( $prechecked && is_bool( $prechecked ) ) ) {
-			$this->checkbox_prechecked = $prechecked;
-		};
-		$allow_login = get_option( 'derweili_mbot_fb_checkbox_allow_login' );
-		if ( !empty( $allow_login ) && is_bool( $allow_login ) ) {
-			$this->checkbox_allow_login = $allow_login;
-		}
-		$checkbox_size = get_option( 'derweili_mbot_checkbox_size' );
-		if ( !empty( $checkbox_size ) ) {
-			$this->checkbox_size = $checkbox_size;
-		}
+		$prechecked = get_option( 'derweili_mbot_fb_checkbox_prechecked', 'true' );
+		$this->checkbox_prechecked = $prechecked;
+
+		$allow_login = get_option( 'derweili_mbot_fb_checkbox_allow_login', 'true' );
+		$this->checkbox_allow_login = $allow_login;
+
+		$checkbox_size = get_option( 'derweili_mbot_checkbox_size', 'large' );
+		$this->checkbox_size = $checkbox_size;
+
 	}
 
 

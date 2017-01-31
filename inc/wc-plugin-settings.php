@@ -35,6 +35,7 @@ class WC_Settings_My_Plugin extends WC_Settings_Page {
 
         $sections = array(
             ''         => __( 'API Credentials', 'mbot-woocommmerce' ),
+            'screen-settings'         => __( 'Appearance', 'mbot-woocommmerce' ),
             'messages'         => __( 'Messages', 'mbot-woocommmerce' ),
             //'section 2'         => __( 'Section 2', 'mbot-woocommmerce' ),
 
@@ -115,6 +116,92 @@ class WC_Settings_My_Plugin extends WC_Settings_Page {
                     )
                 );
             break;
+
+            case 'screen-settings':
+
+
+                 $settings = array(
+                            'facebook_api_credentials_title' => array(
+                            'name'     => __( 'Appearance of the Facebook Messenger Plugins', 'mbot-woocommmerce' ),
+                            'type'     => 'title',
+                            //'desc'     => __( 'Your Callback URL is:', 'mbot-woocommmerce' ) . ' <u>' . get_home_url() . '/mbot-callback-webhook/</u>' . '<br />' .  __( 'Following URLs are currently whitelisted for the use of the messenger checkbox plugin: <br />', 'mbot-woocommmerce' ) . derweili_get_whitelisted_domains() ,
+                            'id'       => 'derweili_mbot_fb_screen_settings_title'
+                        ),
+                        'checkbox-size' => array(
+                            'name' => __( 'Checkbox size', 'mbot-woocommmerce' ),
+                             'type' => 'select',
+                             'id' => 'derweili_mbot_checkbox_size',
+                             'options' => array(
+                                'small' => __('Small', 'mbot-woocommmerce' ) ,
+                                'medium' => __('Medium', 'mbot-woocommerce' ),
+                                'large' => __('Large', 'mbot-woocommere' ),
+                                'standard' => __( 'Standard', 'mbot-wooocommerce' ),
+                                'xlarge' => __('xLarge', 'mbot-woocommere' )
+                              )
+                        ),
+
+                       /*'checkbox-prechecked' => array(
+                            'name'     => __( 'precheck the checkbox', 'mbot-woocommmerce' ),
+                            'type'     => 'checkbox',
+                            //'desc'     => __( 'Your Callback URL is:', 'mbot-woocommmerce' ) . ' <u>' . plugin_dir_url( __FILE__ ) . 'webhook.php</u>' ,
+                            'id'       => 'derweili_mbot_fb_checkbox_prechecked'
+                        ),*/
+                        'checkbox-prechecked' => array(
+                            'name' => __( 'Initial checkbox status', 'mbot-woocommmerce' ),
+                            'type' => 'select',
+                            'id'       => 'derweili_mbot_fb_checkbox_prechecked',
+                             'options' => array(
+                                'true' => __('Checked', 'mbot-woocommmerce' ) ,
+                                'false' => __('Unchecked', 'mbot-woocommerce' ),
+                            )
+                        ),
+                        'checkbox-login' => array(
+                            'name' => __( 'Allow / disallow login', 'mbot-woocommmerce' ),
+                            'type' => 'select',
+                            'id'       => 'derweili_mbot_fb_checkbox_allow_login',
+                            'options' => array(
+                                'true' => __( 'Allow Login', 'mbot-woocommmerce' ) ,
+                                'false' => __( 'Disallow Login', 'mbot-woocommerce' ),
+                            )
+                        ),
+                        'button-size' => array(
+                            'name' => __( 'Send-to-Messenger Button size', 'mbot-woocommmerce' ),
+                             'type' => 'select',
+                             'id' => 'derweili_mbot_button_size',
+                             'options' => array(
+                                'large' => __('Large', 'mbot-woocommere' ),
+                                'standard' => __( 'Standard', 'mbot-wooocommerce' ),
+                                'xlarge' => __('xLarge', 'mbot-woocommere' )
+                            )
+                        ),
+                        'send-to-messenger-color' => array(
+                            'name' => __( 'Send to Messenger Button color', 'mbot-woocommmerce' ),
+                             'type' => 'select',
+                             'id' => 'derweili_mbot_button_color',
+                             'options' => array(
+                                'blue' => __('Blue', 'mbot-woocommerce' ),
+                                'white' => __('Weiß', 'mbot-woocommerce')
+                              )
+                        ),
+                        'send-to-messenger-login' => array(
+                            'name' => __( 'Send-to-Messenger User Login', 'mbot-woocommmerce' ),
+                             'type' => 'select',
+                             'id' => 'derweili_mbot_button_enforce_login',
+                             'options' => array(
+                                'true' => __('Enforce Login for every user', 'mbot-woocommerce' ),
+                                'false' => __('Enable Login only for logged out users', 'mbot-woocommerce' )
+                              )
+                        ),
+                        'section_end' => array(
+                             'type' => 'sectionend',
+                             'id' => 'wc_mbot_settings_section_end'
+                        )
+                    );
+
+
+
+            break;
+
             case 'section-2':
                 $settings = array(
                     'section_title' => array(
@@ -189,27 +276,6 @@ class WC_Settings_My_Plugin extends WC_Settings_Page {
                         //'desc'     => __( 'Your Callback URL is:', 'mbot-woocommmerce' ) . ' <u>' . plugin_dir_url( __FILE__ ) . 'webhook.php</u>' ,
                         'id'       => 'derweili_mbot_fb_checkbox_allow_login'
                     ),*/
-                    'checkbox-size' => array(
-                        'name' => __( 'Checkbox size', 'mbot-woocommmerce' ),
-                         'type' => 'select',
-                         'id' => 'derweili_mbot_checkbox_size',
-                         'options' => array(
-                            'standard' => 'Standard',
-                            'small' => 'Small',
-                            'medium' => 'Medium',
-                            'large' => 'Large',
-                            'xlarge' => 'xLarge',
-                          )
-                    ),
-                    'send-to-messenger-color' => array(
-                        'name' => __( 'Send to Messenger Button color', 'mbot-woocommmerce' ),
-                         'type' => 'select',
-                         'id' => 'derweili_mbot_button_color',
-                         'options' => array(
-                            'blue' => 'Blau',
-                            'white' => 'Weiß',
-                          )
-                    ),
                     'section_end' => array(
                          'type' => 'sectionend',
                          'id' => 'wc_mbot_settings_section_end'

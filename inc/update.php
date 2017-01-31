@@ -69,3 +69,24 @@ function derweili_mbot_migrate_message_text( $version ) {
 }
 
 add_action( 'mbot_woocommerce_plugin_update', 'derweili_mbot_migrate_message_text' );
+
+
+/**
+* NOTE: Migrate from static text to woocommerce settings
+* @since 1.17
+*/
+function derweili_mbot_migrate_display_settings( $version ) {
+	if ( 117 >= $version ) {
+		
+		update_option( 'derweili_mbot_checkbox_size', 'large' );
+		update_option( 'derweili_mbot_fb_checkbox_prechecked', 'true' );
+		update_option( 'derweili_mbot_fb_checkbox_allow_login', 'true' );
+		update_option( 'derweili_mbot_button_size', 'large' );
+		update_option( 'derweili_mbot_button_color', 'blue' );
+		update_option( 'derweili_mbot_button_enforce_login', 'false' );
+
+	}else{
+	}
+}
+
+add_action( 'mbot_woocommerce_plugin_update', 'derweili_mbot_migrate_display_settings' );

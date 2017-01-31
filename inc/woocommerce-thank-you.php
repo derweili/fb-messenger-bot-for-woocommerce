@@ -17,8 +17,9 @@ class Derweili_Mbot_Thank_You_Page
 
 	private $checkbox_prechecked = false;
 	private $checkbox_allow_login = false;
-	private $checkbox_size = 'large';
+	private $buttom_size = 'large';
 	private $button_color = 'blue';
+	private $button_enforce_login = 'false';
 
 
 	function __construct()
@@ -33,32 +34,19 @@ class Derweili_Mbot_Thank_You_Page
 
 	// handle send-to-messenger style attributes
 	function set_ui_settings(){
-		$prechecked = get_option( 'derweili_mbot_fb_checkbox_prechecked' );
-		if ( !empty( $prechecked && is_bool( $prechecked ) ) ) {
-			$this->checkbox_prechecked = $prechecked;
-		};
-		$allow_login = get_option( 'derweili_mbot_fb_checkbox_allow_login');
-		if ( !empty( $allow_login ) && is_bool( $allow_login ) ) {
-			$this->checkbox_allow_login = $allow_login;
-		}
-		$checkbox_size = get_option( 'derweili_mbot_checkbox_size' );
-		if ( !empty( $checkbox_size ) ) {
-			$this->checkbox_size = $checkbox_size;
 
-			// set size to standard size if small or medium is selected
-			// small and medium are only available for the checkbox plugin but not for send-to-messenger plugin
-			if ( $this->checkbox_size == 'small' || $this->checkbox_size == 'medium' ) {
-				$this->checkbox_size = 'standard';
-			}
+		$buttom_size = get_option( 'derweili_mbot_button_size', 'large' );
+			$this->buttom_size = $buttom_size;
 
-		}
-		$button_color = get_option( 'derweili_mbot_button_color' );
-		
-		if ( ! empty( $button_color ) ) {
 
+		$button_color = get_option( 'derweili_mbot_button_color', 'blue' );
 			$this->button_color = $button_color;
 
-		}
+
+		$button_enforce_login = get_option( 'derweili_mbot_button_enforce_login', 'false' );
+			$this->button_enforce_login = $button_enforce_login;
+
+
 	}
 
 
@@ -118,8 +106,9 @@ class Derweili_Mbot_Thank_You_Page
 		                  messenger_app_id="' . mbot_woocommerce_app_id . '" 
 		                  page_id="' . mbot_woocommerce_page_id . '" 
 		                  data-ref="derweiliSubscribeToOrder' . $order->id . '" 
-		                  color="blue" 
-		                  size="' . $this->checkbox_size . '"></div>';
+		                  color="' . $this->button_color . '" 
+		                  enforce_login="' . $this->button_enforce_login . '" 
+		                  size="' . $this->buttom_size . '"></div>';
 		    return '<div style="width: 100%; background-color:white; padding: 20px; margin-bottom:20px;"><h3>' . __( 'Get notified about Updates via Facebook Messenger', 'mbot-woocommerce' ) . '</h3>' . $send_to_messenger_button . '</div>' . $example;
 
 	}
