@@ -42,7 +42,7 @@ class Derweili_Custom_Order_Status_Handler
 
 			);
 		}
-		derweili_mbot_log($this->custom_order_status);
+		//derweili_mbot_log($this->custom_order_status);
 
 	}
 
