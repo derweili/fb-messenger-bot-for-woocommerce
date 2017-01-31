@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Messengerbot for WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Messengerbot for WooCommerce 1.17\n"
+"Project-Id-Version: Messengerbot for WooCommerce 1.18\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/messenger-bot-for-"
 "woocommerce\n"
-"POT-Creation-Date: 2017-01-31 19:19:51+00:00\n"
+"POT-Creation-Date: 2017-01-31 19:30:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,27 +30,27 @@ msgstr ""
 msgid "Messenger Bot"
 msgstr ""
 
-#: inc/settingspage.php:71 inc/wc-plugin-settings.php:238
+#: inc/settingspage.php:71 inc/wc-plugin-settings.php:209
 msgid "Facebook API Credentials"
 msgstr ""
 
-#: inc/settingspage.php:73 inc/wc-plugin-settings.php:240
+#: inc/settingspage.php:73 inc/wc-plugin-settings.php:211
 msgid "Your Callback URL is:"
 msgstr ""
 
-#: inc/settingspage.php:77 inc/wc-plugin-settings.php:244
+#: inc/settingspage.php:77 inc/wc-plugin-settings.php:215
 msgid "Page ID"
 msgstr ""
 
-#: inc/settingspage.php:83 inc/wc-plugin-settings.php:250
+#: inc/settingspage.php:83 inc/wc-plugin-settings.php:221
 msgid "Messenger App ID"
 msgstr ""
 
-#: inc/settingspage.php:89 inc/wc-plugin-settings.php:256
+#: inc/settingspage.php:89 inc/wc-plugin-settings.php:227
 msgid "Page Tooken"
 msgstr ""
 
-#: inc/settingspage.php:95 inc/wc-plugin-settings.php:262
+#: inc/settingspage.php:95 inc/wc-plugin-settings.php:233
 msgid "Verify Token"
 msgstr ""
 
@@ -249,7 +249,7 @@ msgid "Blue"
 msgstr ""
 
 #: inc/wc-plugin-settings.php:183
-msgid "Weiß"
+msgid "White"
 msgstr ""
 
 #: inc/wc-plugin-settings.php:187
@@ -264,26 +264,7 @@ msgstr ""
 msgid "Enable Login only for logged out users"
 msgstr ""
 
-#: inc/wc-plugin-settings.php:208 inc/wc-plugin-settings.php:214
-msgid "Section Two Title"
-msgstr ""
-
-#: inc/wc-plugin-settings.php:216
-msgid "This is some helper text"
-msgstr ""
-
-#: inc/wc-plugin-settings.php:220
-msgid "Section Two Description"
-msgstr ""
-
-#: inc/wc-plugin-settings.php:222
-msgid ""
-"This is a paragraph describing the setting. Lorem ipsum yadda yadda yadda. "
-"Lorem ipsum yadda yadda yadda. Lorem ipsum yadda yadda yadda. Lorem ipsum "
-"yadda yadda yadda."
-msgstr ""
-
-#: inc/wc-plugin-settings.php:240
+#: inc/wc-plugin-settings.php:211
 msgid ""
 "Following URLs are currently whitelisted for the use of the messenger "
 "checkbox plugin: <br />"
