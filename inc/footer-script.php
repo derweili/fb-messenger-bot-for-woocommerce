@@ -11,39 +11,38 @@ if (!defined('ABSPATH'))
 add_action( 'wp_footer', 'derweili_footer_script' );
 function derweili_footer_script() {
 
-	?>
-	
-		<script>
-			
-			<?php do_action( 'derweili_mbot_before_fb_js_sdk' ) ?>
+	if ( is_checkout() ) {
 
-			window.fbAsyncInit = function() {
-				FB.init({
-				  appId      : '<?php echo mbot_woocommerce_app_id; ?>',
-				  xfbml      : true,
-				  version    : 'v2.6'
-				});
+		?>	
+			<script>
+				<?php do_action( 'derweili_mbot_before_fb_js_sdk' ) ?>
 
-				<?php
-					// load additional scripts for fb plugins (checkbox + send to messenger)
-					do_action( 'derweili_mbot_after_fb_init' );
-				?>
+				(function(d, s, id){
+					var js, fjs = d.getElementsByTagName(s)[0];
+					if (d.getElementById(id)) {return;}
+					js = d.createElement(s); js.id = id;
+					js.src = "//connect.facebook.net/<?php echo get_locale() ?>/sdk.js";
+					fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));
 
-			}
+				window.fbAsyncInit = function() {
+					FB.init({
+					  appId      : '<?php echo mbot_woocommerce_app_id; ?>',
+					  xfbml      : true,
+					  version    : 'v2.6'
+					});
 
-			(function(d, s, id){
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) {return;}
-				js = d.createElement(s); js.id = id;
-				js.src = "//connect.facebook.net/<?php echo get_locale() ?>/sdk.js";
-				fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
+					<?php
+						// load additional scripts for fb plugins (checkbox + send to messenger)
+						do_action( 'derweili_mbot_after_fb_init' );
+					?>
 
+				}
+			</script>
 
-		</script>
+		<?php
 
-
-	<?php
+	} // is_checkout
 
 }
 
