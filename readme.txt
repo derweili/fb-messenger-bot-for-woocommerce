@@ -4,7 +4,7 @@ Donate link: http://derweili.de/
 Tags: facebook, woocommerce, messenger
 Requires at least: 4.6
 Tested up to: 4.7
-Stable tag: 1.21
+Stable tag: 1.22
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -77,6 +77,10 @@ https://github.com/derweili/fb-messenger-bot-for-woocommerce
 1. **Plugin Settings Screen**
 
 == Changelog ==
+
+= 1.22 =
+* Performance improvements: load Facebook JS SDK only on checkout pages
+
 
 = 1.16 =
 * Additional Settings Section for appearance settings added
