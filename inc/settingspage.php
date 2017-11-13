@@ -86,12 +86,12 @@ if ( 1 == 2 ){
                     'id'   => 'derweili_mbot_messenger_app_id'
                 ),
                 'page_token' => array(
-                    'name' => __( 'Page Tooken', 'mbot-woocommmerce' ),
+                    'name' => __( 'Page Token', 'mbot-woocommmerce' ),
                     'type' => 'text',
                     'desc' => __( '', 'mbot-woocommmerce' ),
                     'id'   => 'derweili_mbot_page_token'
                 ),
-                'verify_tooken' => array(
+                'verify_token' => array(
                     'name' => __( 'Verify Token', 'mbot-woocommmerce' ),
                     'type' => 'text',
                     'desc' => __( '', 'mbot-woocommmerce' ),
