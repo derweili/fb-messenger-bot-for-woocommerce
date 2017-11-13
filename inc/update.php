@@ -55,7 +55,7 @@ function derweili_mbot_migrate_message_text( $version ) {
 	if ( 16 >= $version ) {
 		
 		add_option( 'derweili_mbot_new_order_message', __( 'Thank you for your order, you will be immediately notified when your order status changes.', 'mbot-woocommerce' ) );
-		add_option( 'derweili_mbot_pending_order_message', __( 'Your order is now pendig.', 'mbot-woocommerce' ) );
+		add_option( 'derweili_mbot_pending_order_message', __( 'Your order is now pending.', 'mbot-woocommerce' ) );
 		add_option( 'derweili_mbot_failed_order_message', __( 'Your order unfortunately failed.', 'mbot-woocommerce' ) );
 		add_option( 'derweili_mbot_on_hold_order_message', __( 'Your order is now on hold.', 'mbot-woocommerce' ) );
 		add_option( 'derweili_mbot_processing_order_message', __( 'Your order is now processing', 'mbot-woocommerce' ) );
